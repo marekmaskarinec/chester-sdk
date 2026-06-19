@@ -7,7 +7,6 @@ on:
         - '.*'
       branches-ignore:
         - 'gh-pages'
-        - 'marek.maskarinec/app-tag-version'  # TEMP: iterating on release CI; revert before merge
       tags:
         - 'v*'
   workflow_dispatch:
