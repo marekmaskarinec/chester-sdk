@@ -190,7 +190,13 @@ jobs:
         run: |
           mkdir -p stage/build/zephyr
           cd build/zephyr
-          for f in merged.hex zephyr.hex app_update.bin zephyr.elf \
+          # NOTE: zephyr.elf is deliberately NOT staged. The debug build's elf is
+          # ~17 MB, which pushes the multipart upload past the firmware server's
+          # reverse-proxy body-size limit (~10 MB), causing the upload to fail
+          # (HTTP 400 / TLS reset). The hex + app_update + manifest are all the
+          # distribution server needs; the elf would only add cloud symbolication.
+          # Re-add zephyr.elf here once the proxy limit is raised.
+          for f in merged.hex zephyr.hex app_update.bin \
                    dfu_application.zip_manifest.json; do
             [ -f "$f" ] && cp -v "$f" ../../stage/build/zephyr/
           done
