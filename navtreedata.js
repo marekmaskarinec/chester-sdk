@@ -25,13 +25,15 @@
 var NAVTREE =
 [
   [ "CHESTER SDK", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -39,6 +41,7 @@ var NAVTREE =
       [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", "globals_func" ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", "globals_eval" ],
@@ -51,10 +54,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__ctr__buf.html#ga60e4d617968c4d09162642ded5cc2c3d",
-"group__ctr__s1.html#ga94d58e62efa5b80958af172877fbe6dd",
-"group__ctr__z.html#gga8d80575129b3895482e48030dbda5c73a9e8dea9d9e2d62ad2970294645565d4b",
-"structpeople__counter__measurement.html"
+"ctr__test__lrw_8h.html#a5c6d373ae2e46645c888576f2ec42fd5",
+"group__ctr__edge.html#ga6699a0878cb9864a1cfed38b70c17faa",
+"group__ctr__rtd.html#gga017e0067eba5ce9c25b98dc89c3394d4a2f7b77261e6ca66a85d18310245dbf62",
+"group__ctr__z.html#gga1be5ac01700fc5f77e2d4acdd8b4183ba69b28e618925c92b87c07f942addb1e5",
+"structctr__lrw__link__driver__api.html#a20a01963d6d4546602e3ff0ad8953c25"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
