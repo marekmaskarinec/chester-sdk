@@ -1,7 +1,0 @@
-default: ctr_ble_tag
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_tag/build
-domains:
-  - name: ctr_ble_tag
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_tag/build/ctr_ble_tag
-flash_order:
-  - ctr_ble_tag

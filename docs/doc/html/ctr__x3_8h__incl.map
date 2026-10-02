@@ -1,9 +1,0 @@
-<map id="drivers/ctr_x3.h" name="drivers/ctr_x3.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="124,5,235,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,119,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,35,97,74,94,69,158,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="142,80,216,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,33,182,64,177,64,177,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="240,80,305,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="197,30,246,68,243,73,194,35"/>
-</map>

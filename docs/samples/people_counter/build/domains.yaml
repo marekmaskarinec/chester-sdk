@@ -1,7 +1,0 @@
-default: people_counter
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build
-domains:
-  - name: people_counter
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/people_counter
-flash_order:
-  - people_counter

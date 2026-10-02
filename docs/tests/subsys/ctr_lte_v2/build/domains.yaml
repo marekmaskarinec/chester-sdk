@@ -1,7 +1,0 @@
-default: ctr_lte_v2
-build_dir: /home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build
-domains:
-  - name: ctr_lte_v2
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/ctr_lte_v2
-flash_order:
-  - ctr_lte_v2

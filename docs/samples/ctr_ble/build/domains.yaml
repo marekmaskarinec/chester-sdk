@@ -1,9 +1,0 @@
-default: ctr_ble
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build
-domains:
-  - name: ctr_ble
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/ctr_ble
-  - name: mcuboot
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/mcuboot
-flash_order:
-  - ctr_ble

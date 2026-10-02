@@ -1,7 +1,0 @@
-default: ctr_cloud
-build_dir: /home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/build
-domains:
-  - name: ctr_cloud
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/build/ctr_cloud
-flash_order:
-  - ctr_cloud

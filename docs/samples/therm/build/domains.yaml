@@ -1,7 +1,0 @@
-default: therm
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/therm/build
-domains:
-  - name: therm
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/therm/build/therm
-flash_order:
-  - therm

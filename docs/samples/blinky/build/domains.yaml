@@ -1,7 +1,0 @@
-default: blinky
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/blinky/build
-domains:
-  - name: blinky
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/blinky
-flash_order:
-  - blinky

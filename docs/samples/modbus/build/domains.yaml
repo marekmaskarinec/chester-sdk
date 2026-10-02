@@ -1,7 +1,0 @@
-default: modbus
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/modbus/build
-domains:
-  - name: modbus
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/modbus/build/modbus
-flash_order:
-  - modbus

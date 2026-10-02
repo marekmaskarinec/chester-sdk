@@ -1,9 +1,0 @@
-<map id="ctr_rtc.h" name="ctr_rtc.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="142,5,211,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,116,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,35,95,74,92,69,155,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="139,80,214,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,33,179,64,174,64,174,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="238,80,302,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,30,243,68,240,73,191,35"/>
-</map>

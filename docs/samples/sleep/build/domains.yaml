@@ -1,7 +1,0 @@
-default: sleep
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/sleep/build
-domains:
-  - name: sleep
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/sleep/build/sleep
-flash_order:
-  - sleep

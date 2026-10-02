@@ -1,2 +1,0 @@
-# Load Zephyr board defconfig descriptions.
-osource "/home/marek/dev/hio/chester-sdk/chester/boards/hardwario/chester/Kconfig.defconfig"

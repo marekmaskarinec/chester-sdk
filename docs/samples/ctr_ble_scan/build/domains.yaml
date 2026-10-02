@@ -1,7 +1,0 @@
-default: ctr_ble_scan
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build
-domains:
-  - name: ctr_ble_scan
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/ctr_ble_scan
-flash_order:
-  - ctr_ble_scan

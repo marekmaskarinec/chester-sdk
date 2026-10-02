@@ -1,7 +1,0 @@
-default: ctr_led
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build
-domains:
-  - name: ctr_led
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/ctr_led
-flash_order:
-  - ctr_led

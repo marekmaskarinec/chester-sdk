@@ -1,2 +1,0 @@
-"nrf":"/home/marek/dev/hio/chester-sdk/nrf":"/home/marek/dev/hio/chester-sdk/nrf/sysbuild"
-"mcuboot":"/home/marek/dev/hio/chester-sdk/bootloader/mcuboot":"/home/marek/dev/hio/chester-sdk/bootloader/mcuboot/boot/zephyr/sysbuild"

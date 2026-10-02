@@ -1,7 +1,0 @@
-<map id="drivers/ctr_a1.h" name="drivers/ctr_a1.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="65,5,176,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,119,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,34,84,69,80,66,108,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="142,80,216,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,31,162,66,158,69,129,34"/>
-</map>

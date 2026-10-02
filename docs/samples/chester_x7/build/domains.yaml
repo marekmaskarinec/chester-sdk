@@ -1,7 +1,0 @@
-default: chester_x7
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_x7/build
-domains:
-  - name: chester_x7
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_x7/build/chester_x7
-flash_order:
-  - chester_x7

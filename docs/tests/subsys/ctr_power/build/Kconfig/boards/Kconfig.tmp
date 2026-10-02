@@ -1,2 +1,0 @@
-# Load Zephyr board Kconfig descriptions.
-osource "/home/marek/dev/hio/chester-sdk/zephyr/boards/native/native_sim/Kconfig"

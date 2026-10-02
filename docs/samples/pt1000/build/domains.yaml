@@ -1,7 +1,0 @@
-default: pt1000
-build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/pt1000/build
-domains:
-  - name: pt1000
-    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/pt1000/build/pt1000
-flash_order:
-  - pt1000
