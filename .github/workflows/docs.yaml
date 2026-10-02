@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - marek.maskarinec/sbom
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,4 +24,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./chester-sdk/doc/html
+        destination_dir: docs
 
