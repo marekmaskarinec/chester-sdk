@@ -1,0 +1,36 @@
+\doxysection{ctr\+\_\+gpio.\+h File Reference}
+\hypertarget{ctr__gpio_8h}{}\label{ctr__gpio_8h}\index{ctr\_gpio.h@{ctr\_gpio.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\+\_\+gpio\+\_\+channel}} \{ \newline
+\mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9aac4e4f97bac3d01048e5ab7bc3daf150}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+A0}} = 0
+, \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a6599acebc5f833aa0009e9781d8faf2e}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+A1}} = 1
+, \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9aa3eb6b8d9ecf99e64704c9675f3b26f3}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+A2}} = 2
+, \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9af4d0e51a60a5d10e7620fb3866290784}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+A3}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a9a195526fbef080e309c2da5e866dd97}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+B0}} = 4
+, \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a1518106e81774afa706e27fc006959a0}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+B1}} = 5
+, \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a9bac14fddf786320478c4e7326a458b3}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+B2}} = 6
+, \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a8d69586809e90d32fad66816f2a691f6}{CTR\+\_\+\+GPIO\+\_\+\+CHANNEL\+\_\+\+B3}} = 7
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__gpio_ga2ad3a7afe460ba69fabb78d418771fcf}{ctr\+\_\+gpio\+\_\+mode}} \{ \newline
+\mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa06f740f76e5a73333cfb56027681315d}{CTR\+\_\+\+GPIO\+\_\+\+MODE\+\_\+\+ANALOG}} = 0
+, \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfafe114758dd9abfa65ddff92ed7acdf5c}{CTR\+\_\+\+GPIO\+\_\+\+MODE\+\_\+\+OUTPUT}} = 1
+, \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa2d0102dca0ea53819554baff8cd43126}{CTR\+\_\+\+GPIO\+\_\+\+MODE\+\_\+\+OUTPUT\+\_\+\+OD}} = 2
+, \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa78ab93353e8495c11bb14a7b02e9e9c3}{CTR\+\_\+\+GPIO\+\_\+\+MODE\+\_\+\+INPUT}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa6d1845027f430be749c76d6478b6d7d2}{CTR\+\_\+\+GPIO\+\_\+\+MODE\+\_\+\+INPUT\+\_\+\+PU}} = 4
+, \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa870ac9c4c0b307dbbfc2d8a61ac5af72}{CTR\+\_\+\+GPIO\+\_\+\+MODE\+\_\+\+INPUT\+\_\+\+PD}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ctr__gpio_ga16185bbcf318e66c09b9b1f93aa0a026}{ctr\+\_\+gpio\+\_\+set\+\_\+mode}} (enum \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\+\_\+gpio\+\_\+channel}} channel, enum \mbox{\hyperlink{group__ctr__gpio_ga2ad3a7afe460ba69fabb78d418771fcf}{ctr\+\_\+gpio\+\_\+mode}} mode)
+\item 
+int \mbox{\hyperlink{group__ctr__gpio_ga5343c9c71a98c181309c6a3dca247f8b}{ctr\+\_\+gpio\+\_\+read}} (enum \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\+\_\+gpio\+\_\+channel}} channel, int \texorpdfstring{$\ast$}{*}value)
+\item 
+int \mbox{\hyperlink{group__ctr__gpio_ga4d9aeed17d59422c0a82fe0aeacc77d8}{ctr\+\_\+gpio\+\_\+write}} (enum \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\+\_\+gpio\+\_\+channel}} channel, int value)
+\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/CMakeFiles/mb7066"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/CMakeFiles/mb7066.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/CMakeFiles/mb7066-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/_sysbuild/sysbuild/images/mb7066-prefix/src/mb7066-stamp/mb7066-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"mb7066"
+		],
+		"name" : "mb7066"
+	}
+}

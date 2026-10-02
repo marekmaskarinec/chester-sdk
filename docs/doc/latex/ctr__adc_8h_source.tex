@@ -1,0 +1,54 @@
+\doxysection{ctr\+\_\+adc.\+h}
+\hypertarget{ctr__adc_8h_source}{}\label{ctr__adc_8h_source}\mbox{\hyperlink{ctr__adc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_CTR\_ADC\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_CTR\_ADC\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ Default\ ADC\ gain\ is\ 1/6\ */}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CTR\_ADC\_MILLIVOLTS(\_sample)\ \ \ \ \ \ \ \ (((uint32\_t)(\_sample))\ *\ 600\ *\ 6\ /\ 4095)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ CTR\_ADC\_MILLIVOLTS\_GAIN\_1(\_sample)\ (((uint32\_t)(\_sample))\ *\ 600\ *\ 1\ /\ 4095)}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ X0\ contains\ 100kΩ\ and\ 10kΩ\ voltage\ divider\ when\ PD\ is\ enabled\ */}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ CTR\_ADC\_X0\_AI\_MILLIVOLTS(\_sample)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ ((float)CTR\_ADC\_MILLIVOLTS(\_sample)\ *\ ((100.f\ +\ 10.f)\ /\ 10.f))}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ CTR\_ADC\_X0\_AI\_NODIV\_MILLIVOLTS(\_sample)\ ((float)CTR\_ADC\_MILLIVOLTS(\_sample))}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ X0\ contains\ 249Ω\ ohm\ measurement\ resistor\ and\ then\ 100kΩ\ and\ 10kΩ\ voltage\ divider\ */}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ CTR\_ADC\_X0\_CL\_MILLIAMPS(\_sample)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ ((float)CTR\_ADC\_MILLIVOLTS(\_sample)\ *\ ((100.f\ +\ 10.f)\ /\ 10.f)\ /\ 249.f)}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__adc_ga390e1e78d538f0f92334ff2971c7cb59}{ctr\_adc\_channel}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59a4eec79568f1fc0a3fd723ae6cda7f3f7}{CTR\_ADC\_CHANNEL\_A0}}\ =\ 1,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59a56edde1dfe59a65fcc357d2b7c281272}{CTR\_ADC\_CHANNEL\_A1}}\ =\ 5,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59adf25042cadc43de4075a58e5e5d15610}{CTR\_ADC\_CHANNEL\_A2}}\ =\ 0,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59a7d331aa3cd12e918c7e2fe67ccfea522}{CTR\_ADC\_CHANNEL\_A3}}\ =\ 7,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59a358d2385d3f7ab74765f22281a81e9fb}{CTR\_ADC\_CHANNEL\_B0}}\ =\ 4,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59a1cc225005e8e32909d5bc5792c798962}{CTR\_ADC\_CHANNEL\_B1}}\ =\ 6,}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59af141ece5bfa4c60dca8bcf9b0029df36}{CTR\_ADC\_CHANNEL\_B2}}\ =\ 2,}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{group__ctr__adc_gga390e1e78d538f0f92334ff2971c7cb59a395befe3d73980c02203dac47d4f89a5}{CTR\_ADC\_CHANNEL\_B3}}\ =\ 3}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__adc_gab5a7a618e95f50e0569ad06ba8e97ef1}{ctr\_adc\_init}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__adc_ga390e1e78d538f0f92334ff2971c7cb59}{ctr\_adc\_channel}}\ channel);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__adc_gac7dfe0f28f3ac3efb80dc1763533983b}{ctr\_adc\_read}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__adc_ga390e1e78d538f0f92334ff2971c7cb59}{ctr\_adc\_channel}}\ channel,\ uint16\_t\ *sample);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_CTR\_ADC\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

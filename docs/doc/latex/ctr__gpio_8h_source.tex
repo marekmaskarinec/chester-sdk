@@ -1,0 +1,47 @@
+\doxysection{ctr\+\_\+gpio.\+h}
+\hypertarget{ctr__gpio_8h_source}{}\label{ctr__gpio_8h_source}\mbox{\hyperlink{ctr__gpio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_CTR\_GPIO\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_CTR\_GPIO\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\_gpio\_channel}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9aac4e4f97bac3d01048e5ab7bc3daf150}{CTR\_GPIO\_CHANNEL\_A0}}\ =\ 0,}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a6599acebc5f833aa0009e9781d8faf2e}{CTR\_GPIO\_CHANNEL\_A1}}\ =\ 1,}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9aa3eb6b8d9ecf99e64704c9675f3b26f3}{CTR\_GPIO\_CHANNEL\_A2}}\ =\ 2,}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9af4d0e51a60a5d10e7620fb3866290784}{CTR\_GPIO\_CHANNEL\_A3}}\ =\ 3,}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a9a195526fbef080e309c2da5e866dd97}{CTR\_GPIO\_CHANNEL\_B0}}\ =\ 4,}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a1518106e81774afa706e27fc006959a0}{CTR\_GPIO\_CHANNEL\_B1}}\ =\ 5,}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a9bac14fddf786320478c4e7326a458b3}{CTR\_GPIO\_CHANNEL\_B2}}\ =\ 6,}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_ggaefc917ed9573d58433ccab8fff920eb9a8d69586809e90d32fad66816f2a691f6}{CTR\_GPIO\_CHANNEL\_B3}}\ =\ 7,}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gpio_ga2ad3a7afe460ba69fabb78d418771fcf}{ctr\_gpio\_mode}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa06f740f76e5a73333cfb56027681315d}{CTR\_GPIO\_MODE\_ANALOG}}\ =\ 0,}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfafe114758dd9abfa65ddff92ed7acdf5c}{CTR\_GPIO\_MODE\_OUTPUT}}\ =\ 1,}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa2d0102dca0ea53819554baff8cd43126}{CTR\_GPIO\_MODE\_OUTPUT\_OD}}\ =\ 2,}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa78ab93353e8495c11bb14a7b02e9e9c3}{CTR\_GPIO\_MODE\_INPUT}}\ =\ 3,}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa6d1845027f430be749c76d6478b6d7d2}{CTR\_GPIO\_MODE\_INPUT\_PU}}\ =\ 4,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{group__ctr__gpio_gga2ad3a7afe460ba69fabb78d418771fcfa870ac9c4c0b307dbbfc2d8a61ac5af72}{CTR\_GPIO\_MODE\_INPUT\_PD}}\ =\ 5,}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__gpio_ga16185bbcf318e66c09b9b1f93aa0a026}{ctr\_gpio\_set\_mode}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\_gpio\_channel}}\ channel,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gpio_ga2ad3a7afe460ba69fabb78d418771fcf}{ctr\_gpio\_mode}}\ mode);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__gpio_ga5343c9c71a98c181309c6a3dca247f8b}{ctr\_gpio\_read}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\_gpio\_channel}}\ channel,\ \textcolor{keywordtype}{int}\ *value);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__gpio_ga4d9aeed17d59422c0a82fe0aeacc77d8}{ctr\_gpio\_write}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gpio_gaefc917ed9573d58433ccab8fff920eb9}{ctr\_gpio\_channel}}\ channel,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_CTR\_GPIO\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

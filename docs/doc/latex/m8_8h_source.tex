@@ -1,0 +1,63 @@
+\doxysection{m8.\+h}
+\hypertarget{m8_8h_source}{}\label{m8_8h_source}\index{drivers/m8.h@{drivers/m8.h}}
+\mbox{\hyperlink{m8_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_M8\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_M8\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ int\ (*m8\_api\_set\_main\_power)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{bool}\ on);}
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ int\ (*m8\_api\_set\_bckp\_power)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{bool}\ on);}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ int\ (*m8\_api\_read\_buffer)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{void}\ *buf,\ \textcolor{keywordtype}{size\_t}\ buf\_size,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *bytes\_read);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{struct\ }m8\_driver\_api\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ m8\_api\_set\_main\_power\ set\_main\_power;}
+\DoxyCodeLine{00036\ \ \ \ \ m8\_api\_set\_bckp\_power\ set\_bckp\_power;}
+\DoxyCodeLine{00037\ \ \ \ \ m8\_api\_read\_buffer\ read\_buffer;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__m8_ga7a6a294f158395908a7acbfbbb9746f1}{m8\_set\_main\_power}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{bool}\ on)}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }m8\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }m8\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_main\_power(dev,\ on);}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__m8_ga3fe91ad7d8cdfb475a1c865f0431775e}{m8\_set\_bckp\_power}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{bool}\ on)}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }m8\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }m8\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_bckp\_power(dev,\ on);}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__m8_ga90c0cfcb16f198b62dd70035692bb6db}{m8\_read\_buffer}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{void}\ *buf,\ \textcolor{keywordtype}{size\_t}\ buf\_size,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ *bytes\_read)}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }m8\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }m8\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_buffer(dev,\ buf,\ buf\_size,\ bytes\_read);}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_M8\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

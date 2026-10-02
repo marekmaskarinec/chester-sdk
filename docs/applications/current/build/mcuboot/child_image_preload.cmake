@@ -1,0 +1,11 @@
+# Generated file used for preloading a child image
+set(CMAKE_BUILD_TYPE "" CACHE INTERNAL "NCS child image controlled")
+set(CMAKE_VERBOSE_MAKEFILE "FALSE" CACHE INTERNAL "NCS child image controlled")
+set(BOARD_DIR "/home/marek/dev/hio/chester-sdk/chester/boards/hardwario/chester" CACHE INTERNAL "NCS child image controlled")
+set(ZEPHYR_TOOLCHAIN_VARIANT "zephyr" CACHE INTERNAL "NCS child image controlled")
+set(CROSS_COMPILE "/home/marek/.local/opt/zephyr-sdk-0.16.8/arm-zephyr-eabi/bin/arm-zephyr-eabi-" CACHE INTERNAL "NCS child image controlled")
+set(WEST_PYTHON "/home/marek/dev/hio/chester-sdk/venv/bin/python" CACHE INTERNAL "NCS child image controlled")
+set(FILE_SUFFIX "" CACHE INTERNAL "NCS child image controlled")
+set(BOARD "chester/nrf52840" CACHE INTERNAL "NCS child image controlled")
+set(DTC_OVERLAY_FILE "/home/marek/dev/hio/chester-sdk/chester/applications/current/child_image/mcuboot/boards/chester_nrf52840.overlay" CACHE INTERNAL "NCS child image controlled")
+set(EXTRA_CONF_FILE "/home/marek/dev/hio/chester-sdk/nrf/subsys/bootloader/bl_override/override_external_mcuboot.conf;/home/marek/dev/hio/chester-sdk/nrf/subsys/partition_manager/ext_flash_mcuboot_secondary.conf;/home/marek/dev/hio/chester-sdk/nrf/subsys/partition_manager/partition_manager_enabled.conf;/home/marek/dev/hio/chester-sdk/chester/applications/current/child_image/mcuboot.conf" CACHE INTERNAL "NCS child image controlled")

@@ -1,0 +1,104 @@
+\doxysection{ds28e17.\+h}
+\hypertarget{ds28e17_8h_source}{}\label{ds28e17_8h_source}\index{drivers/w1/ds28e17.h@{drivers/w1/ds28e17.h}}
+\mbox{\hyperlink{ds28e17_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_W1\_DS28E17\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_W1\_DS28E17\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <zephyr/drivers/w1.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ds28e17_ga62fb297b7f0ab9d512807340cd88adc5}{ds28e17\_i2c\_speed}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group__ds28e17_gga62fb297b7f0ab9d512807340cd88adc5a621115ef1f66f63654f02a7efeac8d6e}{DS28E17\_I2C\_SPEED\_100\_KHZ}}\ =\ 0,}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group__ds28e17_gga62fb297b7f0ab9d512807340cd88adc5a1797ecf0b6c0df61977e6a4bac57575a}{DS28E17\_I2C\_SPEED\_400\_KHZ}}\ =\ 1,}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{group__ds28e17_gga62fb297b7f0ab9d512807340cd88adc5acb1f96268e6760fe910c3c14a42b6d1e}{DS28E17\_I2C\_SPEED\_900\_KHZ}}\ =\ 2,}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ int\ (*ds28e17\_api\_set\_w1\_config)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{struct\ }w1\_slave\_config\ config);}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ int\ (*ds28e17\_api\_i2c\_write)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint8\_t\ dev\_addr,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *write\_buf,\ \textcolor{keywordtype}{size\_t}\ write\_len);}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ int\ (*ds28e17\_api\_i2c\_read)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint8\_t\ dev\_addr,\ uint8\_t\ *read\_buf,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ read\_len);}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ int\ (*ds28e17\_api\_i2c\_write\_read)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint8\_t\ dev\_addr,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *write\_buf,\ \textcolor{keywordtype}{size\_t}\ write\_len,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *read\_buf,\ \textcolor{keywordtype}{size\_t}\ read\_len);}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ int\ (*ds28e17\_api\_write\_config)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ds28e17_ga62fb297b7f0ab9d512807340cd88adc5}{ds28e17\_i2c\_speed}}\ i2c\_speed);}
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ int\ (*ds28e17\_api\_enable\_sleep)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ ds28e17\_api\_set\_w1\_config\ set\_w1\_config;}
+\DoxyCodeLine{00053\ \ \ \ \ ds28e17\_api\_i2c\_write\ i2c\_write;}
+\DoxyCodeLine{00054\ \ \ \ \ ds28e17\_api\_i2c\_read\ i2c\_read;}
+\DoxyCodeLine{00055\ \ \ \ \ ds28e17\_api\_i2c\_write\_read\ i2c\_write\_read;}
+\DoxyCodeLine{00056\ \ \ \ \ ds28e17\_api\_write\_config\ write\_config;}
+\DoxyCodeLine{00057\ \ \ \ \ ds28e17\_api\_enable\_sleep\ enable\_sleep;}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ds28e17_ga00b31c470165586c2fe408d35818c9da}{ds28e17\_set\_w1\_config}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{struct}\ w1\_slave\_config\ config)}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_w1\_config(dev,\ config);}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ds28e17_gac75e372b888387d804038d2e59c5d762}{ds28e17\_i2c\_write}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint8\_t\ dev\_addr,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *write\_buf,\ \textcolor{keywordtype}{size\_t}\ write\_len)}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>i2c\_write(dev,\ dev\_addr,\ write\_buf,\ write\_len);}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ds28e17_ga561892d610ed81b1c88c22acd34cf6a8}{ds28e17\_i2c\_read}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint8\_t\ dev\_addr,\ uint8\_t\ *read\_buf,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ read\_len)}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>i2c\_read(dev,\ dev\_addr,\ read\_buf,\ read\_len);}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ds28e17_gaa026e3d545be3ace69d9e82cadf42192}{ds28e17\_i2c\_write\_read}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint8\_t\ dev\_addr,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *write\_buf,\ \textcolor{keywordtype}{size\_t}\ write\_len,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *read\_buf,\ \textcolor{keywordtype}{size\_t}\ read\_len)}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>i2c\_write\_read(dev,\ dev\_addr,\ write\_buf,\ write\_len,\ read\_buf,\ read\_len);}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ds28e17_ga3f45a173f573bf25fb3902a61ce1b733}{ds28e17\_write\_config}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ds28e17_ga62fb297b7f0ab9d512807340cd88adc5}{ds28e17\_i2c\_speed}}\ i2c\_speed)}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>write\_config(dev,\ i2c\_speed);}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ds28e17_ga0764dc9b4d06b5e2d920127c3f5e888a}{ds28e17\_enable\_sleep}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ds28e17\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>enable\_sleep(dev);}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_W1\_DS28E17\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

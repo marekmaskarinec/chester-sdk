@@ -1,0 +1,59 @@
+\doxysection{ctr\+\_\+rtc.\+h}
+\hypertarget{ctr__rtc_8h_source}{}\label{ctr__rtc_8h_source}\mbox{\hyperlink{ctr__rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_CTR\_RTC\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_CTR\_RTC\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/kernel.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__rtc__tm}{ctr\_rtc\_tm}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{/*\ Year\ in\ the\ Anno\ Domini\ calendar\ (e.g.\ 2022)\ */}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_a0ad1282cf179ead2f6d20198eb7b4141}{year}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{/*\ Month\ of\ the\ year\ (range\ 1-\/12)\ */}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_a528527bb2042e078d222c0b128720041}{month}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{/*\ Day\ of\ the\ month\ (range\ 1-\/31)\ */}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_a280d67725550faf2657a7eeb412e20b8}{day}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{/*\ Day\ of\ the\ week\ (range\ 1-\/7;\ 1\ =\ Mon)\ */}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_ae5fadc4e957f0d23c79cb40f97abdaaf}{wday}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*\ Hours\ since\ midnight\ (range\ 0-\/23)\ */}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_aac037e3bd02bb8036cea539e8d337734}{hours}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{/*\ Minutes\ after\ the\ hour\ (range\ 0-\/59)\ */}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_aef44b7c095c3f54fd116fb409d625b22}{minutes}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{/*\ Seconds\ after\ the\ minute\ (range\ 0-\/59)\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__rtc__tm_ae6bee5a83d12328b37ea2b7b6bc64554}{seconds}};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rtc_ga389d5a44e6c658604c9af5907b099364}{ctr\_rtc\_get\_tm}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__rtc__tm}{ctr\_rtc\_tm}}\ *tm);}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rtc_ga58f5ce68a97eefab6794fd248019fc47}{ctr\_rtc\_set\_tm}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__rtc__tm}{ctr\_rtc\_tm}}\ *tm);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rtc_ga6cce722217b527a5771255ff930bd55f}{ctr\_rtc\_get\_ts}}(int64\_t\ *ts);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rtc_ga15885a72026c71201e0b53cb4b8dcb39}{ctr\_rtc\_set\_ts}}(int64\_t\ ts);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rtc_gaa24f5b099755cf8861580900d92ddd92}{ctr\_rtc\_wait\_set}}(k\_timeout\_t\ timeout);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_CTR\_RTC\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

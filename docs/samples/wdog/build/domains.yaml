@@ -1,0 +1,7 @@
+default: wdog
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/wdog/build
+domains:
+  - name: wdog
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/wdog/build/wdog
+flash_order:
+  - wdog

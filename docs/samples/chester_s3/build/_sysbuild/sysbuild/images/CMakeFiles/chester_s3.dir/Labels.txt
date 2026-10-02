@@ -1,0 +1,13 @@
+# Target labels
+ chester_s3
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/CMakeFiles/chester_s3
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/CMakeFiles/chester_s3.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/CMakeFiles/chester_s3-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/_sysbuild/sysbuild/images/chester_s3-prefix/src/chester_s3-stamp/chester_s3-update.rule

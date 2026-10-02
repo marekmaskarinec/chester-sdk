@@ -1,0 +1,7 @@
+default: chester_x10
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build
+domains:
+  - name: chester_x10
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/chester_x10
+flash_order:
+  - chester_x10

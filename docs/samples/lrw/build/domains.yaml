@@ -1,0 +1,7 @@
+default: lrw
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/lrw/build
+domains:
+  - name: lrw
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/lrw
+flash_order:
+  - lrw

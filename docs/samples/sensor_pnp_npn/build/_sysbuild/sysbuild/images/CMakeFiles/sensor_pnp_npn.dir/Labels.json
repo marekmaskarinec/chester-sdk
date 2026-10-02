@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/CMakeFiles/sensor_pnp_npn"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/CMakeFiles/sensor_pnp_npn.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/CMakeFiles/sensor_pnp_npn-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sensor_pnp_npn"
+		],
+		"name" : "sensor_pnp_npn"
+	}
+}

@@ -1,0 +1,10 @@
+default: range
+build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/range/build
+domains:
+  - name: range
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/range/build/range
+  - name: mcuboot
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/range/build/mcuboot
+flash_order:
+  - mcuboot
+  - range

@@ -1,0 +1,13 @@
+# Target labels
+ blinky
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/CMakeFiles/blinky
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/CMakeFiles/blinky.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/CMakeFiles/blinky-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/blinky/build/_sysbuild/sysbuild/images/blinky-prefix/src/blinky-stamp/blinky-update.rule

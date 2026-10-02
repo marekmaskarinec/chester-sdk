@@ -1,0 +1,45 @@
+\doxysection{ctr\+\_\+led.\+h}
+\hypertarget{ctr__led_8h_source}{}\label{ctr__led_8h_source}\mbox{\hyperlink{ctr__led_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_CTR\_LED\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_CTR\_LED\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <zephyr/drivers/led.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__led_ga5de51735ccd24a14ba037f6d1ae9393d}{ctr\_led\_channel}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{group__ctr__led_gga5de51735ccd24a14ba037f6d1ae9393da494ab02eac268544e0986b469961cd80}{CTR\_LED\_CHANNEL\_R}}\ =\ 0,}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{group__ctr__led_gga5de51735ccd24a14ba037f6d1ae9393da480b4b4c00475ed2a24d10f2a7e31dc3}{CTR\_LED\_CHANNEL\_G}}\ =\ 1,}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group__ctr__led_gga5de51735ccd24a14ba037f6d1ae9393da99bcb6ccbef92891e18106230d46f5d3}{CTR\_LED\_CHANNEL\_Y}}\ =\ 2,}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group__ctr__led_gga5de51735ccd24a14ba037f6d1ae9393dae64c19745b76a98df9dca64718febae5}{CTR\_LED\_CHANNEL\_EXT}}\ =\ 3,}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group__ctr__led_gga5de51735ccd24a14ba037f6d1ae9393da449b68ce91278ce5789800dafaca9459}{CTR\_LED\_CHANNEL\_LOAD}}\ =\ 4,}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__led_ga32bec2142a6226d1909e30cd7f1cb84a}{ctr\_led\_set}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__led_ga5de51735ccd24a14ba037f6d1ae9393d}{ctr\_led\_channel}}\ channel,\ \textcolor{keywordtype}{bool}\ is\_on)}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_on)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ led\_on(DEVICE\_DT\_GET(DT\_NODELABEL(gpio\_leds)),\ channel);}
+\DoxyCodeLine{00036\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ led\_off(DEVICE\_DT\_GET(DT\_NODELABEL(gpio\_leds)),\ channel);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_CTR\_LED\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

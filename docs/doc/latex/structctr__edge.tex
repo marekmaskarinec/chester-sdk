@@ -1,0 +1,146 @@
+\doxysection{ctr\+\_\+edge Struct Reference}
+\hypertarget{structctr__edge}{}\label{structctr__edge}\index{ctr\_edge@{ctr\_edge}}
+
+
+{\ttfamily \#include $<$ctr\+\_\+edge.\+h$>$}
+
+
+
+Collaboration diagram for ctr\+\_\+edge\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{structctr__edge__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const struct gpio\+\_\+dt\+\_\+spec \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structctr__edge_a4ad9c61e930a6dac64b996de4ce61abb}{spec}}
+\item 
+bool \mbox{\hyperlink{structctr__edge_a898318d99607b0b7e16e6b3f77291753}{start\+\_\+active}}
+\item 
+\mbox{\hyperlink{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec}{ctr\+\_\+edge\+\_\+cb\+\_\+t}} \mbox{\hyperlink{structctr__edge_a19d481fa581634e31c6678e5f2d25212}{cb}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structctr__edge_a50878edcb20924d5db155a71e7116cf3}{user\+\_\+data}}
+\item 
+atomic\+\_\+t \mbox{\hyperlink{structctr__edge_a9278707a0916fb7538296636c991f481}{cooldown\+\_\+time}}
+\item 
+atomic\+\_\+t \mbox{\hyperlink{structctr__edge_a3dcb8e491f15c604d892e007cc1f7675}{active\+\_\+duration}}
+\item 
+atomic\+\_\+t \mbox{\hyperlink{structctr__edge_a00e1c3bc6dab51e4b0b20235b73c8ee5}{inactive\+\_\+duration}}
+\item 
+struct k\+\_\+mutex \mbox{\hyperlink{structctr__edge_a47b5814d61aba7a34dd649d1e1b92705}{lock}}
+\item 
+struct k\+\_\+timer \mbox{\hyperlink{structctr__edge_af74edd87e6e3a5379fd929c8ddecfb57}{cooldown\+\_\+timer}}
+\item 
+struct k\+\_\+timer \mbox{\hyperlink{structctr__edge_ae36c225a10298c76111bea39066f3150}{event\+\_\+timer}}
+\item 
+struct k\+\_\+work \mbox{\hyperlink{structctr__edge_a1d05ee5586f3669cc6b95d3a1d17e1af}{event\+\_\+active\+\_\+work}}
+\item 
+struct k\+\_\+work \mbox{\hyperlink{structctr__edge_a954307f85ff8f77dbd9e033d82a71f43}{event\+\_\+inactive\+\_\+work}}
+\item 
+struct gpio\+\_\+callback \mbox{\hyperlink{structctr__edge_af6f71e57058504cde448598fa5cb77c5}{gpio\+\_\+cb}}
+\item 
+atomic\+\_\+t \mbox{\hyperlink{structctr__edge_ae8812c225a9a466a386d9e02fe15e3b7}{is\+\_\+debouncing}}
+\item 
+atomic\+\_\+t \mbox{\hyperlink{structctr__edge_abe76b53dba1e131b876046f229ea51a0}{is\+\_\+active}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structctr__edge_a3dcb8e491f15c604d892e007cc1f7675}\index{ctr\_edge@{ctr\_edge}!active\_duration@{active\_duration}}
+\index{active\_duration@{active\_duration}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{active\_duration}{active\_duration}}
+{\footnotesize\ttfamily \label{structctr__edge_a3dcb8e491f15c604d892e007cc1f7675} 
+atomic\+\_\+t ctr\+\_\+edge\+::active\+\_\+duration}
+
+\Hypertarget{structctr__edge_a19d481fa581634e31c6678e5f2d25212}\index{ctr\_edge@{ctr\_edge}!cb@{cb}}
+\index{cb@{cb}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{cb}{cb}}
+{\footnotesize\ttfamily \label{structctr__edge_a19d481fa581634e31c6678e5f2d25212} 
+\mbox{\hyperlink{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec}{ctr\+\_\+edge\+\_\+cb\+\_\+t}} ctr\+\_\+edge\+::cb}
+
+\Hypertarget{structctr__edge_a9278707a0916fb7538296636c991f481}\index{ctr\_edge@{ctr\_edge}!cooldown\_time@{cooldown\_time}}
+\index{cooldown\_time@{cooldown\_time}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{cooldown\_time}{cooldown\_time}}
+{\footnotesize\ttfamily \label{structctr__edge_a9278707a0916fb7538296636c991f481} 
+atomic\+\_\+t ctr\+\_\+edge\+::cooldown\+\_\+time}
+
+\Hypertarget{structctr__edge_af74edd87e6e3a5379fd929c8ddecfb57}\index{ctr\_edge@{ctr\_edge}!cooldown\_timer@{cooldown\_timer}}
+\index{cooldown\_timer@{cooldown\_timer}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{cooldown\_timer}{cooldown\_timer}}
+{\footnotesize\ttfamily \label{structctr__edge_af74edd87e6e3a5379fd929c8ddecfb57} 
+struct k\+\_\+timer ctr\+\_\+edge\+::cooldown\+\_\+timer}
+
+\Hypertarget{structctr__edge_a1d05ee5586f3669cc6b95d3a1d17e1af}\index{ctr\_edge@{ctr\_edge}!event\_active\_work@{event\_active\_work}}
+\index{event\_active\_work@{event\_active\_work}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{event\_active\_work}{event\_active\_work}}
+{\footnotesize\ttfamily \label{structctr__edge_a1d05ee5586f3669cc6b95d3a1d17e1af} 
+struct k\+\_\+work ctr\+\_\+edge\+::event\+\_\+active\+\_\+work}
+
+\Hypertarget{structctr__edge_a954307f85ff8f77dbd9e033d82a71f43}\index{ctr\_edge@{ctr\_edge}!event\_inactive\_work@{event\_inactive\_work}}
+\index{event\_inactive\_work@{event\_inactive\_work}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{event\_inactive\_work}{event\_inactive\_work}}
+{\footnotesize\ttfamily \label{structctr__edge_a954307f85ff8f77dbd9e033d82a71f43} 
+struct k\+\_\+work ctr\+\_\+edge\+::event\+\_\+inactive\+\_\+work}
+
+\Hypertarget{structctr__edge_ae36c225a10298c76111bea39066f3150}\index{ctr\_edge@{ctr\_edge}!event\_timer@{event\_timer}}
+\index{event\_timer@{event\_timer}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{event\_timer}{event\_timer}}
+{\footnotesize\ttfamily \label{structctr__edge_ae36c225a10298c76111bea39066f3150} 
+struct k\+\_\+timer ctr\+\_\+edge\+::event\+\_\+timer}
+
+\Hypertarget{structctr__edge_af6f71e57058504cde448598fa5cb77c5}\index{ctr\_edge@{ctr\_edge}!gpio\_cb@{gpio\_cb}}
+\index{gpio\_cb@{gpio\_cb}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{gpio\_cb}{gpio\_cb}}
+{\footnotesize\ttfamily \label{structctr__edge_af6f71e57058504cde448598fa5cb77c5} 
+struct gpio\+\_\+callback ctr\+\_\+edge\+::gpio\+\_\+cb}
+
+\Hypertarget{structctr__edge_a00e1c3bc6dab51e4b0b20235b73c8ee5}\index{ctr\_edge@{ctr\_edge}!inactive\_duration@{inactive\_duration}}
+\index{inactive\_duration@{inactive\_duration}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{inactive\_duration}{inactive\_duration}}
+{\footnotesize\ttfamily \label{structctr__edge_a00e1c3bc6dab51e4b0b20235b73c8ee5} 
+atomic\+\_\+t ctr\+\_\+edge\+::inactive\+\_\+duration}
+
+\Hypertarget{structctr__edge_abe76b53dba1e131b876046f229ea51a0}\index{ctr\_edge@{ctr\_edge}!is\_active@{is\_active}}
+\index{is\_active@{is\_active}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{is\_active}{is\_active}}
+{\footnotesize\ttfamily \label{structctr__edge_abe76b53dba1e131b876046f229ea51a0} 
+atomic\+\_\+t ctr\+\_\+edge\+::is\+\_\+active}
+
+\Hypertarget{structctr__edge_ae8812c225a9a466a386d9e02fe15e3b7}\index{ctr\_edge@{ctr\_edge}!is\_debouncing@{is\_debouncing}}
+\index{is\_debouncing@{is\_debouncing}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{is\_debouncing}{is\_debouncing}}
+{\footnotesize\ttfamily \label{structctr__edge_ae8812c225a9a466a386d9e02fe15e3b7} 
+atomic\+\_\+t ctr\+\_\+edge\+::is\+\_\+debouncing}
+
+\Hypertarget{structctr__edge_a47b5814d61aba7a34dd649d1e1b92705}\index{ctr\_edge@{ctr\_edge}!lock@{lock}}
+\index{lock@{lock}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{lock}{lock}}
+{\footnotesize\ttfamily \label{structctr__edge_a47b5814d61aba7a34dd649d1e1b92705} 
+struct k\+\_\+mutex ctr\+\_\+edge\+::lock}
+
+\Hypertarget{structctr__edge_a4ad9c61e930a6dac64b996de4ce61abb}\index{ctr\_edge@{ctr\_edge}!spec@{spec}}
+\index{spec@{spec}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{spec}{spec}}
+{\footnotesize\ttfamily \label{structctr__edge_a4ad9c61e930a6dac64b996de4ce61abb} 
+const struct gpio\+\_\+dt\+\_\+spec\texorpdfstring{$\ast$}{*} ctr\+\_\+edge\+::spec}
+
+\Hypertarget{structctr__edge_a898318d99607b0b7e16e6b3f77291753}\index{ctr\_edge@{ctr\_edge}!start\_active@{start\_active}}
+\index{start\_active@{start\_active}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{start\_active}{start\_active}}
+{\footnotesize\ttfamily \label{structctr__edge_a898318d99607b0b7e16e6b3f77291753} 
+bool ctr\+\_\+edge\+::start\+\_\+active}
+
+\Hypertarget{structctr__edge_a50878edcb20924d5db155a71e7116cf3}\index{ctr\_edge@{ctr\_edge}!user\_data@{user\_data}}
+\index{user\_data@{user\_data}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{user\_data}{user\_data}}
+{\footnotesize\ttfamily \label{structctr__edge_a50878edcb20924d5db155a71e7116cf3} 
+void\texorpdfstring{$\ast$}{*} ctr\+\_\+edge\+::user\+\_\+data}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ctr__edge_8h}{ctr\+\_\+edge.\+h}}\end{DoxyCompactItemize}

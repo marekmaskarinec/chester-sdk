@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"lrw"
+		],
+		"name" : "lrw"
+	}
+}

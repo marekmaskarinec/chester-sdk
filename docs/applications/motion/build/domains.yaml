@@ -1,0 +1,10 @@
+default: motion
+build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/motion/build
+domains:
+  - name: motion
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/motion/build/motion
+  - name: mcuboot
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/motion/build/mcuboot
+flash_order:
+  - mcuboot
+  - motion

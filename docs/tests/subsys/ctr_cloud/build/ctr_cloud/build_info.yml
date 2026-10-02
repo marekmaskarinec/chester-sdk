@@ -1,0 +1,58 @@
+cmake:
+  application:
+    configuration-dir: '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud'
+    source-dir: '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud'
+  board:
+    name: 'qemu_cortex_m3'
+    path:
+     - '/home/marek/dev/hio/chester-sdk/zephyr/boards/qemu/cortex_m3'
+    qualifiers: 'ti_lm3s6965'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/marek/dev/hio/chester-sdk/chester/dts/bindings'
+     - '/home/marek/dev/hio/chester-sdk/nrf/dts/bindings'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/bindings'
+    files:
+     - '/home/marek/dev/hio/chester-sdk/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts'
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/boards/qemu_cortex_m3.overlay'
+    include-dirs:
+     - '/home/marek/dev/hio/chester-sdk/chester/include'
+     - '/home/marek/dev/hio/chester-sdk/chester/dts'
+     - '/home/marek/dev/hio/chester-sdk/nrf/include'
+     - '/home/marek/dev/hio/chester-sdk/nrf/dts/common'
+     - '/home/marek/dev/hio/chester-sdk/nrf/dts/riscv'
+     - '/home/marek/dev/hio/chester-sdk/nrf/dts/arm'
+     - '/home/marek/dev/hio/chester-sdk/nrf/dts'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/include'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/include/zephyr'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/common'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/vendor'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/rx'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/x86'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/xtensa'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/sparc'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/riscv'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/posix'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/arm64'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/arm'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts/arc'
+     - '/home/marek/dev/hio/chester-sdk/zephyr/dts'
+    user-files:
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/boards/qemu_cortex_m3.overlay'
+  kconfig:
+    files:
+     - '/home/marek/dev/hio/chester-sdk/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3_defconfig'
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/prj.conf'
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/boards/qemu_cortex_m3.conf'
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/build/ctr_cloud/zephyr/.config.sysbuild'
+    user-files:
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/prj.conf'
+     - '/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_cloud/boards/qemu_cortex_m3.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/home/marek/.local/opt/zephyr-sdk-0.16.8'
+  zephyr:
+    version: '4.3.99'
+    zephyr-base: '/home/marek/dev/hio/chester-sdk/zephyr'
+version: '0.1.0'

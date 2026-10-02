@@ -1,0 +1,61 @@
+\doxysection{ctr\+\_\+meteo.\+h}
+\hypertarget{ctr__meteo_8h_source}{}\label{ctr__meteo_8h_source}\index{drivers/ctr\_meteo.h@{drivers/ctr\_meteo.h}}
+\mbox{\hyperlink{ctr__meteo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_METEO\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_METEO\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <zephyr/drivers/gpio.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ int\ (*ctr\_meteo\_api\_get\_rainfall\_and\_clear)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *rainfall\_mm);}
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ int\ (*ctr\_meteo\_api\_get\_wind\_speed\_and\_clear)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *wind\_speed\_mps);}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ int\ (*ctr\_meteo\_api\_get\_wind\_direction)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *direction);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ ctr\_meteo\_api\_get\_rainfall\_and\_clear\ get\_rainfall\_and\_clear;}
+\DoxyCodeLine{00034\ \ \ \ \ ctr\_meteo\_api\_get\_wind\_speed\_and\_clear\ get\_wind\_speed\_and\_clear;}
+\DoxyCodeLine{00035\ \ \ \ \ ctr\_meteo\_api\_get\_wind\_direction\ get\_wind\_direction;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__meteo_ga9a6a96422cd587d8711c8cc02846aad5}{ctr\_meteo\_get\_rainfall\_and\_clear}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *rainfall\_mm)}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_rainfall\_and\_clear(dev,\ rainfall\_mm);}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__meteo_gae74e20c9f2111386b550735d9e9b21a4}{ctr\_meteo\_get\_wind\_speed\_and\_clear}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *wind\_speed\_mps)}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_wind\_speed\_and\_clear(dev,\ wind\_speed\_mps);}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__meteo_ga133a137a5f5cb2783424a0496d7c672e}{ctr\_meteo\_get\_wind\_direction}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *direction)}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_meteo\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_wind\_direction(dev,\ direction);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_METEO\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

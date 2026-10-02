@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/CMakeFiles/serial"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/CMakeFiles/serial.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/CMakeFiles/serial-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"serial"
+		],
+		"name" : "serial"
+	}
+}

@@ -1,0 +1,4 @@
+west:
+  command: /home/marek/dev/hio/chester-sdk/venv/bin/west build
+  topdir: /home/marek/dev/hio/chester-sdk
+  version: 1.5.0

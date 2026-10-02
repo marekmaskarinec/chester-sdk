@@ -1,0 +1,7 @@
+default: rfmux
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/rfmux/build
+domains:
+  - name: rfmux
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/rfmux/build/rfmux
+flash_order:
+  - rfmux

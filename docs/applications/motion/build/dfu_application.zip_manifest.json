@@ -1,0 +1,20 @@
+{
+    "format-version": 1,
+    "time": 1782290448,
+    "files": [
+        {
+            "type": "application",
+            "board": "chester",
+            "soc": "nrf52840",
+            "load_address": 49152,
+            "image_index": "0",
+            "slot_index_primary": "1",
+            "slot_index_secondary": "2",
+            "version_MCUBOOT": "3.5.5+0",
+            "size": 492790,
+            "file": "motion.signed.bin",
+            "modtime": 1782290447
+        }
+    ],
+    "name": "motion"
+}

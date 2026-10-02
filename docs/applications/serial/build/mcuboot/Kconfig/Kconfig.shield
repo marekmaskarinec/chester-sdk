@@ -1,0 +1,2 @@
+osource "/home/marek/dev/hio/chester-sdk/chester/boards/shields/*/Kconfig.shield"
+osource "/home/marek/dev/hio/chester-sdk/nrf/boards/shields/*/Kconfig.shield"

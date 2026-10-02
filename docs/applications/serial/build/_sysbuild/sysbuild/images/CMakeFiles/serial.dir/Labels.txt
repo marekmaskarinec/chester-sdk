@@ -1,0 +1,13 @@
+# Target labels
+ serial
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/CMakeFiles/serial
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/CMakeFiles/serial.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/CMakeFiles/serial-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-build.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-download.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-install.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/serial/build/_sysbuild/sysbuild/images/serial-prefix/src/serial-stamp/serial-update.rule

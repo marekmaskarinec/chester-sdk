@@ -1,0 +1,38 @@
+\doxysection{drivers/ctr\+\_\+x3.h File Reference}
+\hypertarget{ctr__x3_8h}{}\label{ctr__x3_8h}\index{drivers/ctr\_x3.h@{drivers/ctr\_x3.h}}
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for ctr\+\_\+x3.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{ctr__x3_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctr__x3__driver__api}{ctr\+\_\+x3\+\_\+driver\+\_\+api}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__ctr__x3_ga45bea68cab78395e77b2a46bacfb422d}{ctr\+\_\+x3\+\_\+api\+\_\+set\+\_\+power}}) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, bool enabled)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__ctr__x3_gae7866a5595b99d458ad89a868d33bf4e}{ctr\+\_\+x3\+\_\+api\+\_\+measure}}) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} \{ \mbox{\hyperlink{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4a78c36568dbe6287a7d89206361d70499}{CTR\+\_\+\+X3\+\_\+\+CHANNEL\+\_\+1}} = 0
+, \mbox{\hyperlink{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4af476e0cb5a1b5ba332b3fbbfae3bc367}{CTR\+\_\+\+X3\+\_\+\+CHANNEL\+\_\+2}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__ctr__x3_ga7ce67eea25f5fc26d74605d36b0a2c54}{ctr\+\_\+x3\+\_\+set\+\_\+power}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, bool enabled)
+\item 
+static int \mbox{\hyperlink{group__ctr__x3_ga34ec4735e3644d74ff19385bb49fdce6}{ctr\+\_\+x3\+\_\+measure}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\end{DoxyCompactItemize}

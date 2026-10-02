@@ -1,0 +1,364 @@
+\doxysection{ctr\+\_\+s1.\+h}
+\hypertarget{ctr__s1_8h_source}{}\label{ctr__s1_8h_source}\index{drivers/ctr\_s1.h@{drivers/ctr\_s1.h}}
+\mbox{\hyperlink{ctr__s1_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_S1\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_S1\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ include\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_gaefcbe2cb5bfb67d990e254f61d172511}{ctr\_s1\_buzzer\_command}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a7373c024b5070f3582e0d1667b1aefa9}{CTR\_S1\_BUZZER\_COMMAND\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a51e3f836fadee5efe233644b45a0500b}{CTR\_S1\_BUZZER\_COMMAND\_1X\_1\_16}}\ =\ 1,}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a5bec85bb198ba1ae97dffc400cbd4da3}{CTR\_S1\_BUZZER\_COMMAND\_4X\_1\_16}}\ =\ 2,}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a92ea4366a9c698ee551a713cf05f803e}{CTR\_S1\_BUZZER\_COMMAND\_1X\_1\_8}}\ =\ 3,}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a5b417e48e12918e5ab7747e34d681887}{CTR\_S1\_BUZZER\_COMMAND\_1X\_1\_4}}\ =\ 4,}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511abdf2cc8f70abad0d7be17ee517b4e9a2}{CTR\_S1\_BUZZER\_COMMAND\_1X\_1\_2}}\ =\ 5,}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a463af0efe1d8e2b189451c490e7f3f17}{CTR\_S1\_BUZZER\_COMMAND\_2X\_1\_2}}\ =\ 6,}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a702ca6c6d5273ffa5eb5875651394a8c}{CTR\_S1\_BUZZER\_COMMAND\_3X\_1\_2}}\ =\ 7,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511ac19c93ec4e07bba97bfa178202425b48}{CTR\_S1\_BUZZER\_COMMAND\_1X\_1\_1}}\ =\ 8,}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a57157dc2439b15a65272259b7658a6a0}{CTR\_S1\_BUZZER\_COMMAND\_1X\_2\_1}}\ =\ 9,}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga5f6f7f84691932f77e87fcdd46ea3fbb}{ctr\_s1\_buzzer\_pattern}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbae8625c77d8047eb8d2c6160e9be7b812}{CTR\_S1\_BUZZER\_PATTERN\_OFF}}\ =\ 0,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbab0de6b58dd315014d93565b6c40661a4}{CTR\_S1\_BUZZER\_PATTERN\_1\_HZ\_1\_1}}\ =\ 1,}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbaa239dfec92840461c8ca13f1d6748822}{CTR\_S1\_BUZZER\_PATTERN\_1\_HZ\_1\_7}}\ =\ 2,}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbabd592b9d96da4aca5d67dc4961ace8e5}{CTR\_S1\_BUZZER\_PATTERN\_2\_HZ\_1\_1}}\ =\ 3,}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbabaf504fa12889f69d90bd9df25b38d9b}{CTR\_S1\_BUZZER\_PATTERN\_2\_HZ\_1\_3}}\ =\ 4,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbba6c196b19ce204fa974ef056adfab59e8}{CTR\_S1\_BUZZER\_PATTERN\_4\_HZ\_1\_1}}\ =\ 5,}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbba81df3ef894e432685fede8bb764a08e7}{CTR\_S1\_BUZZER\_PATTERN\_8\_HZ\_1\_1}}\ =\ 6,}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbba1890f652da93f59c6c41eaf1c016a485}{CTR\_S1\_BUZZER\_PATTERN\_ON}}\ =\ 15,}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga94a57166a9f40f389cdfafac2c3e5f68}{ctr\_s1\_led\_channel}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga94a57166a9f40f389cdfafac2c3e5f68a76e1846c8c31dafcbf8e7f8ef126c456}{CTR\_S1\_LED\_CHANNEL\_R}}\ =\ 0,}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga94a57166a9f40f389cdfafac2c3e5f68a02acb0438cf16339f77c9751e6bb827b}{CTR\_S1\_LED\_CHANNEL\_G}}\ =\ 1,}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga94a57166a9f40f389cdfafac2c3e5f68a79978dba7fd1a6e6eb06d022e50a6019}{CTR\_S1\_LED\_CHANNEL\_B}}\ =\ 2,}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga74019edefb23aa3b42fe329b4a0bdcbd}{ctr\_s1\_led\_brightness}}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbdac01ec2c6699d9d2ce58d7f9c50a558fd}{CTR\_S1\_LED\_BRIGHTNESS\_OFF}}\ =\ 0x00,}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbdaf13310c6a80f9169ed4b9f223e87bc74}{CTR\_S1\_LED\_BRIGHTNESS\_LOW}}\ =\ 0x1f,}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbda3e1484e603777b0f2243e77710728957}{CTR\_S1\_LED\_BRIGHTNESS\_MEDIUM}}\ =\ 0x7f,}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbdacd52431030aad41ab49a4b685301dfa3}{CTR\_S1\_LED\_BRIGHTNESS\_HIGH}}\ =\ 0xff,}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_gaf7e13846d2a2104326bab976a4bae58e}{ctr\_s1\_led\_command}}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea91eaf871d30a5336c77c4117e4db2beb}{CTR\_S1\_LED\_COMMAND\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea88f40d6e32d0820e6724dd45b43e82cf}{CTR\_S1\_LED\_COMMAND\_1X\_1\_16}}\ =\ 1,}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea01f164a9a264bd4a7f94647fc968823b}{CTR\_S1\_LED\_COMMAND\_4X\_1\_16}}\ =\ 2,}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eaad63f7c3c6193c930532db14ce030bc6}{CTR\_S1\_LED\_COMMAND\_1X\_1\_8}}\ =\ 3,}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eab60f0801948b8c7a1cc297ac5b954f3a}{CTR\_S1\_LED\_COMMAND\_1X\_1\_4}}\ =\ 4,}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea9d44f316077755812953be17912610d7}{CTR\_S1\_LED\_COMMAND\_1X\_1\_2}}\ =\ 5,}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eadde2370fa7f9fe15ef93737f94b65fdf}{CTR\_S1\_LED\_COMMAND\_2X\_1\_2}}\ =\ 6,}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eaec243093e6e3567390f522c7c7121f86}{CTR\_S1\_LED\_COMMAND\_3X\_1\_2}}\ =\ 7,}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eab4daa2a38267611dbe074478df0be529}{CTR\_S1\_LED\_COMMAND\_1X\_1\_1}}\ =\ 8,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea3558b6a435466b2d8ffe565a86ad75e1}{CTR\_S1\_LED\_COMMAND\_1X\_2\_1}}\ =\ 9,}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_gaa0ed4c2f6392f2473bfd8c66f2eaeb6a}{ctr\_s1\_led\_pattern}}\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aae553e570774a55f8f239e774010b72d9}{CTR\_S1\_LED\_PATTERN\_OFF}}\ =\ 0,}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aaa760dfadaf640b513abdaade69c61c08}{CTR\_S1\_LED\_PATTERN\_1\_HZ\_1\_1}}\ =\ 1,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa467bbc78bbd12603957420936921beb5}{CTR\_S1\_LED\_PATTERN\_1\_HZ\_1\_7}}\ =\ 2,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa538d5a000ec44d5cb7a26b876652cec5}{CTR\_S1\_LED\_PATTERN\_2\_HZ\_1\_1}}\ =\ 3,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa2c6501db8d775908e2bbc54be5c6044d}{CTR\_S1\_LED\_PATTERN\_2\_HZ\_1\_3}}\ =\ 4,}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa6174dd3096aebb49d0afe3bffab64b41}{CTR\_S1\_LED\_PATTERN\_4\_HZ\_1\_1}}\ =\ 5,}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa9ffe15289f9a0521aaed34629a6c87a6}{CTR\_S1\_LED\_PATTERN\_8\_HZ\_1\_1}}\ =\ 6,}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aadd1b432b1efdd3619f9227deca8d0bb7}{CTR\_S1\_LED\_PATTERN\_ON}}\ =\ 15,}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga52263a891f2232f0a48ce1106bede491}{ctr\_s1\_motion\_sensitivity}}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491a6d19990c15efdf4021f37ea66dab1c7f}{CTR\_S1\_PIR\_SENSITIVITY\_LOW}}\ =\ 0,}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491a1e2ba0a3e1e29b4bb76078a79861b9df}{CTR\_S1\_PIR\_SENSITIVITY\_MEDIUM}}\ =\ 1,}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491ae6b9e32f233a9604a6c86ac73bcaac82}{CTR\_S1\_PIR\_SENSITIVITY\_HIGH}}\ =\ 2,}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491a1fc402bdfecb7fad80db16f4ab4347f8}{CTR\_S1\_PIR\_SENSITIVITY\_VERY\_HIGH}}\ =\ 3}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga101641b5bb5a5370cf1e7bfc38f816a7}{ctr\_s1\_motion\_blind\_time}}\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aa366a9d8b815247eb5458daca09291cd}{CTR\_S1\_PIR\_BLIND\_TIME\_0\_5S}}\ =\ 0,}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aacefb384a06ed776d6e0df2008726c3a}{CTR\_S1\_PIR\_BLIND\_TIME\_1\_0S}}\ =\ 1,}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7ad4930a37bff9fd14078e6f617505174e}{CTR\_S1\_PIR\_BLIND\_TIME\_1\_5S}}\ =\ 2,}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aa6a661c333da2a5a169b89216ce43963}{CTR\_S1\_PIR\_BLIND\_TIME\_2\_0S}}\ =\ 3,}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a9dfe7206b4b1ea6d8457d9bf54fb6b4f}{CTR\_S1\_PIR\_BLIND\_TIME\_2\_5S}}\ =\ 4,}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a5231e31e1bb8620709ea35f065c1c63b}{CTR\_S1\_PIR\_BLIND\_TIME\_3\_0S}}\ =\ 5,}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a408b29214997f22bd3f47d0694cd9f68}{CTR\_S1\_PIR\_BLIND\_TIME\_3\_5S}}\ =\ 6,}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a4a3c13da5552c36ac020b5dc8c7f0d92}{CTR\_S1\_PIR\_BLIND\_TIME\_4\_0S}}\ =\ 7,}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7afc3be9724809134baa06fd4658dc3286}{CTR\_S1\_PIR\_BLIND\_TIME\_4\_5S}}\ =\ 8,}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a3149b8a859fa3e81b9c7290da9dac678}{CTR\_S1\_PIR\_BLIND\_TIME\_5\_0S}}\ =\ 9,}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aef0e3992c20595efb80e09a5b5b52fa0}{CTR\_S1\_PIR\_BLIND\_TIME\_5\_5S}}\ =\ 10,}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a8d7151f7a514630ec645bd8127e6786c}{CTR\_S1\_PIR\_BLIND\_TIME\_6\_0S}}\ =\ 11,}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a4bf0e8478275a2d9a93b14ccadf0e328}{CTR\_S1\_PIR\_BLIND\_TIME\_6\_5S}}\ =\ 12,}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7ad6ff10aefc2fed212610a04ac99aefdb}{CTR\_S1\_PIR\_BLIND\_TIME\_7\_0S}}\ =\ 13,}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aa55075cf27b93b6a0c8f49d27d345333}{CTR\_S1\_PIR\_BLIND\_TIME\_7\_5S}}\ =\ 14,}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7adff1e9db45af2664888bf48934a9e4c4}{CTR\_S1\_PIR\_BLIND\_TIME\_8\_0S}}\ =\ 15,}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga057c9c304d4f0e61874cd1aab5a8744e}{ctr\_s1\_event}}\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea77f8611bf398496afe3ee6bcb64c1354}{CTR\_S1\_EVENT\_DEVICE\_RESET}}\ =\ 15,}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eab6727e22909239cf6b8c7515793a7c39}{CTR\_S1\_EVENT\_MOTION\_DETECTED}}\ =\ 12,}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea525216a5a677c64584e7e64855edab5b}{CTR\_S1\_EVENT\_ALTITUDE\_CONVERTED}}\ =\ 11,}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eadf73e32f5629cf99f89f4c0f28f6d628}{CTR\_S1\_EVENT\_PRESSURE\_CONVERTED}}\ =\ 10,}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eaa52b3011d9182979a79670c5f475aac9}{CTR\_S1\_EVENT\_ILLUMINANCE\_CONVERTED}}\ =\ 9,}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea75afd4a12bec4331b416f620d4eaf457}{CTR\_S1\_EVENT\_HUMIDITY\_CONVERTED}}\ =\ 8,}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea0220483e08d6e386c35123fb5b0de798}{CTR\_S1\_EVENT\_TEMPERATURE\_CONVERTED}}\ =\ 7,}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea2cb5dd94827b519bf3636af917307856}{CTR\_S1\_EVENT\_CO2\_ABC\_CALIB\_DONE}}\ =\ 6,}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ead10912e1e24d65616ad993ebe6ad8e65}{CTR\_S1\_EVENT\_CO2\_TGT\_CALIB\_DONE}}\ =\ 5,}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eafad0d151e56424d615894c7e534d677c}{CTR\_S1\_EVENT\_CO2\_CONC\_CONVERTED}}\ =\ 4,}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea829d012062840f1f39a36cc697ceeb31}{CTR\_S1\_EVENT\_BUTTON\_PRESSED}}\ =\ 3,}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea50a22cd8157ec670b0c71a089e7c88b5}{CTR\_S1\_EVENT\_BUTTON\_CLICKED}}\ =\ 2,}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea0f119eec569eb12b89ea55eceeb9fb8b}{CTR\_S1\_EVENT\_BUTTON\_HOLD}}\ =\ 1,}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea0415d0faa515c6c7444aa78a6a06933c}{CTR\_S1\_EVENT\_BUTTON\_RELEASED}}\ =\ 0,}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__s1__buzzer__param}{ctr\_s1\_buzzer\_param}}\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_gaefcbe2cb5bfb67d990e254f61d172511}{ctr\_s1\_buzzer\_command}}\ \mbox{\hyperlink{structctr__s1__buzzer__param_a7fb265a96eb03e2cc9dd6b2f457f9ba3}{command}};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga5f6f7f84691932f77e87fcdd46ea3fbb}{ctr\_s1\_buzzer\_pattern}}\ \mbox{\hyperlink{structctr__s1__buzzer__param_adab3daac62342773a852803841ed357a}{pattern}};}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__s1__led__param}{ctr\_s1\_led\_param}}\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga74019edefb23aa3b42fe329b4a0bdcbd}{ctr\_s1\_led\_brightness}}\ \mbox{\hyperlink{structctr__s1__led__param_a7fed745fe4783c61e6517f13dd852f75}{brightness}};}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_gaf7e13846d2a2104326bab976a4bae58e}{ctr\_s1\_led\_command}}\ \mbox{\hyperlink{structctr__s1__led__param_af456d4f045648232f9823681c787a990}{command}};}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_gaa0ed4c2f6392f2473bfd8c66f2eaeb6a}{ctr\_s1\_led\_pattern}}\ \mbox{\hyperlink{structctr__s1__led__param_ae9fb2e947174ee67bc66153427121be4}{pattern}};}
+\DoxyCodeLine{00140\ \};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__s1__status}{ctr\_s1\_status}}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structctr__s1__status_ab11d7410c3628d53b036b028e9e41878}{button\_pressed}};}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{typedef}\ void\ (*ctr\_s1\_user\_cb)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga057c9c304d4f0e61874cd1aab5a8744e}{ctr\_s1\_event}}\ event,\ \textcolor{keywordtype}{void}\ *user\_data);}
+\DoxyCodeLine{00149\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_set\_handler)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ ctr\_s1\_user\_cb\ callback,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *user\_data);}
+\DoxyCodeLine{00152\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_enable\_interrupts)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00154\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_apply)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00156\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_status)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__s1__status}{ctr\_s1\_status}}\ *status);}
+\DoxyCodeLine{00158\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_serial\_number)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint32\_t\ *serial\_number);}
+\DoxyCodeLine{00160\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_hw\_revision)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint16\_t\ *hw\_revision);}
+\DoxyCodeLine{00162\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_hw\_variant)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint32\_t\ *hw\_variant);}
+\DoxyCodeLine{00164\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_fw\_version)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ uint32\_t\ *fw\_version);}
+\DoxyCodeLine{00166\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_vendor\_name)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ buf\_size);}
+\DoxyCodeLine{00168\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_get\_product\_name)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ buf\_size);}
+\DoxyCodeLine{00170\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_set\_buzzer)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__s1__buzzer__param}{ctr\_s1\_buzzer\_param}}\ *param);}
+\DoxyCodeLine{00173\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_set\_led)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga94a57166a9f40f389cdfafac2c3e5f68}{ctr\_s1\_led\_channel}}\ channel,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__s1__led__param}{ctr\_s1\_led\_param}}\ *param);}
+\DoxyCodeLine{00176\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_set\_motion\_sensitivity)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga52263a891f2232f0a48ce1106bede491}{ctr\_s1\_motion\_sensitivity}}\ motion\_sensitivity);}
+\DoxyCodeLine{00179\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_set\_motion\_blind\_time)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga101641b5bb5a5370cf1e7bfc38f816a7}{ctr\_s1\_motion\_blind\_time}}\ motion\_blind\_time);}
+\DoxyCodeLine{00182\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_motion\_count)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{int}\ *motion\_count);}
+\DoxyCodeLine{00184\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_temperature)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *temperature);}
+\DoxyCodeLine{00186\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_humidity)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *humidity);}
+\DoxyCodeLine{00188\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_illuminance)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *illuminance);}
+\DoxyCodeLine{00190\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_altitude)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *altitude);}
+\DoxyCodeLine{00192\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_pressure)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *pressure);}
+\DoxyCodeLine{00194\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_read\_co2\_conc)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ *co2\_conc);}
+\DoxyCodeLine{00196\ \textcolor{keyword}{typedef}\ int\ (*ctr\_s1\_api\_calib\_tgt\_co2\_conc)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{float}\ tgt\_co2\_conc);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ ctr\_s1\_api\_set\_handler\ set\_handler;}
+\DoxyCodeLine{00201\ \ \ \ \ ctr\_s1\_api\_enable\_interrupts\ enable\_interrupts;}
+\DoxyCodeLine{00202\ \ \ \ \ ctr\_s1\_api\_apply\ apply;}
+\DoxyCodeLine{00203\ \ \ \ \ ctr\_s1\_api\_get\_status\ get\_status;}
+\DoxyCodeLine{00204\ \ \ \ \ ctr\_s1\_api\_get\_serial\_number\ get\_serial\_number;}
+\DoxyCodeLine{00205\ \ \ \ \ ctr\_s1\_api\_get\_hw\_revision\ get\_hw\_revision;}
+\DoxyCodeLine{00206\ \ \ \ \ ctr\_s1\_api\_get\_hw\_variant\ get\_hw\_variant;}
+\DoxyCodeLine{00207\ \ \ \ \ ctr\_s1\_api\_get\_fw\_version\ get\_fw\_version;}
+\DoxyCodeLine{00208\ \ \ \ \ ctr\_s1\_api\_get\_vendor\_name\ get\_vendor\_name;}
+\DoxyCodeLine{00209\ \ \ \ \ ctr\_s1\_api\_get\_product\_name\ get\_product\_name;}
+\DoxyCodeLine{00210\ \ \ \ \ ctr\_s1\_api\_set\_buzzer\ set\_buzzer;}
+\DoxyCodeLine{00211\ \ \ \ \ ctr\_s1\_api\_set\_led\ set\_led;}
+\DoxyCodeLine{00212\ \ \ \ \ ctr\_s1\_api\_set\_motion\_sensitivity\ set\_motion\_sensitivity;}
+\DoxyCodeLine{00213\ \ \ \ \ ctr\_s1\_api\_set\_motion\_blind\_time\ set\_motion\_blind\_time;}
+\DoxyCodeLine{00214\ \ \ \ \ ctr\_s1\_api\_read\_motion\_count\ read\_motion\_count;}
+\DoxyCodeLine{00215\ \ \ \ \ ctr\_s1\_api\_read\_temperature\ read\_temperature;}
+\DoxyCodeLine{00216\ \ \ \ \ ctr\_s1\_api\_read\_humidity\ read\_humidity;}
+\DoxyCodeLine{00217\ \ \ \ \ ctr\_s1\_api\_read\_illuminance\ read\_illuminance;}
+\DoxyCodeLine{00218\ \ \ \ \ ctr\_s1\_api\_read\_altitude\ read\_altitude;}
+\DoxyCodeLine{00219\ \ \ \ \ ctr\_s1\_api\_read\_pressure\ read\_pressure;}
+\DoxyCodeLine{00220\ \ \ \ \ ctr\_s1\_api\_read\_co2\_conc\ read\_co2\_conc;}
+\DoxyCodeLine{00221\ \ \ \ \ ctr\_s1\_api\_calib\_tgt\_co2\_conc\ calib\_tgt\_co2\_conc;}
+\DoxyCodeLine{00222\ \};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga84340dad345734b7aad6b42f8c4683ca}{ctr\_s1\_set\_handler}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ ctr\_s1\_user\_cb\ user\_cb,}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{00226\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_handler(dev,\ user\_cb,\ user\_data);}
+\DoxyCodeLine{00230\ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga374cbd3056ace3fb275d0e2d74f6eb92}{ctr\_s1\_enable\_interrupts}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00233\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>enable\_interrupts(dev);}
+\DoxyCodeLine{00237\ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga008ed336faf2027f96afa839e9b778e9}{ctr\_s1\_apply}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00240\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>apply(dev);}
+\DoxyCodeLine{00244\ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga4cd4efb9eb3e1a4cd7a6c484e489cba5}{ctr\_s1\_get\_status}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__s1__status}{ctr\_s1\_status}}\ *status)}
+\DoxyCodeLine{00247\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_status(dev,\ status);}
+\DoxyCodeLine{00251\ \}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_gae47d2028f5dbac2eba041f838038811c}{ctr\_s1\_get\_serial\_number}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint32\_t\ *serial\_number)}
+\DoxyCodeLine{00254\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_serial\_number(dev,\ serial\_number);}
+\DoxyCodeLine{00258\ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_gaaed681effd9d3737f8f9414456a5b2d9}{ctr\_s1\_get\_hw\_revision}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint16\_t\ *hw\_revision)}
+\DoxyCodeLine{00261\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_hw\_revision(dev,\ hw\_revision);}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga142b5ffbd49c6ced96c36a44809a1fab}{ctr\_s1\_get\_hw\_variant}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint32\_t\ *hw\_variant)}
+\DoxyCodeLine{00268\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_hw\_variant(dev,\ hw\_variant);}
+\DoxyCodeLine{00272\ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_gac72d655ac54277380cebbe1a7d6fabe4}{ctr\_s1\_get\_fw\_version}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ uint32\_t\ *fw\_version)}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_fw\_version(dev,\ fw\_version);}
+\DoxyCodeLine{00279\ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga1e5e42309b01a783c9dfe987bd74439c}{ctr\_s1\_get\_vendor\_name}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ buf\_size)}
+\DoxyCodeLine{00282\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_vendor\_name(dev,\ buf,\ buf\_size);}
+\DoxyCodeLine{00286\ \}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga2d4795ddaff76c3e23afedd84afd409a}{ctr\_s1\_get\_product\_name}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ buf\_size)}
+\DoxyCodeLine{00289\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_product\_name(dev,\ buf,\ buf\_size);}
+\DoxyCodeLine{00293\ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga08b589e91457f49152c9be7039343cb2}{ctr\_s1\_set\_buzzer}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__s1__buzzer__param}{ctr\_s1\_buzzer\_param}}\ *param)}
+\DoxyCodeLine{00297\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_buzzer(dev,\ param);}
+\DoxyCodeLine{00301\ \}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_gace0dec1cf15b5ac9656039dba44c699a}{ctr\_s1\_set\_led}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga94a57166a9f40f389cdfafac2c3e5f68}{ctr\_s1\_led\_channel}}\ channel,}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__s1__led__param}{ctr\_s1\_led\_param}}\ *param)}
+\DoxyCodeLine{00305\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_led(dev,\ channel,\ param);}
+\DoxyCodeLine{00309\ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga8d55163025c314bcca1bb6114a36d999}{ctr\_s1\_set\_motion\_sensitivity}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga52263a891f2232f0a48ce1106bede491}{ctr\_s1\_motion\_sensitivity}}\ motion\_sensitivity)}
+\DoxyCodeLine{00313\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_motion\_sensitivity(dev,\ motion\_sensitivity);}
+\DoxyCodeLine{00317\ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_gaefb62c5c15f5f7190a48fae2c6b524cf}{ctr\_s1\_set\_motion\_blind\_time}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__s1_ga101641b5bb5a5370cf1e7bfc38f816a7}{ctr\_s1\_motion\_blind\_time}}\ motion\_blind\_time)}
+\DoxyCodeLine{00321\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_motion\_blind\_time(dev,\ motion\_blind\_time);}
+\DoxyCodeLine{00325\ \}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga94d58e62efa5b80958af172877fbe6dd}{ctr\_s1\_read\_motion\_count}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{int}\ *motion\_count)}
+\DoxyCodeLine{00328\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_motion\_count(dev,\ motion\_count);}
+\DoxyCodeLine{00332\ \}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga531697c42f1eb3685341bbfd748e058e}{ctr\_s1\_read\_temperature}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *temperature)}
+\DoxyCodeLine{00335\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_temperature(dev,\ temperature);}
+\DoxyCodeLine{00339\ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga22ec873019190e4fdc08d892a76b6c36}{ctr\_s1\_read\_humidity}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *humidity)}
+\DoxyCodeLine{00342\ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_humidity(dev,\ humidity);}
+\DoxyCodeLine{00346\ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga06815009cd6a19f80283660c48840967}{ctr\_s1\_read\_illuminance}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *illuminance)}
+\DoxyCodeLine{00349\ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_illuminance(dev,\ illuminance);}
+\DoxyCodeLine{00353\ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga3284e31515cc93dcd1bf2e72534244f7}{ctr\_s1\_read\_altitude}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *altitude)}
+\DoxyCodeLine{00356\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_altitude(dev,\ altitude);}
+\DoxyCodeLine{00360\ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga81f29d12ab2f9639d9271e106c2c3226}{ctr\_s1\_read\_pressure}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *pressure)}
+\DoxyCodeLine{00363\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_pressure(dev,\ pressure);}
+\DoxyCodeLine{00367\ \}}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_gae6af0dfa6841ac7d7e4ead797035618c}{ctr\_s1\_read\_co2\_conc}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ *co2\_conc)}
+\DoxyCodeLine{00370\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>read\_co2\_conc(dev,\ co2\_conc);}
+\DoxyCodeLine{00374\ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__s1_ga55e31017577e2191f58310400cea355d}{ctr\_s1\_calib\_tgt\_co2\_conc}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{float}\ tgt\_co2\_conc)}
+\DoxyCodeLine{00377\ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_s1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>calib\_tgt\_co2\_conc(dev,\ tgt\_co2\_conc);}
+\DoxyCodeLine{00381\ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00386\ \}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_S1\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

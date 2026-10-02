@@ -1,0 +1,80 @@
+\doxysection{ctr\+\_\+x3}
+\hypertarget{group__ctr__x3}{}\label{group__ctr__x3}\index{ctr\_x3@{ctr\_x3}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctr__x3__driver__api}{ctr\+\_\+x3\+\_\+driver\+\_\+api}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__ctr__x3_ga45bea68cab78395e77b2a46bacfb422d}{ctr\+\_\+x3\+\_\+api\+\_\+set\+\_\+power}}) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, bool enabled)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__ctr__x3_gae7866a5595b99d458ad89a868d33bf4e}{ctr\+\_\+x3\+\_\+api\+\_\+measure}}) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} \{ \mbox{\hyperlink{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4a78c36568dbe6287a7d89206361d70499}{CTR\+\_\+\+X3\+\_\+\+CHANNEL\+\_\+1}} = 0
+, \mbox{\hyperlink{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4af476e0cb5a1b5ba332b3fbbfae3bc367}{CTR\+\_\+\+X3\+\_\+\+CHANNEL\+\_\+2}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__ctr__x3_ga7ce67eea25f5fc26d74605d36b0a2c54}{ctr\+\_\+x3\+\_\+set\+\_\+power}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, bool enabled)
+\item 
+static int \mbox{\hyperlink{group__ctr__x3_ga34ec4735e3644d74ff19385bb49fdce6}{ctr\+\_\+x3\+\_\+measure}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__ctr__x3_gae7866a5595b99d458ad89a868d33bf4e}\index{ctr\_x3@{ctr\_x3}!ctr\_x3\_api\_measure@{ctr\_x3\_api\_measure}}
+\index{ctr\_x3\_api\_measure@{ctr\_x3\_api\_measure}!ctr\_x3@{ctr\_x3}}
+\doxysubsubsection{\texorpdfstring{ctr\_x3\_api\_measure}{ctr\_x3\_api\_measure}}
+{\footnotesize\ttfamily \label{group__ctr__x3_gae7866a5595b99d458ad89a868d33bf4e} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+x3\+\_\+api\+\_\+measure) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)}
+
+\Hypertarget{group__ctr__x3_ga45bea68cab78395e77b2a46bacfb422d}\index{ctr\_x3@{ctr\_x3}!ctr\_x3\_api\_set\_power@{ctr\_x3\_api\_set\_power}}
+\index{ctr\_x3\_api\_set\_power@{ctr\_x3\_api\_set\_power}!ctr\_x3@{ctr\_x3}}
+\doxysubsubsection{\texorpdfstring{ctr\_x3\_api\_set\_power}{ctr\_x3\_api\_set\_power}}
+{\footnotesize\ttfamily \label{group__ctr__x3_ga45bea68cab78395e77b2a46bacfb422d} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+x3\+\_\+api\+\_\+set\+\_\+power) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}} channel, bool enabled)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}\index{ctr\_x3@{ctr\_x3}!ctr\_x3\_channel@{ctr\_x3\_channel}}
+\index{ctr\_x3\_channel@{ctr\_x3\_channel}!ctr\_x3@{ctr\_x3}}
+\doxysubsubsection{\texorpdfstring{ctr\_x3\_channel}{ctr\_x3\_channel}}
+{\footnotesize\ttfamily \label{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4} 
+enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X3\_CHANNEL\_1@{CTR\_X3\_CHANNEL\_1}!ctr\_x3@{ctr\_x3}}\index{ctr\_x3@{ctr\_x3}!CTR\_X3\_CHANNEL\_1@{CTR\_X3\_CHANNEL\_1}}}\Hypertarget{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4a78c36568dbe6287a7d89206361d70499}\label{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4} 
+CTR\+\_\+\+X3\+\_\+\+CHANNEL\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X3\_CHANNEL\_2@{CTR\_X3\_CHANNEL\_2}!ctr\_x3@{ctr\_x3}}\index{ctr\_x3@{ctr\_x3}!CTR\_X3\_CHANNEL\_2@{CTR\_X3\_CHANNEL\_2}}}\Hypertarget{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4af476e0cb5a1b5ba332b3fbbfae3bc367}\label{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4} 
+CTR\+\_\+\+X3\+\_\+\+CHANNEL\+\_\+2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ctr__x3_ga34ec4735e3644d74ff19385bb49fdce6}\index{ctr\_x3@{ctr\_x3}!ctr\_x3\_measure@{ctr\_x3\_measure}}
+\index{ctr\_x3\_measure@{ctr\_x3\_measure}!ctr\_x3@{ctr\_x3}}
+\doxysubsubsection{\texorpdfstring{ctr\_x3\_measure()}{ctr\_x3\_measure()}}
+{\footnotesize\ttfamily \label{group__ctr__x3_ga34ec4735e3644d74ff19385bb49fdce6} 
+static int ctr\+\_\+x3\+\_\+measure (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}}}]{channel}{, }\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__x3_ga7ce67eea25f5fc26d74605d36b0a2c54}\index{ctr\_x3@{ctr\_x3}!ctr\_x3\_set\_power@{ctr\_x3\_set\_power}}
+\index{ctr\_x3\_set\_power@{ctr\_x3\_set\_power}!ctr\_x3@{ctr\_x3}}
+\doxysubsubsection{\texorpdfstring{ctr\_x3\_set\_power()}{ctr\_x3\_set\_power()}}
+{\footnotesize\ttfamily \label{group__ctr__x3_ga7ce67eea25f5fc26d74605d36b0a2c54} 
+static int ctr\+\_\+x3\+\_\+set\+\_\+power (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{enum \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\+\_\+x3\+\_\+channel}}}]{channel}{, }\item[{bool}]{enabled}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

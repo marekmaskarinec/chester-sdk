@@ -1,0 +1,7 @@
+default: opt3001
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/opt3001/build
+domains:
+  - name: opt3001
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/opt3001/build/opt3001
+flash_order:
+  - opt3001

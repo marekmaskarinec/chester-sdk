@@ -1,0 +1,219 @@
+\doxysection{ctr\+\_\+lte\+\_\+link.\+h}
+\hypertarget{ctr__lte__link_8h_source}{}\label{ctr__lte__link_8h_source}\index{drivers/ctr\_lte\_link.h@{drivers/ctr\_lte\_link.h}}
+\mbox{\hyperlink{ctr__lte__link_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_LTE\_LINK\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_LTE\_LINK\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <zephyr/kernel.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}{ctr\_lte\_link\_event}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86abfa2f9fc3cbe8b3902dcd14bd39356d0}{CTR\_LTE\_LINK\_EVENT\_RESET}}\ =\ 0,}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86aed2a110a9ff46d580dede4df2d367549}{CTR\_LTE\_LINK\_EVENT\_INDICATE}}\ =\ 1,}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86ae344e7db731df6bd0df5e3a7c50ca459}{CTR\_LTE\_LINK\_EVENT\_RX\_LINE}}\ =\ 2,}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86a77a6ba814622228cb59bb3c26f33332c}{CTR\_LTE\_LINK\_EVENT\_RX\_DATA}}\ =\ 3,}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86ae1f1c6d08cce330e310c18075180c2fa}{CTR\_LTE\_LINK\_EVENT\_RX\_LOSS}}\ =\ 4,}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\_lte\_link\_user\_cb}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}{ctr\_lte\_link\_event}}\ event,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *user\_data);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a5b50de694c72e8c1d617ae13fcaca8fb}{ctr\_lte\_link\_api\_set\_callback}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\_lte\_link\_user\_cb}}\ user\_cb,\ \textcolor{keywordtype}{void}\ *user\_data);}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{ctr__lte__link_8h_a1cab79b7cc1295cf29c4609030d95a27}{ctr\_lte\_link\_api\_lock}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{ctr__lte__link_8h_a9e3e8aad30f2b18cd2ec08228bebba68}{ctr\_lte\_link\_api\_unlock}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_ab018ece09f80f05629f4eb04c00009ea}{ctr\_lte\_link\_api\_reset}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_ae43d53045e83eae4d6e96d3265a26272}{ctr\_lte\_link\_api\_wake\_up}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a0e2185bb5f3ed68c5278884a6fb27b3e}{ctr\_lte\_link\_api\_enable\_uart}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a00b97f58879125b1966a864f6fe2cb93}{ctr\_lte\_link\_api\_disable\_uart}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_aefb10a9afffc9c36164b3c03f8e71955}{ctr\_lte\_link\_api\_enter\_dialog}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_ac340ef48142938fa411269b9776f0963}{ctr\_lte\_link\_api\_exit\_dialog}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_aea1792a0d616ccb7d843f50d9b20b37a}{ctr\_lte\_link\_api\_enter\_data\_mode}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_ab2a755fbd3adb23b3bd12a5c55cb0a60}{ctr\_lte\_link\_api\_exit\_data\_mode}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a448dbe29ff2edbf02192f8e050179d97}{ctr\_lte\_link\_api\_send\_line}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ k\_timeout\_t\ timeout,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ va\_list\ ap);}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a2bbb997f0957df1f4ccf923257ba3adc}{ctr\_lte\_link\_api\_recv\_line}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ k\_timeout\_t\ timeout,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **line);}
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a959c2f9bfbf04cf509894699581b35f8}{ctr\_lte\_link\_api\_free\_line}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{char}\ *line);}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_ae7d73d70b2d01e2b49ac5f3e4b5d722a}{ctr\_lte\_link\_api\_send\_data}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ k\_timeout\_t\ timeout,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{ctr__lte__link_8h_a53cd24304a689675817569a57f20df9d}{ctr\_lte\_link\_api\_recv\_data}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ k\_timeout\_t\ timeout,\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ *len);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a5b50de694c72e8c1d617ae13fcaca8fb}{ctr\_lte\_link\_api\_set\_callback}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a2884fd990915f750bda31ca3ceec09a2}{set\_callback}};}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a1cab79b7cc1295cf29c4609030d95a27}{ctr\_lte\_link\_api\_lock}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a4075e4accb8b930e0f24698aca2d709f}{lock}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a9e3e8aad30f2b18cd2ec08228bebba68}{ctr\_lte\_link\_api\_unlock}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_adca5021df679131bb7e9956b6c0e2ffb}{unlock}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ab018ece09f80f05629f4eb04c00009ea}{ctr\_lte\_link\_api\_reset}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_ac2d023f5844d381d2ce182e4ce4a0dad}{reset}};}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ae43d53045e83eae4d6e96d3265a26272}{ctr\_lte\_link\_api\_wake\_up}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_aa9430db7c9d9a5232f18168a60f3f234}{wake\_up}};}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a0e2185bb5f3ed68c5278884a6fb27b3e}{ctr\_lte\_link\_api\_enable\_uart}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_ac387018bf312ebda4336063a36f8874d}{enable\_uart}};}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a00b97f58879125b1966a864f6fe2cb93}{ctr\_lte\_link\_api\_disable\_uart}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a7e4fd2ada882245ab9bd37ef940a6d32}{disable\_uart}};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_aefb10a9afffc9c36164b3c03f8e71955}{ctr\_lte\_link\_api\_enter\_dialog}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_ad7f44640320f490193f2ad61f4f9a2b3}{enter\_dialog}};}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ac340ef48142938fa411269b9776f0963}{ctr\_lte\_link\_api\_exit\_dialog}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a88f99435ea2263d3168d39b5cea2ada6}{exit\_dialog}};}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_aea1792a0d616ccb7d843f50d9b20b37a}{ctr\_lte\_link\_api\_enter\_data\_mode}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a11174a4f78792bc8624b9bbaa3fe0fcd}{enter\_data\_mode}};}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ab2a755fbd3adb23b3bd12a5c55cb0a60}{ctr\_lte\_link\_api\_exit\_data\_mode}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a35dd7ddb67a5ea0043a3c9407f2571d7}{exit\_data\_mode}};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a448dbe29ff2edbf02192f8e050179d97}{ctr\_lte\_link\_api\_send\_line}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a8cf7925f18e7972b45c6f888c0f0d7bd}{send\_line}};}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a2bbb997f0957df1f4ccf923257ba3adc}{ctr\_lte\_link\_api\_recv\_line}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_aa590be00e3997debaedfd06436c9eaad}{recv\_line}};}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a959c2f9bfbf04cf509894699581b35f8}{ctr\_lte\_link\_api\_free\_line}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a9cd8ce177606bece6e777033c11cb66d}{free\_line}};}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ae7d73d70b2d01e2b49ac5f3e4b5d722a}{ctr\_lte\_link\_api\_send\_data}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_aaaab3e2bfc5d52bbc8f26f5cac8d8bde}{send\_data}};}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_a53cd24304a689675817569a57f20df9d}{ctr\_lte\_link\_api\_recv\_data}}\ \mbox{\hyperlink{structctr__lte__link__driver__api_a1f7995f4d1c11b79c871956004f022c0}{recv\_data}};}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_ab7d0f45c361894c4e6a703487659e411}{ctr\_lte\_link\_set\_callback}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\_lte\_link\_user\_cb}}\ user\_cb,\ \textcolor{keywordtype}{void}\ *user\_data)}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a2884fd990915f750bda31ca3ceec09a2}{set\_callback}}(dev,\ user\_cb,\ user\_data);}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ctr__lte__link_8h_a7e70ac1e4c843ffa5e32f27d022b97c8}{ctr\_lte\_link\_lock}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a4075e4accb8b930e0f24698aca2d709f}{lock}}(dev);}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ctr__lte__link_8h_aff1f769b5f928d0872fcd1561f9bb43d}{ctr\_lte\_link\_unlock}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_adca5021df679131bb7e9956b6c0e2ffb}{unlock}}(dev);}
+\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_ac4d529e2b5262fc8402fe8f17b057b9b}{ctr\_lte\_link\_reset}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00095\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_ac2d023f5844d381d2ce182e4ce4a0dad}{reset}}(dev);}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_aa406bcba023d59c7818629c90e5a6b3e}{ctr\_lte\_link\_wake\_up}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_aa9430db7c9d9a5232f18168a60f3f234}{wake\_up}}(dev);}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_af04d3a428fec6d68a61f83287c951af1}{ctr\_lte\_link\_enable\_uart}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_ac387018bf312ebda4336063a36f8874d}{enable\_uart}}(dev);}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a3f2b99c296bffe7a5754a38c86692140}{ctr\_lte\_link\_disable\_uart}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00119\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a7e4fd2ada882245ab9bd37ef940a6d32}{disable\_uart}}(dev);}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a26706f2b56a41c57830d141bfa8e6090}{ctr\_lte\_link\_enter\_dialog}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_ad7f44640320f490193f2ad61f4f9a2b3}{enter\_dialog}}(dev);}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_aee0dde6ee8749ad43e3aa3845ef7cff1}{ctr\_lte\_link\_exit\_dialog}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a88f99435ea2263d3168d39b5cea2ada6}{exit\_dialog}}(dev);}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a30ef204c2412bcd9e24f7de66da06dee}{ctr\_lte\_link\_enter\_data\_mode}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a11174a4f78792bc8624b9bbaa3fe0fcd}{enter\_data\_mode}}(dev);}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a17fd61288a147ac4547291edbf470b0a}{ctr\_lte\_link\_exit\_data\_mode}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00151\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a35dd7ddb67a5ea0043a3c9407f2571d7}{exit\_data\_mode}}(dev);}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a46ee12b6dd51510f3367744355ce11b6}{ctr\_lte\_link\_send\_line}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ k\_timeout\_t\ timeout,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ ...)}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ ret;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ va\_list\ ap;}
+\DoxyCodeLine{00167\ \ \ \ \ va\_start(ap,\ format);}
+\DoxyCodeLine{00168\ \ \ \ \ ret\ =\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a8cf7925f18e7972b45c6f888c0f0d7bd}{send\_line}}(dev,\ timeout,\ format,\ ap);}
+\DoxyCodeLine{00169\ \ \ \ \ va\_end(ap);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00172\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a3937cc408a6c0e82e796206f5ef737bc}{ctr\_lte\_link\_recv\_line}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ k\_timeout\_t\ timeout,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **line)}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_aa590be00e3997debaedfd06436c9eaad}{recv\_line}}(dev,\ timeout,\ line);}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_acc430f25a6d328101b608d26b60e61a7}{ctr\_lte\_link\_free\_line}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{char}\ *line)}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a9cd8ce177606bece6e777033c11cb66d}{free\_line}}(dev,\ line);}
+\DoxyCodeLine{00189\ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_ac4d56dc42f8065d5cf0d4a179799cf9a}{ctr\_lte\_link\_send\_data}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ k\_timeout\_t\ timeout,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,\ \textcolor{keywordtype}{size\_t}\ len)}
+\DoxyCodeLine{00193\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_aaaab3e2bfc5d52bbc8f26f5cac8d8bde}{send\_data}}(dev,\ timeout,\ buf,\ len);}
+\DoxyCodeLine{00198\ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ctr__lte__link_8h_a6af6dfbc35b57029d4fae5d4919db0ae}{ctr\_lte\_link\_recv\_data}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ k\_timeout\_t\ timeout,\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ *len)}
+\DoxyCodeLine{00202\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *api\ =}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\_lte\_link\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__lte__link__driver__api_a1f7995f4d1c11b79c871956004f022c0}{recv\_data}}(dev,\ timeout,\ buf,\ size,\ len);}
+\DoxyCodeLine{00207\ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00210\ \}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_LTE\_LINK\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

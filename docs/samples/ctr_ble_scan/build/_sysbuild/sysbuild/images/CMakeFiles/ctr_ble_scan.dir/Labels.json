@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_ble_scan"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_ble_scan.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_ble_scan-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/ctr_ble_scan-prefix/src/ctr_ble_scan-stamp/ctr_ble_scan-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ctr_ble_scan"
+		],
+		"name" : "ctr_ble_scan"
+	}
+}

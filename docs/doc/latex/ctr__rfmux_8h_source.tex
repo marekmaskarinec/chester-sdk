@@ -1,0 +1,81 @@
+\doxysection{ctr\+\_\+rfmux.\+h}
+\hypertarget{ctr__rfmux_8h_source}{}\label{ctr__rfmux_8h_source}\index{drivers/ctr\_rfmux.h@{drivers/ctr\_rfmux.h}}
+\mbox{\hyperlink{ctr__rfmux_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_RFMUX\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_RFMUX\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__rfmux_ga0428e0d1461168d7ec06994c98d6ab77}{ctr\_rfmux\_interface}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{group__ctr__rfmux_gga0428e0d1461168d7ec06994c98d6ab77a91627c09e91a7a380a913fb8f0819a46}{CTR\_RFMUX\_INTERFACE\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{group__ctr__rfmux_gga0428e0d1461168d7ec06994c98d6ab77a655349cf98b06cbd3bd9657e24d7408e}{CTR\_RFMUX\_INTERFACE\_LTE}}\ =\ 1,}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{group__ctr__rfmux_gga0428e0d1461168d7ec06994c98d6ab77a7040b9fff1400f0064da1e3364d07a13}{CTR\_RFMUX\_INTERFACE\_LRW}}\ =\ 2,}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__rfmux_ga9d202b7d4713a4e8f6cfa677ca5a6b97}{ctr\_rfmux\_antenna}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group__ctr__rfmux_gga9d202b7d4713a4e8f6cfa677ca5a6b97aa391ae347d10a043c1a71b5d5d1b585f}{CTR\_RFMUX\_ANTENNA\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{group__ctr__rfmux_gga9d202b7d4713a4e8f6cfa677ca5a6b97ae2547341499a8534e00d75ecf610adbc}{CTR\_RFMUX\_ANTENNA\_INT}}\ =\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{group__ctr__rfmux_gga9d202b7d4713a4e8f6cfa677ca5a6b97a829a2b99d151d1f826dd8c3a2cabe6f2}{CTR\_RFMUX\_ANTENNA\_EXT}}\ =\ 2,}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ int\ (*ctr\_rfmux\_api\_acquire)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ int\ (*ctr\_rfmux\_api\_release)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ int\ (*ctr\_rfmux\_api\_set\_interface)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__rfmux_ga0428e0d1461168d7ec06994c98d6ab77}{ctr\_rfmux\_interface}}\ interface);}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ int\ (*ctr\_rfmux\_api\_set\_antenna)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__rfmux_ga9d202b7d4713a4e8f6cfa677ca5a6b97}{ctr\_rfmux\_antenna}}\ antenna);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ ctr\_rfmux\_api\_acquire\ acquire;}
+\DoxyCodeLine{00047\ \ \ \ \ ctr\_rfmux\_api\_release\ release;}
+\DoxyCodeLine{00048\ \ \ \ \ ctr\_rfmux\_api\_set\_interface\ set\_interface;}
+\DoxyCodeLine{00049\ \ \ \ \ ctr\_rfmux\_api\_set\_antenna\ set\_antenna;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rfmux_ga95b19113136818018564c893208c4412}{ctr\_rfmux\_acquire}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>acquire(dev);}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rfmux_ga6d49c8db6d3f8130032346772bb4ef70}{ctr\_rfmux\_release}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>release(dev);}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rfmux_ga43fb9c027c8928eebf5a9202633928ec}{ctr\_rfmux\_set\_interface}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__rfmux_ga0428e0d1461168d7ec06994c98d6ab77}{ctr\_rfmux\_interface}}\ interface)}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_interface(dev,\ interface);}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__rfmux_gaf3846d6df3b20865794ced1319c13381}{ctr\_rfmux\_set\_antenna}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__rfmux_ga9d202b7d4713a4e8f6cfa677ca5a6b97}{ctr\_rfmux\_antenna}}\ antenna)}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_rfmux\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_antenna(dev,\ antenna);}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_RFMUX\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

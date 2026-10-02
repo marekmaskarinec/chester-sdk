@@ -1,0 +1,51 @@
+\doxysection{ctr\+\_\+batt}
+\hypertarget{group__ctr__batt}{}\label{group__ctr__batt}\index{ctr\_batt@{ctr\_batt}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__ctr__batt_gae8a9acd98b0dcf21d41961274501c8d0}{ctr\+\_\+batt\+\_\+get\+\_\+rest\+\_\+voltage\+\_\+mv}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}rest\+\_\+mv, int delay\+\_\+ms)
+\item 
+static int \mbox{\hyperlink{group__ctr__batt_gac9b85cc544e40392cc9eadac9c5cbb8b}{ctr\+\_\+batt\+\_\+get\+\_\+load\+\_\+voltage\+\_\+mv}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}load\+\_\+mv, int delay\+\_\+ms)
+\item 
+static void \mbox{\hyperlink{group__ctr__batt_ga9612224d2256fa5717acc6f76765b250}{ctr\+\_\+batt\+\_\+get\+\_\+load\+\_\+current\+\_\+ma}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}current\+\_\+ma, int load\+\_\+mv)
+\item 
+static int \mbox{\hyperlink{group__ctr__batt_ga59b22153115bc5f04c1225dd34ce61da}{ctr\+\_\+batt\+\_\+load}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{group__ctr__batt_gae20d5845b135ca482d67c792658513a3}{ctr\+\_\+batt\+\_\+unload}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ctr__batt_ga9612224d2256fa5717acc6f76765b250}\index{ctr\_batt@{ctr\_batt}!ctr\_batt\_get\_load\_current\_ma@{ctr\_batt\_get\_load\_current\_ma}}
+\index{ctr\_batt\_get\_load\_current\_ma@{ctr\_batt\_get\_load\_current\_ma}!ctr\_batt@{ctr\_batt}}
+\doxysubsubsection{\texorpdfstring{ctr\_batt\_get\_load\_current\_ma()}{ctr\_batt\_get\_load\_current\_ma()}}
+{\footnotesize\ttfamily \label{group__ctr__batt_ga9612224d2256fa5717acc6f76765b250} 
+static void ctr\+\_\+batt\+\_\+get\+\_\+load\+\_\+current\+\_\+ma (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{current\+\_\+ma}{, }\item[{int}]{load\+\_\+mv}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__batt_gac9b85cc544e40392cc9eadac9c5cbb8b}\index{ctr\_batt@{ctr\_batt}!ctr\_batt\_get\_load\_voltage\_mv@{ctr\_batt\_get\_load\_voltage\_mv}}
+\index{ctr\_batt\_get\_load\_voltage\_mv@{ctr\_batt\_get\_load\_voltage\_mv}!ctr\_batt@{ctr\_batt}}
+\doxysubsubsection{\texorpdfstring{ctr\_batt\_get\_load\_voltage\_mv()}{ctr\_batt\_get\_load\_voltage\_mv()}}
+{\footnotesize\ttfamily \label{group__ctr__batt_gac9b85cc544e40392cc9eadac9c5cbb8b} 
+static int ctr\+\_\+batt\+\_\+get\+\_\+load\+\_\+voltage\+\_\+mv (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{load\+\_\+mv}{, }\item[{int}]{delay\+\_\+ms}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__batt_gae8a9acd98b0dcf21d41961274501c8d0}\index{ctr\_batt@{ctr\_batt}!ctr\_batt\_get\_rest\_voltage\_mv@{ctr\_batt\_get\_rest\_voltage\_mv}}
+\index{ctr\_batt\_get\_rest\_voltage\_mv@{ctr\_batt\_get\_rest\_voltage\_mv}!ctr\_batt@{ctr\_batt}}
+\doxysubsubsection{\texorpdfstring{ctr\_batt\_get\_rest\_voltage\_mv()}{ctr\_batt\_get\_rest\_voltage\_mv()}}
+{\footnotesize\ttfamily \label{group__ctr__batt_gae8a9acd98b0dcf21d41961274501c8d0} 
+static int ctr\+\_\+batt\+\_\+get\+\_\+rest\+\_\+voltage\+\_\+mv (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{rest\+\_\+mv}{, }\item[{int}]{delay\+\_\+ms}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__batt_ga59b22153115bc5f04c1225dd34ce61da}\index{ctr\_batt@{ctr\_batt}!ctr\_batt\_load@{ctr\_batt\_load}}
+\index{ctr\_batt\_load@{ctr\_batt\_load}!ctr\_batt@{ctr\_batt}}
+\doxysubsubsection{\texorpdfstring{ctr\_batt\_load()}{ctr\_batt\_load()}}
+{\footnotesize\ttfamily \label{group__ctr__batt_ga59b22153115bc5f04c1225dd34ce61da} 
+static int ctr\+\_\+batt\+\_\+load (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__batt_gae20d5845b135ca482d67c792658513a3}\index{ctr\_batt@{ctr\_batt}!ctr\_batt\_unload@{ctr\_batt\_unload}}
+\index{ctr\_batt\_unload@{ctr\_batt\_unload}!ctr\_batt@{ctr\_batt}}
+\doxysubsubsection{\texorpdfstring{ctr\_batt\_unload()}{ctr\_batt\_unload()}}
+{\footnotesize\ttfamily \label{group__ctr__batt_gae20d5845b135ca482d67c792658513a3} 
+static int ctr\+\_\+batt\+\_\+unload (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

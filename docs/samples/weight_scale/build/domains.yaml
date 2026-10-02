@@ -1,0 +1,7 @@
+default: weight_scale
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build
+domains:
+  - name: weight_scale
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/weight_scale
+flash_order:
+  - weight_scale

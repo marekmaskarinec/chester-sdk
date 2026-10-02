@@ -1,0 +1,19 @@
+# ninja log v7
+2	18	1782304660696537412	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-mkdir	e2a2e13ad803b7df
+2	18	1782304660696537412	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-mkdir	e2a2e13ad803b7df
+18	35	1782304660713537285	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-download	9ba250710d264e4f
+18	35	1782304660713537285	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-download	9ba250710d264e4f
+35	51	1782304660729537165	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-update	6d9d8a1b96670f73
+35	51	1782304660729537165	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-update	6d9d8a1b96670f73
+51	69	1782304660748537024	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-patch	f25d20bb92469357
+51	69	1782304660748537024	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-patch	f25d20bb92469357
+69	84	1782304660762536919	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-configure	2e0d9067c74918a3
+69	84	1782304660762536919	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-configure	2e0d9067c74918a3
+84	13189	1782304660763536912	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-build	3aa5ea9db6f44ceb
+84	13189	1782304660763536912	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-build	3aa5ea9db6f44ceb
+13189	13197	1782304673868439031	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-install	18427d951032c43
+13189	13197	1782304673868439031	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-install	18427d951032c43
+13197	13228	1782304673907438739	_sysbuild/sysbuild/images/CMakeFiles/chester_x10-complete	920a37763dfca2c3
+13197	13228	1782304673907438739	_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-done	920a37763dfca2c3
+13197	13228	1782304673907438739	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/CMakeFiles/chester_x10-complete	920a37763dfca2c3
+13197	13228	1782304673907438739	/home/marek/dev/hio/chester-sdk/chester/samples/chester_x10/build/_sysbuild/sysbuild/images/chester_x10-prefix/src/chester_x10-stamp/chester_x10-done	920a37763dfca2c3

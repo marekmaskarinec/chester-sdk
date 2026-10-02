@@ -1,0 +1,13 @@
+# Target labels
+ therm
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/CMakeFiles/therm
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/CMakeFiles/therm.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/CMakeFiles/therm-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/therm/build/_sysbuild/sysbuild/images/therm-prefix/src/therm-stamp/therm-update.rule

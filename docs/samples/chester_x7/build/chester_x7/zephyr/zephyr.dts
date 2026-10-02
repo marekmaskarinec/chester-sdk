@@ -1,0 +1,1552 @@
+/dts-v1/;
+
+/* node '/' defined in zephyr/dts/common/skeleton.dtsi:9 */
+/ {
+	#address-cells = < 0x1 >;                  /* in zephyr/dts/common/skeleton.dtsi:10 */
+	#size-cells = < 0x1 >;                     /* in zephyr/dts/common/skeleton.dtsi:11 */
+	model = "HARDWARIO CHESTER nRF52840";      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:15 */
+	compatible = "hardwario,chester-nrf52840"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:16 */
+
+	/* node '/chosen' defined in zephyr/dts/common/skeleton.dtsi:13 */
+	chosen {
+		zephyr,bt-hci = &bt_hci_sdc;                 /* in zephyr/dts/arm/nordic/nrf52840.dtsi:14 */
+		zephyr,entropy = &cryptocell;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:15 */
+		zephyr,flash-controller = &flash_controller; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:16 */
+		zephyr,sram = &sram0;                        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:23 */
+		zephyr,flash = &flash0;                      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:24 */
+		zephyr,code-partition = &slot0_partition;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:25 */
+		zephyr,ieee802154 = &ieee802154;             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:26 */
+		ctr,batt_adc = &tla2021;                     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:27 */
+		ctr,lrw_if = &ctr_lrw_if;                    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:28 */
+		ctr,lte_if = &ctr_lte_if;                    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:29 */
+	};
+
+	/* node '/aliases' defined in zephyr/dts/common/skeleton.dtsi:15 */
+	aliases {
+		led0 = &led_g;              /* in chester/boards/hardwario/chester/chester_nrf52840.dts:171 */
+		led1 = &led_y;              /* in chester/boards/hardwario/chester/chester_nrf52840.dts:172 */
+		led2 = &led_r;              /* in chester/boards/hardwario/chester/chester_nrf52840.dts:173 */
+		led3 = &led_ext;            /* in chester/boards/hardwario/chester/chester_nrf52840.dts:174 */
+		pwm-led0 = &pwm_led_g;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:175 */
+		pwm-led1 = &pwm_led_y;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:176 */
+		pwm-led2 = &pwm_led_r;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:177 */
+		pwm-led3 = &pwm_led_ext;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:178 */
+		sw0 = &btn_int;             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:179 */
+		sw1 = &btn_ext;             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:180 */
+		mcuboot-button0 = &btn_int; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:181 */
+		mcuboot-led0 = &led_g;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:182 */
+		watchdog0 = &wdt0;          /* in chester/boards/hardwario/chester/chester_nrf52840.dts:183 */
+		spi-flash0 = &spi_flash0;   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:184 */
+		accel0 = &lis2dh12;         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:185 */
+		ambient-temp0 = &tmp112;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:186 */
+	};
+
+	/* node '/soc' defined in zephyr/dts/arm/armv7-m.dtsi:6 */
+	soc {
+		#address-cells = < 0x1 >;     /* in zephyr/dts/arm/armv7-m.dtsi:7 */
+		#size-cells = < 0x1 >;        /* in zephyr/dts/arm/armv7-m.dtsi:8 */
+		interrupt-parent = < &nvic >; /* in zephyr/dts/arm/armv7-m.dtsi:10 */
+		ranges;                       /* in zephyr/dts/arm/armv7-m.dtsi:11 */
+		compatible = "simple-bus";    /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:30 */
+
+		/* node '/soc/interrupt-controller@e000e100' defined in zephyr/dts/arm/armv7-m.dtsi:13 */
+		nvic: interrupt-controller@e000e100 {
+			#address-cells = < 0x1 >;            /* in zephyr/dts/arm/armv7-m.dtsi:14 */
+			compatible = "arm,v7m-nvic";         /* in zephyr/dts/arm/armv7-m.dtsi:15 */
+			reg = < 0xe000e100 0xc00 >;          /* in zephyr/dts/arm/armv7-m.dtsi:16 */
+			interrupt-controller;                /* in zephyr/dts/arm/armv7-m.dtsi:17 */
+			#interrupt-cells = < 0x2 >;          /* in zephyr/dts/arm/armv7-m.dtsi:18 */
+			arm,num-irq-priority-bits = < 0x3 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:590 */
+			phandle = < 0x1 >;                   /* in zephyr/dts/arm/armv7-m.dtsi:10 */
+		};
+
+		/* node '/soc/timer@e000e010' defined in zephyr/dts/arm/armv7-m.dtsi:21 */
+		systick: timer@e000e010 {
+			compatible = "arm,armv7m-systick"; /* in zephyr/dts/arm/armv7-m.dtsi:22 */
+			reg = < 0xe000e010 0x10 >;         /* in zephyr/dts/arm/armv7-m.dtsi:23 */
+			status = "disabled";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:595 */
+		};
+
+		/* node '/soc/ficr@10000000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:48 */
+		ficr: ficr@10000000 {
+			compatible = "nordic,nrf-ficr"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:49 */
+			reg = < 0x10000000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:50 */
+			#nordic,ficr-cells = < 0x1 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:51 */
+			status = "okay";                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:52 */
+		};
+
+		/* node '/soc/uicr@10001000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:55 */
+		uicr: uicr@10001000 {
+			compatible = "nordic,nrf-uicr";     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:56 */
+			reg = < 0x10001000 0x1000 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:57 */
+			ranges = < 0x0 0x10001000 0x1000 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:58 */
+			status = "okay";                    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:59 */
+			#address-cells = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:60 */
+			#size-cells = < 0x1 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:61 */
+			nfct-pins-as-gpios;                 /* in chester/boards/hardwario/chester/chester_nrf52840.dts:191 */
+			gpio-as-nreset;                     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:192 */
+		};
+
+		/* node '/soc/memory@20000000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:64 */
+		sram0: memory@20000000 {
+			compatible = "mmio-sram";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:65 */
+			#address-cells = < 0x1 >;            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:66 */
+			#size-cells = < 0x1 >;               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:67 */
+			reg = < 0x20000000 0x40000 >;        /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:15 */
+			ranges = < 0x0 0x20000000 0x40000 >; /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:16 */
+		};
+
+		/* node '/soc/clock@40000000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:70 */
+		clock: clock@40000000 {
+			compatible = "nordic,nrf-clock"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:71 */
+			reg = < 0x40000000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:72 */
+			interrupts = < 0x0 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:73 */
+			status = "okay";                 /* in zephyr/dts/arm/nordic/nrf52840.dtsi:74 */
+		};
+
+		/* node '/soc/power@40000000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:77 */
+		power: power@40000000 {
+			compatible = "nordic,nrf-power"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:78 */
+			reg = < 0x40000000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:79 */
+			interrupts = < 0x0 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:80 */
+			status = "okay";                 /* in zephyr/dts/arm/nordic/nrf52840.dtsi:81 */
+			#address-cells = < 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:82 */
+			#size-cells = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:83 */
+
+			/* node '/soc/power@40000000/gpregret1@4000051c' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:85 */
+			gpregret1: gpregret1@4000051c {
+				#address-cells = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:86 */
+				#size-cells = < 0x1 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:87 */
+				compatible = "nordic,nrf-gpregret"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:88 */
+				reg = < 0x4000051c 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:89 */
+				status = "okay";                    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:90 */
+			};
+
+			/* node '/soc/power@40000000/gpregret2@40000520' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:93 */
+			gpregret2: gpregret2@40000520 {
+				#address-cells = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:94 */
+				#size-cells = < 0x1 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:95 */
+				compatible = "nordic,nrf-gpregret"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:96 */
+				reg = < 0x40000520 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:97 */
+				status = "okay";                    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:98 */
+			};
+
+			/* node '/soc/power@40000000/regulator@40000578' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:101 */
+			reg1: regulator@40000578 {
+				compatible = "nordic,nrf5x-regulator"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:102 */
+				reg = < 0x40000578 0x1 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:103 */
+				regulator-name = "REG1";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:104 */
+				status = "okay";                       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:375 */
+				regulator-initial-mode = < 0x1 >;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:376 */
+			};
+
+			/* node '/soc/power@40000000/regulator@40000580' defined in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:20 */
+			reg0: regulator@40000580 {
+				compatible = "nordic,nrf52x-regulator-hv"; /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:21 */
+				reg = < 0x40000580 0x1 >;                  /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:22 */
+				regulator-name = "REG0";                   /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:23 */
+				status = "disabled";                       /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:24 */
+			};
+		};
+
+		/* node '/soc/radio@40001000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:109 */
+		radio: radio@40001000 {
+			compatible = "nordic,nrf-radio"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:110 */
+			reg = < 0x40001000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:111 */
+			interrupts = < 0x1 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:112 */
+			status = "okay";                 /* in zephyr/dts/arm/nordic/nrf52840.dtsi:113 */
+			ieee802154-supported;            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:114 */
+			ble-2mbps-supported;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:115 */
+			ble-coded-phy-supported;         /* in zephyr/dts/arm/nordic/nrf52840.dtsi:116 */
+			radio-tx-high-power-supported;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:117 */
+
+			/* node '/soc/radio@40001000/ieee802154' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:119 */
+			ieee802154: ieee802154 {
+				compatible = "nordic,nrf-ieee802154"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:120 */
+				status = "disabled";                  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:335 */
+			};
+
+			/* node '/soc/radio@40001000/bt_hci_sdc' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:124 */
+			bt_hci_sdc: bt_hci_sdc {
+				compatible = "nordic,bt-hci-sdc"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:125 */
+				status = "okay";                  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:126 */
+			};
+
+			/* node '/soc/radio@40001000/bt_hci_controller' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:128 */
+			bt_hci_controller: bt_hci_controller {
+				compatible = "zephyr,bt-hci-ll-sw-split"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:129 */
+				status = "disabled";                      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:130 */
+			};
+		};
+
+		/* node '/soc/uart@40002000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:134 */
+		uart0: uart@40002000 {
+			reg = < 0x40002000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:138 */
+			interrupts = < 0x2 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:139 */
+			status = "disabled";             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:304 */
+			compatible = "nordic,nrf-uarte"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:305 */
+			current-speed = < 0x1c200 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:306 */
+			pinctrl-0 = < &uart0_default >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:307 */
+			pinctrl-1 = < &uart0_sleep >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:308 */
+			pinctrl-names = "default",
+			                "sleep";         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:309 */
+
+			/* node '/soc/uart@40002000/ctr_lte_if' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:311 */
+			ctr_lte_if: ctr_lte_if {
+				compatible = "hardwario,ctr-lte-if"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:312 */
+				status = "disabled";                 /* in chester/boards/hardwario/chester/chester_nrf52840.dts:313 */
+				reset-gpios = < &gpio1 0x7 0x7 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:314 */
+				wakeup-gpios = < &gpio0 0xf 0x7 >;   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:315 */
+			};
+		};
+
+		/* node '/soc/i2c@40003000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:143 */
+		i2c0: i2c@40003000 {
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:152 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:153 */
+			reg = < 0x40003000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:154 */
+			interrupts = < 0x3 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:155 */
+			easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:156 */
+			zephyr,pm-device-runtime-auto;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:158 */
+			compatible = "nordic,nrf-twi";  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:219 */
+			status = "okay";                /* in chester/boards/hardwario/chester/chester_nrf52840.dts:220 */
+			clock-frequency = < 0x186a0 >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:221 */
+			pinctrl-0 = < &i2c0_default >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:222 */
+			pinctrl-1 = < &i2c0_sleep >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:223 */
+			pinctrl-names = "default",
+			                "sleep";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:224 */
+
+			/* node '/soc/i2c@40003000/ds2484@18' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:226 */
+			ds2484: ds2484@18 {
+				compatible = "maxim,ds2484";     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:227 */
+				#address-cells = < 0x1 >;        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:228 */
+				#size-cells = < 0x0 >;           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:229 */
+				reg = < 0x18 >;                  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:230 */
+				slpz-gpios = < &gpio1 0xa 0x1 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:231 */
+				active-pullup;                   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:232 */
+			};
+
+			/* node '/soc/i2c@40003000/lis2dh12@19' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:235 */
+			lis2dh12: lis2dh12@19 {
+				compatible = "st,lis2dh";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:236 */
+				reg = < 0x19 >;                  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:237 */
+				irq-gpios = < &gpio0 0x13 0x0 >,
+				            < &gpio0 0x11 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:238 */
+				disconnect-sdo-sa0-pull-up;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:240 */
+			};
+
+			/* node '/soc/i2c@40003000/m8@42' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:243 */
+			m8: m8@42 {
+				compatible = "u-blox,m8";           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:244 */
+				status = "disabled";                /* in chester/boards/hardwario/chester/chester_nrf52840.dts:245 */
+				reg = < 0x42 >;                     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:246 */
+				main-en-gpios = < &gpio1 0x1 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:247 */
+				bckp-en-gpios = < &gpio1 0x3 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:248 */
+			};
+
+			/* node '/soc/i2c@40003000/sht30@44' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:251 */
+			sht30: sht30@44 {
+				compatible = "sensirion,sht3xd"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:252 */
+				status = "disabled";             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:253 */
+				reg = < 0x44 >;                  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:254 */
+			};
+
+			/* node '/soc/i2c@40003000/tmp112@48' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:257 */
+			tmp112: tmp112@48 {
+				compatible = "ti,tmp112"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:258 */
+				reg = < 0x48 >;           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:259 */
+			};
+
+			/* node '/soc/i2c@40003000/tla2021@4b' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:262 */
+			tla2021: tla2021@4b {
+				compatible = "ti,tla2021";   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:263 */
+				reg = < 0x4b >;              /* in chester/boards/hardwario/chester/chester_nrf52840.dts:264 */
+				#address-cells = < 0x1 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:265 */
+				#size-cells = < 0x0 >;       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:266 */
+				#io-channel-cells = < 0x1 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:267 */
+				phandle = < 0x12 >;          /* in chester/boards/hardwario/chester/chester_nrf52840.dts:102 */
+
+				/* node '/soc/i2c@40003000/tla2021@4b/channel@0' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:269 */
+				channel@0 {
+					reg = < 0x0 >;                         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:270 */
+					zephyr,gain = "ADC_GAIN_1";            /* in chester/boards/hardwario/chester/chester_nrf52840.dts:271 */
+					zephyr,reference = "ADC_REF_INTERNAL"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:272 */
+					zephyr,acquisition-time = < 0x0 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:273 */
+					zephyr,input-positive = < 0x0 >;       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:274 */
+					zephyr,input-negative = < 0x1 >;       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:275 */
+					zephyr,resolution = < 0xc >;           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:276 */
+				};
+			};
+
+			/* node '/soc/i2c@40003000/ctr_s1@11' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:99 */
+			ctr_s1: ctr_s1@11 {
+				compatible = "hardwario,ctr-s1"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:100 */
+				status = "disabled";             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:101 */
+				reg = < 0x11 >;                  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:102 */
+				irq-gpios = < &gpio1 0x6 0x11 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:103 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x0_pcal6416a_a@20' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:106 */
+			ctr_x0_pcal6416a_a: ctr_x0_pcal6416a_a@20 {
+				compatible = "nxp,pcal6416a"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:107 */
+				status = "disabled";          /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:108 */
+				reg = < 0x20 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:109 */
+				gpio-controller;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:110 */
+				#gpio-cells = < 0x2 >;        /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:111 */
+				ngpios = < 0x10 >;            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:112 */
+				phandle = < 0x13 >;           /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:12 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x0_pcal6416a_b@21' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:115 */
+			ctr_x0_pcal6416a_b: ctr_x0_pcal6416a_b@21 {
+				compatible = "nxp,pcal6416a"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:116 */
+				status = "disabled";          /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:117 */
+				reg = < 0x21 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:118 */
+				gpio-controller;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:119 */
+				#gpio-cells = < 0x2 >;        /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:120 */
+				ngpios = < 0x10 >;            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:121 */
+				phandle = < 0x14 >;           /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:37 */
+			};
+
+			/* node '/soc/i2c@40003000/uart@50' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:124 */
+			ctr_x2_sc16is740_a: uart@50 {
+				compatible = "nxp,sc16is7xx";   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:125 */
+				status = "disabled";            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:126 */
+				reg = < 0x50 >;                 /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:127 */
+				clock-frequency = < 0xe10000 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:128 */
+				prescaler = < 0x1 >;            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:129 */
+				irq-gpios = < &gpio0 0x2 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:130 */
+			};
+
+			/* node '/soc/i2c@40003000/uart@51' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:133 */
+			ctr_x2_sc16is740_b: uart@51 {
+				compatible = "nxp,sc16is7xx";   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:134 */
+				status = "disabled";            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:135 */
+				reg = < 0x51 >;                 /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:136 */
+				clock-frequency = < 0xe10000 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:137 */
+				prescaler = < 0x1 >;            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:138 */
+				irq-gpios = < &gpio0 0x4 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:139 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x3_ads122c04_a1@46' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:142 */
+			ctr_x3_ads122c04_a1: ctr_x3_ads122c04_a1@46 {
+				compatible = "ti,ads122c04"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:143 */
+				status = "disabled";         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:144 */
+				reg = < 0x46 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:145 */
+				mux = < 0x3 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:146 */
+				#io-channel-cells = < 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:147 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x3_ads122c04_a2@47' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:150 */
+			ctr_x3_ads122c04_a2: ctr_x3_ads122c04_a2@47 {
+				compatible = "ti,ads122c04"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:151 */
+				status = "disabled";         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:152 */
+				reg = < 0x47 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:153 */
+				mux = < 0x3 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:154 */
+				#io-channel-cells = < 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:155 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x3_ads122c04_b1@4a' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:158 */
+			ctr_x3_ads122c04_b1: ctr_x3_ads122c04_b1@4a {
+				compatible = "ti,ads122c04"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:159 */
+				status = "disabled";         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:160 */
+				reg = < 0x4a >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:161 */
+				mux = < 0x3 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:162 */
+				#io-channel-cells = < 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:163 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x3_ads122c04b2@4f' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:166 */
+			ctr_x3_ads122c04_b2: ctr_x3_ads122c04b2@4f {
+				compatible = "ti,ads122c04"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:167 */
+				status = "disabled";         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:168 */
+				reg = < 0x4f >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:169 */
+				mux = < 0x3 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:170 */
+				#io-channel-cells = < 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:171 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x4_tla2021@49' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:174 */
+			ctr_x4_tla2021: ctr_x4_tla2021@49 {
+				compatible = "ti,tla2021";   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:175 */
+				status = "disabled";         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:176 */
+				reg = < 0x49 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:177 */
+				#io-channel-cells = < 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:178 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_x10_tla2024@49' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:181 */
+			ctr_x10_tla2024: ctr_x10_tla2024@49 {
+				compatible = "hardwario,tla2024"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:182 */
+				status = "disabled";              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:183 */
+				reg = < 0x49 >;                   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:184 */
+				#io-channel-cells = < 0x4 >;      /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:185 */
+			};
+
+			/* node '/soc/i2c@40003000/uart@54' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:188 */
+			ctr_x12_sc16is740_a: uart@54 {
+				compatible = "nxp,sc16is7xx";   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:189 */
+				status = "disabled";            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:190 */
+				reg = < 0x54 >;                 /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:191 */
+				clock-frequency = < 0xe10000 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:192 */
+				prescaler = < 0x1 >;            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:193 */
+				irq-gpios = < &gpio0 0x2 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:194 */
+			};
+
+			/* node '/soc/i2c@40003000/uart@55' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:197 */
+			ctr_x12_sc16is740_b: uart@55 {
+				compatible = "nxp,sc16is7xx";   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:198 */
+				status = "disabled";            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:199 */
+				reg = < 0x55 >;                 /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:200 */
+				clock-frequency = < 0xe10000 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:201 */
+				prescaler = < 0x1 >;            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:202 */
+				irq-gpios = < &gpio0 0x4 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:203 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_z@10' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:206 */
+			ctr_z: ctr_z@10 {
+				compatible = "hardwario,ctr-z";  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:207 */
+				status = "disabled";             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:208 */
+				reg = < 0x10 >;                  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:209 */
+				irq-gpios = < &gpio1 0x6 0x11 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:210 */
+			};
+
+			/* node '/soc/i2c@40003000/sht30_ext@45' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:213 */
+			sht30_ext: sht30_ext@45 {
+				compatible = "sensirion,sht3xd"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:214 */
+				status = "disabled";             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:215 */
+				reg = < 0x45 >;                  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:216 */
+			};
+
+			/* node '/soc/i2c@40003000/sps30_ext@69' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:219 */
+			sps30_ext: sps30_ext@69 {
+				compatible = "sensirion,sps30"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:220 */
+				status = "disabled";            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:221 */
+				reg = < 0x69 >;                 /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:222 */
+				deferred-init;                  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:223 */
+			};
+
+			/* node '/soc/i2c@40003000/ctr_barometer_tag@60' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:226 */
+			ctr_barometer_tag: ctr_barometer_tag@60 {
+				compatible = "nxp,mpl3115a2"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:227 */
+				status = "disabled";          /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:228 */
+				reg = < 0x60 >;               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:229 */
+			};
+		};
+
+		/* node '/soc/spi@40003000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:161 */
+		spi0: spi@40003000 {
+			compatible = "nordic,nrf-spim"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:169 */
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:170 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:171 */
+			reg = < 0x40003000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:172 */
+			interrupts = < 0x3 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:173 */
+			max-frequency = < 0x7a1200 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:174 */
+			easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:175 */
+			status = "disabled";            /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:234 */
+
+			/* node '/soc/spi@40003000/ctr_x13_mcp2518fd@0' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:236 */
+			ctr_x13_can: ctr_x13_mcp2518fd@0 {
+				compatible = "microchip,mcp251xfd"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:237 */
+				status = "disabled";                /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:238 */
+				reg = < 0x0 >;                      /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:239 */
+				osc-freq = < 0x1312d00 >;           /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:240 */
+				int-gpios = < &gpio1 0x6 0x1 >;     /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:241 */
+				spi-max-frequency = < 0x7a1200 >;   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:243 */
+				xstby-enable;                       /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:244 */
+			};
+
+			/* node '/soc/spi@40003000/w5500@0' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:247 */
+			ctr_x14_w5500: w5500@0 {
+				compatible = "wiznet,w5500";       /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:248 */
+				status = "disabled";               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:249 */
+				reg = < 0x0 >;                     /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:250 */
+				int-gpios = < &gpio1 0x6 0x1 >;    /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:251 */
+				spi-max-frequency = < 0x16e3600 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:252 */
+			};
+		};
+
+		/* node '/soc/i2c@40004000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:179 */
+		i2c1: i2c@40004000 {
+			compatible = "nordic,nrf-twim"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:187 */
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:188 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:189 */
+			reg = < 0x40004000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:190 */
+			interrupts = < 0x4 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:191 */
+			easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:192 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:193 */
+			zephyr,pm-device-runtime-auto;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:194 */
+		};
+
+		/* node '/soc/spi@40004000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:197 */
+		spi1: spi@40004000 {
+			compatible = "nordic,nrf-spim"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:205 */
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:206 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:207 */
+			reg = < 0x40004000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:208 */
+			interrupts = < 0x4 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:209 */
+			max-frequency = < 0x7a1200 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:210 */
+			easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:211 */
+			status = "okay";                /* in chester/boards/hardwario/chester/chester_nrf52840.dts:282 */
+			pinctrl-0 = < &spi1_default >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:283 */
+			pinctrl-1 = < &spi1_sleep >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:284 */
+			pinctrl-names = "default",
+			                "sleep";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:285 */
+			cs-gpios = < &gpio0 0x17 0x1 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:286 */
+
+			/* node '/soc/spi@40004000/at45db641e@0' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:288 */
+			spi_flash0: at45db641e@0 {
+				compatible = "hardwario,at45";    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:289 */
+				reg = < 0x0 >;                    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:290 */
+				spi-max-frequency = < 0xe4e1c0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:291 */
+				jedec-id = [ 1F 28 00 ];          /* in chester/boards/hardwario/chester/chester_nrf52840.dts:292 */
+				size = < 0x4000000 >;             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:293 */
+				sector-size = < 0x40000 >;        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:294 */
+				block-size = < 0x800 >;           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:295 */
+				page-size = < 0x100 >;            /* in chester/boards/hardwario/chester/chester_nrf52840.dts:296 */
+				use-udpd;                         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:297 */
+				enter-dpd-delay = < 0xbb8 >;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:298 */
+				exit-dpd-delay = < 0x186a0 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:299 */
+			};
+		};
+
+		/* node '/soc/nfct@40005000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:215 */
+		nfct: nfct@40005000 {
+			compatible = "nordic,nrf-nfct"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:216 */
+			reg = < 0x40005000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:217 */
+			interrupts = < 0x5 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:218 */
+			status = "disabled";            /* in chester/boards/hardwario/chester/chester_nrf52840.dts:342 */
+		};
+
+		/* node '/soc/gpiote@40006000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:222 */
+		gpiote: gpiote0: gpiote@40006000 {
+			compatible = "nordic,nrf-gpiote"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:223 */
+			reg = < 0x40006000 0x1000 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:224 */
+			interrupts = < 0x6 0x5 >;         /* in zephyr/dts/arm/nordic/nrf52840.dtsi:225 */
+			instance = < 0x0 >;               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:227 */
+			status = "okay";                  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:200 */
+			phandle = < 0xe >;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:564 */
+		};
+
+		/* node '/soc/adc@40007000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:230 */
+		adc: adc@40007000 {
+			compatible = "nordic,nrf-saadc"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:231 */
+			reg = < 0x40007000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:232 */
+			interrupts = < 0x7 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:233 */
+			#io-channel-cells = < 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:235 */
+			zephyr,pm-device-runtime-auto;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:236 */
+			status = "okay";                 /* in chester/boards/hardwario/chester/chester_nrf52840.dts:196 */
+		};
+
+		/* node '/soc/timer@40008000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:239 */
+		timer0: timer@40008000 {
+			compatible = "nordic,nrf-timer"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:240 */
+			status = "disabled";             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:241 */
+			reg = < 0x40008000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:242 */
+			cc-num = < 0x4 >;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:243 */
+			max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:244 */
+			interrupts = < 0x8 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:245 */
+			prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:246 */
+		};
+
+		/* node '/soc/timer@40009000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:249 */
+		timer1: timer@40009000 {
+			compatible = "nordic,nrf-timer"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:250 */
+			status = "disabled";             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:251 */
+			reg = < 0x40009000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:252 */
+			cc-num = < 0x4 >;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:253 */
+			max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:254 */
+			interrupts = < 0x9 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:255 */
+			prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:256 */
+			phandle = < 0xf >;               /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:42 */
+		};
+
+		/* node '/soc/timer@4000a000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:259 */
+		timer2: timer@4000a000 {
+			compatible = "nordic,nrf-timer"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:260 */
+			status = "disabled";             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:261 */
+			reg = < 0x4000a000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:262 */
+			cc-num = < 0x4 >;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:263 */
+			max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:264 */
+			interrupts = < 0xa 0x1 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:265 */
+			prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:266 */
+		};
+
+		/* node '/soc/rtc@4000b000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:269 */
+		rtc0: rtc@4000b000 {
+			compatible = "nordic,nrf-rtc"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:270 */
+			reg = < 0x4000b000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:271 */
+			cc-num = < 0x3 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:272 */
+			interrupts = < 0xb 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:273 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:274 */
+			clock-frequency = < 0x8000 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:275 */
+			prescaler = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:276 */
+		};
+
+		/* node '/soc/temp@4000c000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:279 */
+		temp: temp@4000c000 {
+			compatible = "nordic,nrf-temp"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:280 */
+			reg = < 0x4000c000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:281 */
+			interrupts = < 0xc 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:282 */
+			status = "okay";                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:283 */
+		};
+
+		/* node '/soc/random@4000d000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:286 */
+		rng: random@4000d000 {
+			compatible = "nordic,nrf-rng"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:287 */
+			reg = < 0x4000d000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:288 */
+			interrupts = < 0xd 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:289 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:290 */
+		};
+
+		/* node '/soc/ecb@4000e000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:293 */
+		ecb: ecb@4000e000 {
+			compatible = "nordic,nrf-ecb"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:294 */
+			reg = < 0x4000e000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:295 */
+			interrupts = < 0xe 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:296 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:297 */
+		};
+
+		/* node '/soc/ccm@4000f000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:300 */
+		ccm: ccm@4000f000 {
+			compatible = "nordic,nrf-ccm"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:301 */
+			reg = < 0x4000f000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:302 */
+			interrupts = < 0xf 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:303 */
+			length-field-length-8-bits;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:304 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:305 */
+		};
+
+		/* node '/soc/watchdog@40010000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:308 */
+		wdt: wdt0: watchdog@40010000 {
+			compatible = "nordic,nrf-wdt"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:309 */
+			reg = < 0x40010000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:310 */
+			interrupts = < 0x10 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:311 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:312 */
+		};
+
+		/* node '/soc/rtc@40011000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:315 */
+		rtc1: rtc@40011000 {
+			compatible = "nordic,nrf-rtc"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:316 */
+			reg = < 0x40011000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:317 */
+			cc-num = < 0x4 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:318 */
+			interrupts = < 0x11 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:319 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:320 */
+			clock-frequency = < 0x8000 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:321 */
+			prescaler = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:322 */
+		};
+
+		/* node '/soc/qdec@40012000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:325 */
+		qdec: qdec0: qdec@40012000 {
+			compatible = "nordic,nrf-qdec"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:326 */
+			reg = < 0x40012000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:327 */
+			interrupts = < 0x12 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:328 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:329 */
+		};
+
+		/* node '/soc/comparator@40013000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:332 */
+		comp: comparator@40013000 {
+			compatible = "nordic,nrf-comp"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:337 */
+			reg = < 0x40013000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:338 */
+			interrupts = < 0x13 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:339 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:340 */
+		};
+
+		/* node '/soc/egu@40014000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:343 */
+		egu0: swi0: egu@40014000 {
+			compatible = "nordic,nrf-egu",
+			             "nordic,nrf-swi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:344 */
+			reg = < 0x40014000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:345 */
+			interrupts = < 0x14 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:346 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:347 */
+		};
+
+		/* node '/soc/egu@40015000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:350 */
+		egu1: swi1: egu@40015000 {
+			compatible = "nordic,nrf-egu",
+			             "nordic,nrf-swi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:351 */
+			reg = < 0x40015000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:352 */
+			interrupts = < 0x15 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:353 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:354 */
+		};
+
+		/* node '/soc/egu@40016000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:357 */
+		egu2: swi2: egu@40016000 {
+			compatible = "nordic,nrf-egu",
+			             "nordic,nrf-swi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:358 */
+			reg = < 0x40016000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:359 */
+			interrupts = < 0x16 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:360 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:361 */
+		};
+
+		/* node '/soc/egu@40017000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:364 */
+		egu3: swi3: egu@40017000 {
+			compatible = "nordic,nrf-egu",
+			             "nordic,nrf-swi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:365 */
+			reg = < 0x40017000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:366 */
+			interrupts = < 0x17 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:367 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:368 */
+		};
+
+		/* node '/soc/egu@40018000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:371 */
+		egu4: swi4: egu@40018000 {
+			compatible = "nordic,nrf-egu",
+			             "nordic,nrf-swi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:372 */
+			reg = < 0x40018000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:373 */
+			interrupts = < 0x18 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:374 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:375 */
+		};
+
+		/* node '/soc/egu@40019000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:378 */
+		egu5: swi5: egu@40019000 {
+			compatible = "nordic,nrf-egu",
+			             "nordic,nrf-swi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:379 */
+			reg = < 0x40019000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:380 */
+			interrupts = < 0x19 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:381 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:382 */
+		};
+
+		/* node '/soc/timer@4001a000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:385 */
+		timer3: timer@4001a000 {
+			compatible = "nordic,nrf-timer"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:386 */
+			status = "disabled";             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:387 */
+			reg = < 0x4001a000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:388 */
+			cc-num = < 0x6 >;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:389 */
+			max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:390 */
+			interrupts = < 0x1a 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:391 */
+			prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:392 */
+		};
+
+		/* node '/soc/timer@4001b000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:395 */
+		timer4: timer@4001b000 {
+			compatible = "nordic,nrf-timer"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:396 */
+			status = "disabled";             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:397 */
+			reg = < 0x4001b000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:398 */
+			cc-num = < 0x6 >;                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:399 */
+			max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:400 */
+			interrupts = < 0x1b 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:401 */
+			prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:402 */
+		};
+
+		/* node '/soc/pwm@4001c000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:405 */
+		pwm0: pwm@4001c000 {
+			compatible = "nordic,nrf-pwm"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:406 */
+			reg = < 0x4001c000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:407 */
+			interrupts = < 0x1c 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:408 */
+			#pwm-cells = < 0x3 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:410 */
+			pinctrl-0 = < &pwm0_default >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:212 */
+			pinctrl-1 = < &pwm0_sleep >;   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:213 */
+			pinctrl-names = "default",
+			                "sleep";       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:214 */
+			status = "okay";               /* in chester/boards/hardwario/chester/chester_nrf52840.dts:215 */
+			phandle = < 0x11 >;            /* in chester/boards/hardwario/chester/chester_nrf52840.dts:83 */
+		};
+
+		/* node '/soc/pdm@4001d000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:413 */
+		pdm0: pdm@4001d000 {
+			compatible = "nordic,nrf-pdm"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:414 */
+			reg = < 0x4001d000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:415 */
+			interrupts = < 0x1d 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:416 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:417 */
+		};
+
+		/* node '/soc/acl@4001e000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:420 */
+		acl: acl@4001e000 {
+			compatible = "nordic,nrf-acl"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:421 */
+			reg = < 0x4001e000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:422 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:423 */
+		};
+
+		/* node '/soc/flash-controller@4001e000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:426 */
+		flash_controller: flash-controller@4001e000 {
+			compatible = "nordic,nrf52-flash-controller"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:427 */
+			reg = < 0x4001e000 0x1000 >;                  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:428 */
+			partial-erase;                                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:429 */
+			#address-cells = < 0x1 >;                     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:431 */
+			#size-cells = < 0x1 >;                        /* in zephyr/dts/arm/nordic/nrf52840.dtsi:432 */
+
+			/* node '/soc/flash-controller@4001e000/flash@0' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:434 */
+			flash0: flash@0 {
+				compatible = "soc-nv-flash";   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:435 */
+				erase-block-size = < 0x1000 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:436 */
+				write-block-size = < 0x4 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:437 */
+				reg = < 0x0 0x100000 >;        /* in zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi:11 */
+
+				/* node '/soc/flash-controller@4001e000/flash@0/partitions' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:346 */
+				partitions {
+					compatible = "fixed-partitions"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:347 */
+					#address-cells = < 0x1 >;        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:348 */
+					#size-cells = < 0x1 >;           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:349 */
+
+					/* node '/soc/flash-controller@4001e000/flash@0/partitions/partition@0' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:351 */
+					boot_partition: partition@0 {
+						label = "mcuboot";    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:352 */
+						reg = < 0x0 0xc000 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:353 */
+						read-only;            /* in chester/boards/hardwario/chester/chester_nrf52840.dts:354 */
+					};
+
+					/* node '/soc/flash-controller@4001e000/flash@0/partitions/partition@c000' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:357 */
+					slot0_partition: partition@c000 {
+						label = "image-0";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:358 */
+						reg = < 0xc000 0x76000 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:359 */
+					};
+
+					/* node '/soc/flash-controller@4001e000/flash@0/partitions/partition@82000' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:362 */
+					slot1_partition: partition@82000 {
+						label = "image-1";         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:363 */
+						reg = < 0x82000 0x76000 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:364 */
+					};
+
+					/* node '/soc/flash-controller@4001e000/flash@0/partitions/partition@f8000' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:367 */
+					storage_partition: partition@f8000 {
+						label = "storage";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:368 */
+						reg = < 0xf8000 0x8000 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:369 */
+					};
+				};
+			};
+		};
+
+		/* node '/soc/ppi@4001f000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:441 */
+		ppi: ppi@4001f000 {
+			compatible = "nordic,nrf-ppi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:442 */
+			reg = < 0x4001f000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:443 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:444 */
+		};
+
+		/* node '/soc/mwu@40020000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:447 */
+		mwu: mwu@40020000 {
+			compatible = "nordic,nrf-mwu"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:448 */
+			reg = < 0x40020000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:449 */
+			status = "okay";               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:450 */
+		};
+
+		/* node '/soc/pwm@40021000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:453 */
+		pwm1: pwm@40021000 {
+			compatible = "nordic,nrf-pwm"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:454 */
+			reg = < 0x40021000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:455 */
+			interrupts = < 0x21 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:456 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:457 */
+			#pwm-cells = < 0x3 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:458 */
+		};
+
+		/* node '/soc/pwm@40022000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:461 */
+		pwm2: pwm@40022000 {
+			compatible = "nordic,nrf-pwm"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:462 */
+			reg = < 0x40022000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:463 */
+			interrupts = < 0x22 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:464 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:465 */
+			#pwm-cells = < 0x3 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:466 */
+		};
+
+		/* node '/soc/spi@40023000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:469 */
+		spi2: spi@40023000 {
+			compatible = "nordic,nrf-spim"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:477 */
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:478 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:479 */
+			reg = < 0x40023000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:480 */
+			interrupts = < 0x23 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:481 */
+			max-frequency = < 0x7a1200 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:482 */
+			easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:483 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:484 */
+		};
+
+		/* node '/soc/rtc@40024000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:487 */
+		rtc2: rtc@40024000 {
+			compatible = "nordic,nrf-rtc"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:488 */
+			reg = < 0x40024000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:489 */
+			cc-num = < 0x4 >;              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:490 */
+			interrupts = < 0x24 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:491 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:492 */
+			clock-frequency = < 0x8000 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:493 */
+			prescaler = < 0x1 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:494 */
+		};
+
+		/* node '/soc/i2s@40025000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:497 */
+		i2s0: i2s@40025000 {
+			compatible = "nordic,nrf-i2s"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:498 */
+			#address-cells = < 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:499 */
+			#size-cells = < 0x0 >;         /* in zephyr/dts/arm/nordic/nrf52840.dtsi:500 */
+			reg = < 0x40025000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:501 */
+			interrupts = < 0x25 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:502 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:503 */
+		};
+
+		/* node '/soc/usbd@40027000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:506 */
+		usbd: usbd@40027000 {
+			compatible = "nordic,nrf-usbd"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:507 */
+			reg = < 0x40027000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:508 */
+			interrupts = < 0x27 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:509 */
+			num-bidir-endpoints = < 0x1 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:510 */
+			num-in-endpoints = < 0x7 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:511 */
+			num-out-endpoints = < 0x7 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:512 */
+			num-isoin-endpoints = < 0x1 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:513 */
+			num-isoout-endpoints = < 0x1 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:514 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:515 */
+		};
+
+		/* node '/soc/uart@40028000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:518 */
+		uart1: uart@40028000 {
+			reg = < 0x40028000 0x1000 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:520 */
+			interrupts = < 0x28 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:521 */
+			status = "disabled";             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:320 */
+			compatible = "nordic,nrf-uarte"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:321 */
+			current-speed = < 0x4b00 >;      /* in chester/boards/hardwario/chester/chester_nrf52840.dts:322 */
+			pinctrl-0 = < &uart1_default >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:323 */
+			pinctrl-1 = < &uart1_sleep >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:324 */
+			pinctrl-names = "default",
+			                "sleep";         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:325 */
+
+			/* node '/soc/uart@40028000/ctr_lrw_if' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:327 */
+			ctr_lrw_if: ctr_lrw_if {
+				compatible = "hardwario,ctr-lrw-if"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:328 */
+				status = "disabled";                 /* in chester/boards/hardwario/chester/chester_nrf52840.dts:329 */
+				reset-gpios = < &gpio0 0xb 0x7 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:330 */
+			};
+		};
+
+		/* node '/soc/qspi@40029000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:525 */
+		qspi: qspi@40029000 {
+			compatible = "nordic,nrf-qspi"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:526 */
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:527 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:528 */
+			reg = < 0x40029000 0x1000 >,
+			      < 0x12000000 0x8000000 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:529 */
+			reg-names = "qspi",
+			            "qspi_mm";          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:530 */
+			interrupts = < 0x29 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:531 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:532 */
+		};
+
+		/* node '/soc/pwm@4002d000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:535 */
+		pwm3: pwm@4002d000 {
+			compatible = "nordic,nrf-pwm"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:536 */
+			reg = < 0x4002d000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:537 */
+			interrupts = < 0x2d 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:538 */
+			status = "disabled";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:539 */
+			#pwm-cells = < 0x3 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:540 */
+		};
+
+		/* node '/soc/spi@4002f000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:543 */
+		spi3: spi@4002f000 {
+			compatible = "nordic,nrf-spim"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:544 */
+			#address-cells = < 0x1 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:545 */
+			#size-cells = < 0x0 >;          /* in zephyr/dts/arm/nordic/nrf52840.dtsi:546 */
+			reg = < 0x4002f000 0x1000 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:547 */
+			interrupts = < 0x2f 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:548 */
+			max-frequency = < 0x1e84800 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:549 */
+			easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:550 */
+			rx-delay-supported;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:551 */
+			rx-delay = < 0x2 >;             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:552 */
+			status = "disabled";            /* in zephyr/dts/arm/nordic/nrf52840.dtsi:553 */
+		};
+
+		/* node '/soc/gpio@50000000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:556 */
+		gpio0: gpio@50000000 {
+			compatible = "nordic,nrf-gpio";              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:557 */
+			gpio-controller;                             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:558 */
+			reg = < 0x50000000 0x200 0x50000500 0x300 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:559 */
+			#gpio-cells = < 0x2 >;                       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:561 */
+			port = < 0x0 >;                              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:563 */
+			gpiote-instance = < &gpiote >;               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:564 */
+			status = "okay";                             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:204 */
+			phandle = < 0x5 >;                           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:315 */
+		};
+
+		/* node '/soc/gpio@50000300' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:567 */
+		gpio1: gpio@50000300 {
+			compatible = "nordic,nrf-gpio";              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:568 */
+			gpio-controller;                             /* in zephyr/dts/arm/nordic/nrf52840.dtsi:569 */
+			reg = < 0x50000300 0x200 0x50000800 0x300 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:570 */
+			#gpio-cells = < 0x2 >;                       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:572 */
+			ngpios = < 0x10 >;                           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:573 */
+			port = < 0x1 >;                              /* in zephyr/dts/arm/nordic/nrf52840.dtsi:575 */
+			gpiote-instance = < &gpiote >;               /* in zephyr/dts/arm/nordic/nrf52840.dtsi:576 */
+			status = "okay";                             /* in chester/boards/hardwario/chester/chester_nrf52840.dts:208 */
+			phandle = < 0x4 >;                           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:314 */
+		};
+
+		/* node '/soc/crypto@5002a000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:579 */
+		cryptocell: crypto@5002a000 {
+			compatible = "arm,cryptocell-310"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:580 */
+			reg = < 0x5002a000 0x1000 >,
+			      < 0x5002b000 0x1000 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:581 */
+			reg-names = "wrapper",
+			            "core";                /* in zephyr/dts/arm/nordic/nrf52840.dtsi:582 */
+			interrupts = < 0x2a 0x1 >;         /* in zephyr/dts/arm/nordic/nrf52840.dtsi:583 */
+			status = "okay";                   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:584 */
+		};
+	};
+
+	/* node '/pin-controller' defined in zephyr/dts/vendor/nordic/nrf_common.dtsi:26 */
+	pinctrl: pin-controller {
+		compatible = "nordic,nrf-pinctrl"; /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:31 */
+
+		/* node '/pin-controller/i2c0_default' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:8 */
+		i2c0_default: i2c0_default {
+			phandle = < 0x6 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:222 */
+
+			/* node '/pin-controller/i2c0_default/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:9 */
+			group1 {
+				psels = < 0xc000015 >,
+				        < 0xb000014 >;       /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:10 */
+				nordic,drive-mode = < 0x7 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:12 */
+			};
+		};
+
+		/* node '/pin-controller/i2c0_sleep' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:16 */
+		i2c0_sleep: i2c0_sleep {
+			phandle = < 0x7 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:223 */
+
+			/* node '/pin-controller/i2c0_sleep/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:17 */
+			group1 {
+				psels = < 0xc000015 >,
+				        < 0xb000014 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:18 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:20 */
+			};
+		};
+
+		/* node '/pin-controller/spi1_default' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:24 */
+		spi1_default: spi1_default {
+			phandle = < 0x8 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:283 */
+
+			/* node '/pin-controller/spi1_default/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:25 */
+			group1 {
+				psels = < 0x4000016 >,
+				        < 0x5000020 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:26 */
+			};
+
+			/* node '/pin-controller/spi1_default/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:29 */
+			group2 {
+				psels = < 0x6000018 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:30 */
+				bias-pull-down;        /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:31 */
+			};
+		};
+
+		/* node '/pin-controller/spi1_sleep' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:35 */
+		spi1_sleep: spi1_sleep {
+			phandle = < 0x9 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:284 */
+
+			/* node '/pin-controller/spi1_sleep/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:36 */
+			group1 {
+				psels = < 0x4000016 >,
+				        < 0x5000020 >,
+				        < 0x6000018 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:37 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:40 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x13_default_a' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:44 */
+		spi0_x13_default_a: spi0_x13_default_a {
+
+			/* node '/pin-controller/spi0_x13_default_a/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:45 */
+			group1 {
+				psels = < 0x4000003 >,
+				        < 0x500001d >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:46 */
+			};
+
+			/* node '/pin-controller/spi0_x13_default_a/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:49 */
+			group2 {
+				psels = < 0x6000002 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:50 */
+				bias-pull-down;        /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:51 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x14_default_a' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:55 */
+		spi0_x14_default_a: spi0_x14_default_a {
+
+			/* node '/pin-controller/spi0_x14_default_a/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:56 */
+			group1 {
+				psels = < 0x4000002 >,
+				        < 0x500001d >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:57 */
+			};
+
+			/* node '/pin-controller/spi0_x14_default_a/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:60 */
+			group2 {
+				psels = < 0x6000003 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:61 */
+				bias-pull-down;        /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:62 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x13_sleep_a' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:66 */
+		spi0_x13_sleep_a: spi0_x13_sleep_a {
+
+			/* node '/pin-controller/spi0_x13_sleep_a/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:67 */
+			group1 {
+				psels = < 0x4000003 >,
+				        < 0x500001d >,
+				        < 0x6000002 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:68 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:71 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x14_sleep_a' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:75 */
+		spi0_x14_sleep_a: spi0_x14_sleep_a {
+
+			/* node '/pin-controller/spi0_x14_sleep_a/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:76 */
+			group1 {
+				psels = < 0x4000002 >,
+				        < 0x500001d >,
+				        < 0x6000003 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:77 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:80 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x13_default_b' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:84 */
+		spi0_x13_default_b: spi0_x13_default_b {
+
+			/* node '/pin-controller/spi0_x13_default_b/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:85 */
+			group1 {
+				psels = < 0x400001c >,
+				        < 0x500001e >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:86 */
+			};
+
+			/* node '/pin-controller/spi0_x13_default_b/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:89 */
+			group2 {
+				psels = < 0x6000004 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:90 */
+				bias-pull-down;        /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:91 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x14_default_b' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:95 */
+		spi0_x14_default_b: spi0_x14_default_b {
+
+			/* node '/pin-controller/spi0_x14_default_b/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:96 */
+			group1 {
+				psels = < 0x4000004 >,
+				        < 0x500001e >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:97 */
+			};
+
+			/* node '/pin-controller/spi0_x14_default_b/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:100 */
+			group2 {
+				psels = < 0x600001c >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:101 */
+				bias-pull-down;        /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:102 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x13_sleep_b' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:106 */
+		spi0_x13_sleep_b: spi0_x13_sleep_b {
+
+			/* node '/pin-controller/spi0_x13_sleep_b/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:107 */
+			group1 {
+				psels = < 0x400001c >,
+				        < 0x500001e >,
+				        < 0x6000004 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:108 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:111 */
+			};
+		};
+
+		/* node '/pin-controller/spi0_x14_sleep_b' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:115 */
+		spi0_x14_sleep_b: spi0_x14_sleep_b {
+
+			/* node '/pin-controller/spi0_x14_sleep_b/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:116 */
+			group1 {
+				psels = < 0x4000004 >,
+				        < 0x500001e >,
+				        < 0x600001c >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:117 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:120 */
+			};
+		};
+
+		/* node '/pin-controller/uart0_default' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:124 */
+		uart0_default: uart0_default {
+			phandle = < 0x2 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:307 */
+
+			/* node '/pin-controller/uart0_default/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:125 */
+			group1 {
+				psels = < 0xd >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:126 */
+			};
+
+			/* node '/pin-controller/uart0_default/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:128 */
+			group2 {
+				psels = < 0x100000e >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:129 */
+				bias-pull-up;          /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:130 */
+			};
+		};
+
+		/* node '/pin-controller/uart0_sleep' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:134 */
+		uart0_sleep: uart0_sleep {
+			phandle = < 0x3 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:308 */
+
+			/* node '/pin-controller/uart0_sleep/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:135 */
+			group1 {
+				psels = < 0xd >,
+				        < 0x100000e >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:136 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:138 */
+			};
+		};
+
+		/* node '/pin-controller/uart1_default' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:142 */
+		uart1_default: uart1_default {
+			phandle = < 0xc >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:323 */
+
+			/* node '/pin-controller/uart1_default/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:143 */
+			group1 {
+				psels = < 0x7 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:144 */
+			};
+
+			/* node '/pin-controller/uart1_default/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:146 */
+			group2 {
+				psels = < 0x1000008 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:147 */
+				bias-pull-up;          /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:148 */
+			};
+		};
+
+		/* node '/pin-controller/uart1_sleep' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:152 */
+		uart1_sleep: uart1_sleep {
+			phandle = < 0xd >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:324 */
+
+			/* node '/pin-controller/uart1_sleep/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:153 */
+			group1 {
+				psels = < 0x7 >,
+				        < 0x1000008 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:154 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:156 */
+			};
+		};
+
+		/* node '/pin-controller/uart_debug_default' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:164 */
+		uart_debug_default: uart_debug_default {
+
+			/* node '/pin-controller/uart_debug_default/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:165 */
+			group1 {
+				psels = < 0xc >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:166 */
+			};
+
+			/* node '/pin-controller/uart_debug_default/group2' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:168 */
+			group2 {
+				psels = < 0x100001a >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:169 */
+				bias-pull-up;          /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:170 */
+			};
+		};
+
+		/* node '/pin-controller/uart_debug_sleep' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:178 */
+		uart_debug_sleep: uart_debug_sleep {
+
+			/* node '/pin-controller/uart_debug_sleep/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:179 */
+			group1 {
+				psels = < 0xc >,
+				        < 0x100001a >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:180 */
+				low-power-enable;      /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:182 */
+			};
+		};
+
+		/* node '/pin-controller/pwm0_default' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:186 */
+		pwm0_default: pwm0_default {
+			phandle = < 0xa >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:212 */
+
+			/* node '/pin-controller/pwm0_default/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:187 */
+			group1 {
+				psels = < 0x1600002b >,
+				        < 0x1700002c >,
+				        < 0x1800002d >,
+				        < 0x19000024 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:188 */
+			};
+		};
+
+		/* node '/pin-controller/pwm0_sleep' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:195 */
+		pwm0_sleep: pwm0_sleep {
+			phandle = < 0xb >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:213 */
+
+			/* node '/pin-controller/pwm0_sleep/group1' defined in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:196 */
+			group1 {
+				psels = < 0x1600002b >,
+				        < 0x1700002c >,
+				        < 0x1800002d >,
+				        < 0x19000024 >; /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:197 */
+				low-power-enable;       /* in chester/boards/hardwario/chester/chester_nrf52840-pinctrl.dtsi:201 */
+			};
+		};
+	};
+
+	/* node '/entropy_bt_hci' defined in zephyr/dts/vendor/nordic/nrf_common.dtsi:34 */
+	rng_hci: entropy_bt_hci {
+		compatible = "zephyr,bt-hci-entropy"; /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:35 */
+		status = "disabled";                  /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:36 */
+	};
+
+	/* node '/sw-pwm' defined in zephyr/dts/vendor/nordic/nrf_common.dtsi:39 */
+	sw_pwm: sw-pwm {
+		compatible = "nordic,nrf-sw-pwm"; /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:40 */
+		status = "disabled";              /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:41 */
+		generator = < &timer1 >;          /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:42 */
+		clock-prescaler = < 0x0 >;        /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:43 */
+		#pwm-cells = < 0x3 >;             /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:44 */
+	};
+
+	/* node '/cpus' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:19 */
+	cpus {
+		#address-cells = < 0x1 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:20 */
+		#size-cells = < 0x0 >;    /* in zephyr/dts/arm/nordic/nrf52840.dtsi:21 */
+
+		/* node '/cpus/cpu@0' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:23 */
+		cpu@0 {
+			device_type = "cpu";           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:24 */
+			compatible = "arm,cortex-m4f"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:25 */
+			reg = < 0x0 >;                 /* in zephyr/dts/arm/nordic/nrf52840.dtsi:26 */
+			#address-cells = < 0x1 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:27 */
+			#size-cells = < 0x1 >;         /* in zephyr/dts/arm/nordic/nrf52840.dtsi:28 */
+
+			/* node '/cpus/cpu@0/itm@e0000000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:30 */
+			itm: itm@e0000000 {
+				compatible = "arm,armv7m-itm";     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:31 */
+				reg = < 0xe0000000 0x1000 >;       /* in zephyr/dts/arm/nordic/nrf52840.dtsi:32 */
+				swo-ref-frequency = < 0x1e84800 >; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:33 */
+			};
+		};
+	};
+
+	/* node '/clocks' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:38 */
+	clocks {
+
+		/* node '/clocks/hfxo' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:39 */
+		hfxo: hfxo {
+			compatible = "nordic,nrf52-hfxo"; /* in zephyr/dts/arm/nordic/nrf52840.dtsi:40 */
+			clock-frequency = < 0x3d09000 >;  /* in zephyr/dts/arm/nordic/nrf52840.dtsi:41 */
+			startup-time-us = < 0x578 >;      /* in zephyr/dts/arm/nordic/nrf52840.dtsi:42 */
+			#clock-cells = < 0x0 >;           /* in zephyr/dts/arm/nordic/nrf52840.dtsi:43 */
+		};
+	};
+
+	/* node '/zephyr,user' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:18 */
+	zephyr,user {
+		ctr_leds = < &gpio_leds >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:19 */
+	};
+
+	/* node '/gpio_keys' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:32 */
+	gpio_keys: gpio_keys {
+		compatible = "gpio-keys"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:33 */
+
+		/* node '/gpio_keys/btn_int' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:35 */
+		btn_int: btn_int {
+			gpios = < &gpio0 0x1b 0x11 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:36 */
+			zephyr,code = < 0xb >;        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:37 */
+		};
+
+		/* node '/gpio_keys/btn_ext' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:40 */
+		btn_ext: btn_ext {
+			gpios = < &gpio0 0x1a 0x11 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:41 */
+			zephyr,code = < 0x2 >;        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:42 */
+			status = "disabled";          /* in chester/boards/hardwario/chester/chester_nrf52840.dts:43 */
+		};
+
+		/* node '/gpio_keys/tamper_key' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:46 */
+		tamper_key: tamper_key {
+			gpios = < &gpio0 0xc 0x11 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:47 */
+			zephyr,code = < 0x3 >;       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:48 */
+			status = "disabled";         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:49 */
+		};
+	};
+
+	/* node '/gpio_leds' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:53 */
+	gpio_leds: gpio_leds {
+		compatible = "gpio-leds"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:54 */
+		phandle = < 0x10 >;       /* in chester/boards/hardwario/chester/chester_nrf52840.dts:19 */
+
+		/* node '/gpio_leds/led_r' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:56 */
+		led_r: led_r {
+			gpios = < &gpio1 0xd 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:57 */
+		};
+
+		/* node '/gpio_leds/led_g' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:60 */
+		led_g: led_g {
+			gpios = < &gpio1 0xb 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:61 */
+		};
+
+		/* node '/gpio_leds/led_y' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:64 */
+		led_y: led_y {
+			gpios = < &gpio1 0xc 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:65 */
+		};
+
+		/* node '/gpio_leds/led_ext' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:68 */
+		led_ext: led_ext {
+			gpios = < &gpio1 0x4 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:69 */
+			status = "disabled";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:70 */
+		};
+
+		/* node '/gpio_leds/led_load' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:73 */
+		led_load: led_load {
+			gpios = < &gpio1 0x5 0x2 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:74 */
+			status = "disabled";        /* in chester/boards/hardwario/chester/chester_nrf52840.dts:75 */
+		};
+	};
+
+	/* node '/pwm_leds' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:79 */
+	pwm_leds: pwm_leds {
+		compatible = "pwm-leds"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:80 */
+
+		/* node '/pwm_leds/pwm_led_r' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:82 */
+		pwm_led_r: pwm_led_r {
+			pwms = < &pwm0 0x2 0x1312d00 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:83 */
+		};
+
+		/* node '/pwm_leds/pwm_led_g' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:86 */
+		pwm_led_g: pwm_led_g {
+			pwms = < &pwm0 0x0 0x1312d00 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:87 */
+		};
+
+		/* node '/pwm_leds/pwm_led_y' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:90 */
+		pwm_led_y: pwm_led_y {
+			pwms = < &pwm0 0x1 0x1312d00 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:91 */
+		};
+
+		/* node '/pwm_leds/pwm_led_ext' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:94 */
+		pwm_led_ext: pwm_led_ext {
+			pwms = < &pwm0 0x3 0x1312d00 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:95 */
+			status = "disabled";                /* in chester/boards/hardwario/chester/chester_nrf52840.dts:96 */
+		};
+	};
+
+	/* node '/vbatt' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:100 */
+	vbatt {
+		compatible = "voltage-divider";   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:101 */
+		io-channels = < &tla2021 0x0 >;   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:102 */
+		output-ohms = < 0x1388 >;         /* in chester/boards/hardwario/chester/chester_nrf52840.dts:103 */
+		full-ohms = < 0x3a98 >;           /* in chester/boards/hardwario/chester/chester_nrf52840.dts:104 */
+		power-gpios = < &gpio1 0xf 0x0 >,
+		              < &gpio1 0xe 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:109 */
+	};
+
+	/* node '/ctr_rfmux_interface' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:113 */
+	ctr_rfmux_interface: ctr_rfmux_interface {
+		compatible = "skyworks,sky13335";  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:114 */
+		vctl1-gpios = < &gpio1 0x2 0x0 >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:119 */
+		vctl2-gpios = < &gpio0 0x19 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:124 */
+	};
+
+	/* node '/ctr_rfmux_antenna' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:127 */
+	ctr_rfmux_antenna: ctr_rfmux_antenna {
+		compatible = "skyworks,sky13335"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:128 */
+		vctl1-gpios = < &gpio0 0xa 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:133 */
+		vctl2-gpios = < &gpio0 0x9 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:138 */
+	};
+
+	/* node '/ctr_gpio' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:141 */
+	ctr_gpio: ctr_gpio {
+		compatible = "hardwario,ctr-gpio"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:142 */
+		a0-gpios = < &gpio0 0x3 0x0 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:143 */
+		a1-gpios = < &gpio0 0x1d 0x0 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:144 */
+		a2-gpios = < &gpio0 0x2 0x0 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:145 */
+		a3-gpios = < &gpio0 0x1f 0x0 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:146 */
+		b0-gpios = < &gpio0 0x1c 0x0 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:147 */
+		b1-gpios = < &gpio0 0x1e 0x0 >;    /* in chester/boards/hardwario/chester/chester_nrf52840.dts:148 */
+		b2-gpios = < &gpio0 0x4 0x0 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:149 */
+		b3-gpios = < &gpio0 0x5 0x0 >;     /* in chester/boards/hardwario/chester/chester_nrf52840.dts:150 */
+	};
+
+	/* node '/ctr_batt' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:153 */
+	ctr_batt: ctr_batt {
+		compatible = "hardwario,ctr-batt"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:154 */
+		load-gpios = < &gpio1 0xe 0x0 >;   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:155 */
+		test-gpios = < &gpio1 0xf 0x0 >;   /* in chester/boards/hardwario/chester/chester_nrf52840.dts:156 */
+		load-resistor = < 0x64 >;          /* in chester/boards/hardwario/chester/chester_nrf52840.dts:157 */
+		divider-r1 = < 0xa >;              /* in chester/boards/hardwario/chester/chester_nrf52840.dts:158 */
+		divider-r2 = < 0x5 >;              /* in chester/boards/hardwario/chester/chester_nrf52840.dts:159 */
+	};
+
+	/* node '/ctr_rfmux' defined in chester/boards/hardwario/chester/chester_nrf52840.dts:162 */
+	ctr_rfmux: ctr_rfmux {
+		compatible = "hardwario,ctr-rfmux"; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:163 */
+		rf-lte-gpios = < &gpio0 0x19 0x0 >; /* in chester/boards/hardwario/chester/chester_nrf52840.dts:164 */
+		rf-lrw-gpios = < &gpio1 0x2 0x0 >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:165 */
+		rf-int-gpios = < &gpio0 0x9 0x0 >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:166 */
+		rf-ext-gpios = < &gpio0 0xa 0x0 >;  /* in chester/boards/hardwario/chester/chester_nrf52840.dts:167 */
+	};
+
+	/* node '/ctr_x0_a' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:8 */
+	ctr_x0_a: ctr_x0_a {
+		compatible = "hardwario,ctr-x0";             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:9 */
+		status = "disabled";                         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:10 */
+		ch1-gpios = < &gpio0 0x3 0x0 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:11 */
+		on1-gpios = < &ctr_x0_pcal6416a_a 0xb 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:12 */
+		pu1-gpios = < &ctr_x0_pcal6416a_a 0xd 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:13 */
+		pd1-gpios = < &ctr_x0_pcal6416a_a 0xf 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:14 */
+		cl1-gpios = < &ctr_x0_pcal6416a_a 0xe 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:15 */
+		ch2-gpios = < &gpio0 0x1d 0x0 >;             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:16 */
+		on2-gpios = < &ctr_x0_pcal6416a_a 0xa 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:17 */
+		pu2-gpios = < &ctr_x0_pcal6416a_a 0x8 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:18 */
+		pd2-gpios = < &ctr_x0_pcal6416a_a 0xc 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:19 */
+		cl2-gpios = < &ctr_x0_pcal6416a_a 0x9 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:20 */
+		ch3-gpios = < &gpio0 0x2 0x0 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:21 */
+		on3-gpios = < &ctr_x0_pcal6416a_a 0x3 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:22 */
+		pu3-gpios = < &ctr_x0_pcal6416a_a 0x5 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:23 */
+		pd3-gpios = < &ctr_x0_pcal6416a_a 0x7 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:24 */
+		cl3-gpios = < &ctr_x0_pcal6416a_a 0x6 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:25 */
+		ch4-gpios = < &gpio0 0x1f 0x0 >;             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:26 */
+		on4-gpios = < &ctr_x0_pcal6416a_a 0x0 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:27 */
+		pu4-gpios = < &ctr_x0_pcal6416a_a 0x2 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:28 */
+		pd4-gpios = < &ctr_x0_pcal6416a_a 0x4 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:29 */
+		cl4-gpios = < &ctr_x0_pcal6416a_a 0x1 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:30 */
+	};
+
+	/* node '/ctr_x0_b' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:33 */
+	ctr_x0_b: ctr_x0_b {
+		compatible = "hardwario,ctr-x0";             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:34 */
+		status = "disabled";                         /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:35 */
+		ch1-gpios = < &gpio0 0x1c 0x0 >;             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:36 */
+		on1-gpios = < &ctr_x0_pcal6416a_b 0xb 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:37 */
+		pu1-gpios = < &ctr_x0_pcal6416a_b 0xd 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:38 */
+		pd1-gpios = < &ctr_x0_pcal6416a_b 0xf 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:39 */
+		cl1-gpios = < &ctr_x0_pcal6416a_b 0xe 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:40 */
+		ch2-gpios = < &gpio0 0x1e 0x0 >;             /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:41 */
+		on2-gpios = < &ctr_x0_pcal6416a_b 0xa 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:42 */
+		pu2-gpios = < &ctr_x0_pcal6416a_b 0x8 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:43 */
+		pd2-gpios = < &ctr_x0_pcal6416a_b 0xc 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:44 */
+		cl2-gpios = < &ctr_x0_pcal6416a_b 0x9 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:45 */
+		ch3-gpios = < &gpio0 0x4 0x0 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:46 */
+		on3-gpios = < &ctr_x0_pcal6416a_b 0x3 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:47 */
+		pu3-gpios = < &ctr_x0_pcal6416a_b 0x5 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:48 */
+		pd3-gpios = < &ctr_x0_pcal6416a_b 0x7 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:49 */
+		cl3-gpios = < &ctr_x0_pcal6416a_b 0x6 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:50 */
+		ch4-gpios = < &gpio0 0x5 0x0 >;              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:51 */
+		on4-gpios = < &ctr_x0_pcal6416a_b 0x0 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:52 */
+		pu4-gpios = < &ctr_x0_pcal6416a_b 0x2 0x1 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:53 */
+		pd4-gpios = < &ctr_x0_pcal6416a_b 0x4 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:54 */
+		cl4-gpios = < &ctr_x0_pcal6416a_b 0x1 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:55 */
+	};
+
+	/* node '/ctr_x3_a' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:58 */
+	ctr_x3_a: ctr_x3_a {
+		compatible = "hardwario,ctr-x3";   /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:59 */
+		status = "disabled";               /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:60 */
+		slot = "A";                        /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:61 */
+		pwr0-gpios = < &gpio0 0x2 0x11 >;  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:62 */
+		pwr1-gpios = < &gpio0 0x1f 0x11 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:63 */
+	};
+
+	/* node '/ctr_x3_b' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:66 */
+	ctr_x3_b: ctr_x3_b {
+		compatible = "hardwario,ctr-x3";  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:67 */
+		status = "disabled";              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:68 */
+		slot = "B";                       /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:69 */
+		pwr0-gpios = < &gpio0 0x4 0x11 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:70 */
+		pwr1-gpios = < &gpio0 0x5 0x11 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:71 */
+	};
+
+	/* node '/ctr_x4_a' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:74 */
+	ctr_x4_a: ctr_x4_a {
+		compatible = "hardwario,ctr-x4";  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:75 */
+		status = "disabled";              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:76 */
+		pwr1-gpios = < &gpio0 0x3 0x0 >;  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:77 */
+		pwr2-gpios = < &gpio0 0x1d 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:78 */
+		pwr3-gpios = < &gpio0 0x2 0x0 >;  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:79 */
+		pwr4-gpios = < &gpio0 0x1f 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:80 */
+	};
+
+	/* node '/ctr_x4_b' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:83 */
+	ctr_x4_b: ctr_x4_b {
+		compatible = "hardwario,ctr-x4";  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:84 */
+		status = "disabled";              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:85 */
+		pwr1-gpios = < &gpio0 0x1c 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:86 */
+		pwr2-gpios = < &gpio0 0x1e 0x0 >; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:87 */
+		pwr3-gpios = < &gpio0 0x4 0x0 >;  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:88 */
+		pwr4-gpios = < &gpio0 0x5 0x0 >;  /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:89 */
+	};
+
+	/* node '/ctr_x10' defined in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:92 */
+	ctr_x10: ctr_x10 {
+		compatible = "hardwario,ctr-x10"; /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:93 */
+		status = "disabled";              /* in chester/boards/hardwario/chester/chester-expansion-modules.dtsi:94 */
+	};
+
+	/* node '/ctr_x7_a' defined in chester/boards/shields/ctr_x7_a/ctr_x7_a.overlay:8 */
+	ctr_x7_a: ctr_x7_a {
+		compatible = "hardwario,ctr-x7"; /* in chester/boards/shields/ctr_x7_a/ctr_x7_a.overlay:9 */
+		status = "okay";                 /* in chester/boards/shields/ctr_x7_a/ctr_x7_a.overlay:10 */
+		en-gpios = < &gpio0 0x1f 0x0 >;  /* in chester/boards/shields/ctr_x7_a/ctr_x7_a.overlay:11 */
+	};
+};

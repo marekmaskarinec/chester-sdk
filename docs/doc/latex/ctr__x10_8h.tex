@@ -1,0 +1,29 @@
+\doxysection{drivers/ctr\+\_\+x10.h File Reference}
+\hypertarget{ctr__x10_8h}{}\label{ctr__x10_8h}\index{drivers/ctr\_x10.h@{drivers/ctr\_x10.h}}
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for ctr\+\_\+x10.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{ctr__x10_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__x10_ga88b069e1c410fad12509bdb8ee10cf5d}{ctr\+\_\+x10\+\_\+event}} \{ \mbox{\hyperlink{group__ctr__x10_gga88b069e1c410fad12509bdb8ee10cf5da848e8e5228216c02f60f51c7098648ce}{CTR\+\_\+\+X10\+\_\+\+EVENT\+\_\+\+LINE\+\_\+\+CONNECTED}} = 0
+, \mbox{\hyperlink{group__ctr__x10_gga88b069e1c410fad12509bdb8ee10cf5da0809c8f45c59d09ccbca8f82384b51ec}{CTR\+\_\+\+X10\+\_\+\+EVENT\+\_\+\+LINE\+\_\+\+DISCONNECTED}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__ctr__x10_ga831320e6daa5647b2ac5f98306154d5d}{ctr\+\_\+x10\+\_\+set\+\_\+handler}} (const struct device \texorpdfstring{$\ast$}{*}dev, ctr\+\_\+x10\+\_\+user\+\_\+cb user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+static int \mbox{\hyperlink{group__ctr__x10_ga8aa8da753d582622fdf608eaefdade0c}{ctr\+\_\+x10\+\_\+get\+\_\+line\+\_\+voltage}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}line\+\_\+voltage\+\_\+mv)
+\item 
+static int \mbox{\hyperlink{group__ctr__x10_ga9b8883c16bf89bfd4be0293f61c8501b}{ctr\+\_\+x10\+\_\+get\+\_\+line\+\_\+present}} (const struct device \texorpdfstring{$\ast$}{*}dev, bool \texorpdfstring{$\ast$}{*}is\+\_\+line\+\_\+present)
+\item 
+static int \mbox{\hyperlink{group__ctr__x10_ga857cd480ea61497477c0210d201f7aad}{ctr\+\_\+x10\+\_\+get\+\_\+battery\+\_\+voltage}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}battery\+\_\+voltage\+\_\+mv)
+\end{DoxyCompactItemize}

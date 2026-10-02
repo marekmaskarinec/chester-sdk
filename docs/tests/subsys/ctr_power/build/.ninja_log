@@ -1,0 +1,11 @@
+# ninja log v7
+2	34	1784551195564860926	_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-mkdir	26544bc6e866cc7e
+2	34	1784551195564860926	/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-mkdir	26544bc6e866cc7e
+34	60	1784551195589861347	_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-download	c3b89de20e239f95
+34	60	1784551195589861347	/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-download	c3b89de20e239f95
+60	92	1784551195621861886	_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-update	3b30e2cef6cfd14f
+60	92	1784551195621861886	/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-update	3b30e2cef6cfd14f
+92	116	1784551195646862308	_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-patch	8bb418809d457c31
+92	116	1784551195646862308	/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-patch	8bb418809d457c31
+116	147	1784551195677862830	_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-configure	6f3f9cec6aeada34
+116	147	1784551195677862830	/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-configure	6f3f9cec6aeada34

@@ -1,0 +1,84 @@
+\doxysection{ctr\+\_\+buf.\+h}
+\hypertarget{ctr__buf_8h_source}{}\label{ctr__buf_8h_source}\mbox{\hyperlink{ctr__buf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_CTR\_BUF\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_CTR\_BUF\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CTR\_BUF\_DEFINE(\_name,\ \_size)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ uint8\_t\ \_name\#\#\_mem[\_size];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ struct\ ctr\_buf\ \_name\ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .mem\ =\ \_name\#\#\_mem,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .size\ =\ sizeof(\_name\#\#\_mem),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .len\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ CTR\_BUF\_DEFINE\_STATIC(\_name,\ \_size)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ static\ uint8\_t\ \_name\#\#\_mem[\_size];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ static\ struct\ ctr\_buf\ \_name\ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .mem\ =\ \_name\#\#\_mem,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .size\ =\ sizeof(\_name\#\#\_mem),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .len\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{structctr__buf_a5e215c8f7e77873f20e3931a25f3fb7d}{mem}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structctr__buf_aaa7f1948fedf5b5a67cd4d8b3b8fdb15}{size}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structctr__buf_abaa96f5ca20d0131042d49989fe79a49}{len}};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gaa9c43733dcd8254b56c8851786c1722c}{ctr\_buf\_init}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keywordtype}{void}\ *mem,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00046\ uint8\_t\ *\mbox{\hyperlink{group__ctr__buf_ga4cf08228e114cbb962c86e7bbcf4f560}{ctr\_buf\_get\_mem}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{group__ctr__buf_gaa8245e37cbf42744bfb50d0df62d99e6}{ctr\_buf\_get\_free}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{group__ctr__buf_ga60e4d617968c4d09162642ded5cc2c3d}{ctr\_buf\_get\_used}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__ctr__buf_gae07a7a78b65c3bbb9549ccbf292fd0a1}{ctr\_buf\_reset}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf);}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__ctr__buf_ga60689e427902309e94a84d6d78cc8c52}{ctr\_buf\_fill}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga03f7e073ba86008125bcef0ec281e0b4}{ctr\_buf\_seek}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keywordtype}{size\_t}\ pos);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gac5854c1acad8cbd298276ae55bbf684a}{ctr\_buf\_append\_mem}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keyword}{const}\ uint8\_t\ *mem,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gaca363b4ce38fc9cc1ee0806bb8246fbd}{ctr\_buf\_append\_str}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga5de0e432d04ae3ea806b9f28332d6a43}{ctr\_buf\_append\_char}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keywordtype}{char}\ val);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gaf93ba3f6c832319605162066abdf199d}{ctr\_buf\_append\_s8}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int8\_t\ val);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gab04252cb5971e9738077801ef0de5241}{ctr\_buf\_append\_s16\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int16\_t\ val);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gadbe9018fbc75d9686281def1e8de5a0c}{ctr\_buf\_append\_s16\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int16\_t\ val);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga9341c5fa42ae2e352b45c1ac775723ed}{ctr\_buf\_append\_s32\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int32\_t\ val);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga952963173b2035827d94febb1a6d664d}{ctr\_buf\_append\_s32\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int32\_t\ val);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga3acfc0e611aeb09d70beb85964455af0}{ctr\_buf\_append\_s64\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int64\_t\ val);}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga9cf89ba78dfe55abbb08a8ba38f46e4d}{ctr\_buf\_append\_s64\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ int64\_t\ val);}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga6f3c58ad1868e9f168ef0fc49661ec72}{ctr\_buf\_append\_u8}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint8\_t\ val);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gada6acb11d9fe2dfe9fc49fd9e1e2462f}{ctr\_buf\_append\_u16\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint16\_t\ val);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga6076b768d8779d81023a5f0ee0252d2d}{ctr\_buf\_append\_u16\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint16\_t\ val);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gae6f178218cbde5f0cd449d04efd12f84}{ctr\_buf\_append\_u32\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint32\_t\ val);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga4dab020a1ca65a7458190ec9bea9d535}{ctr\_buf\_append\_u32\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint32\_t\ val);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga94bd3db15c7ce99a11f23377bb334c3d}{ctr\_buf\_append\_u64\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint64\_t\ val);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_ga7fc5c5fe48db22e04fe337e256a87c66}{ctr\_buf\_append\_u64\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ uint64\_t\ val);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gadfd802203473c3740fc3c6501cb87034}{ctr\_buf\_append\_float\_le}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__buf_gaf70c0d03b229b99c0d97f3faff8914f2}{ctr\_buf\_append\_float\_be}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__buf}{ctr\_buf}}\ *buf,\ \textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_s16(buf,\ val)\ \ \ ctr\_buf\_append\_s16\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_s32(buf,\ val)\ \ \ ctr\_buf\_append\_s32\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_s64(buf,\ val)\ \ \ ctr\_buf\_append\_s64\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_u16(buf,\ val)\ \ \ ctr\_buf\_append\_u16\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_u32(buf,\ val)\ \ \ ctr\_buf\_append\_u32\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_u64(buf,\ val)\ \ \ ctr\_buf\_append\_u64\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ ctr\_buf\_append\_float(buf,\ val)\ ctr\_buf\_append\_float\_le(buf,\ val)\ \_\_DEPRECATED\_MACRO}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_CTR\_BUF\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

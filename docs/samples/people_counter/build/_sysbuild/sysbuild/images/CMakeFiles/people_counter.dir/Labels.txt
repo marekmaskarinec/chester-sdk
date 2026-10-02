@@ -1,0 +1,13 @@
+# Target labels
+ people_counter
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/CMakeFiles/people_counter
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/CMakeFiles/people_counter.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/CMakeFiles/people_counter-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-update.rule

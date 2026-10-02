@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/CMakeFiles/range"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/CMakeFiles/range.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/CMakeFiles/range-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/range/build/_sysbuild/sysbuild/images/range-prefix/src/range-stamp/range-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"range"
+		],
+		"name" : "range"
+	}
+}

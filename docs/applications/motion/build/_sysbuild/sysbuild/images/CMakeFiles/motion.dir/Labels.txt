@@ -1,0 +1,13 @@
+# Target labels
+ motion
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/CMakeFiles/motion
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/CMakeFiles/motion.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/CMakeFiles/motion-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-build.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-download.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-install.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-update.rule

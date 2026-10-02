@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/bootloader/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/modules/nrf/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/modules/mcuboot/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/boards/cmake_install.cmake",
+		"/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble_scan/build/_sysbuild/sysbuild/images/soc/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

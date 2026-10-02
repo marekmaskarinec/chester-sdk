@@ -1,0 +1,13 @@
+# Target labels
+ ctr_led
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_led
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_led.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_led-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_led/build/_sysbuild/sysbuild/images/ctr_led-prefix/src/ctr_led-stamp/ctr_led-update.rule

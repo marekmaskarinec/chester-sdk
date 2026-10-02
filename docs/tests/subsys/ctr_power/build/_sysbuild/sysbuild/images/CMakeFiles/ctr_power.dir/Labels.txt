@@ -1,0 +1,13 @@
+# Target labels
+ ctr_power
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_power
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_power.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_power-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-build.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-download.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-install.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-update.rule

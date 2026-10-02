@@ -1,0 +1,13 @@
+# Target labels
+ sensor_pnp_npn
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/CMakeFiles/sensor_pnp_npn
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/CMakeFiles/sensor_pnp_npn.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/CMakeFiles/sensor_pnp_npn-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/_sysbuild/sysbuild/images/sensor_pnp_npn-prefix/src/sensor_pnp_npn-stamp/sensor_pnp_npn-update.rule

@@ -1,0 +1,120 @@
+\doxysection{ctr\+\_\+edge}
+\hypertarget{group__ctr__edge}{}\label{group__ctr__edge}\index{ctr\_edge@{ctr\_edge}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec}{ctr\+\_\+edge\+\_\+cb\+\_\+t}}) (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, enum \mbox{\hyperlink{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad}{ctr\+\_\+edge\+\_\+event}} event, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad}{ctr\+\_\+edge\+\_\+event}} \{ \mbox{\hyperlink{group__ctr__edge_ggac8db56f46b8cfd0298f53a7e683d8aadac1039149e74790f9164bdfc70fff3e4f}{CTR\+\_\+\+EDGE\+\_\+\+EVENT\+\_\+\+INACTIVE}} = 0
+, \mbox{\hyperlink{group__ctr__edge_ggac8db56f46b8cfd0298f53a7e683d8aadacf830f1f03ebc1d3307b8bf68dbcd9aa}{CTR\+\_\+\+EDGE\+\_\+\+EVENT\+\_\+\+ACTIVE}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ctr__edge_gaaa7748419dcf468ccd0d54e28d85003f}{ctr\+\_\+edge\+\_\+init}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, const struct gpio\+\_\+dt\+\_\+spec \texorpdfstring{$\ast$}{*}spec, bool start\+\_\+active)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_ga4fcfa627150add06523479dc78a25a50}{ctr\+\_\+edge\+\_\+get\+\_\+active}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, bool \texorpdfstring{$\ast$}{*}is\+\_\+active)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_ga1b7b1a4b3d76ca090b28f06946abdb99}{ctr\+\_\+edge\+\_\+set\+\_\+callback}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, \mbox{\hyperlink{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec}{ctr\+\_\+edge\+\_\+cb\+\_\+t}} cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_ga8b1a6f257875387c966826e196386ab5}{ctr\+\_\+edge\+\_\+set\+\_\+cooldown\+\_\+time}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, int msec)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_ga6699a0878cb9864a1cfed38b70c17faa}{ctr\+\_\+edge\+\_\+set\+\_\+active\+\_\+duration}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, int msec)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_gaba56fdd6167945c92cfd418356566e5e}{ctr\+\_\+edge\+\_\+set\+\_\+inactive\+\_\+duration}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, int msec)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_ga1e5ac9064a5b73397ab4228e235b2616}{ctr\+\_\+edge\+\_\+watch}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge)
+\item 
+int \mbox{\hyperlink{group__ctr__edge_ga1e1978a7e08c4a4811bff541f8857bc0}{ctr\+\_\+edge\+\_\+unwatch}} (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_cb\_t@{ctr\_edge\_cb\_t}}
+\index{ctr\_edge\_cb\_t@{ctr\_edge\_cb\_t}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_cb\_t}{ctr\_edge\_cb\_t}}
+{\footnotesize\ttfamily \label{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec} 
+typedef void(\texorpdfstring{$\ast$}{*} ctr\+\_\+edge\+\_\+cb\+\_\+t) (struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}edge, enum \mbox{\hyperlink{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad}{ctr\+\_\+edge\+\_\+event}} event, void \texorpdfstring{$\ast$}{*}user\+\_\+data)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_event@{ctr\_edge\_event}}
+\index{ctr\_edge\_event@{ctr\_edge\_event}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_event}{ctr\_edge\_event}}
+{\footnotesize\ttfamily \label{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad} 
+enum \mbox{\hyperlink{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad}{ctr\+\_\+edge\+\_\+event}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_EDGE\_EVENT\_INACTIVE@{CTR\_EDGE\_EVENT\_INACTIVE}!ctr\_edge@{ctr\_edge}}\index{ctr\_edge@{ctr\_edge}!CTR\_EDGE\_EVENT\_INACTIVE@{CTR\_EDGE\_EVENT\_INACTIVE}}}\Hypertarget{group__ctr__edge_ggac8db56f46b8cfd0298f53a7e683d8aadac1039149e74790f9164bdfc70fff3e4f}\label{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad} 
+CTR\+\_\+\+EDGE\+\_\+\+EVENT\+\_\+\+INACTIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_EDGE\_EVENT\_ACTIVE@{CTR\_EDGE\_EVENT\_ACTIVE}!ctr\_edge@{ctr\_edge}}\index{ctr\_edge@{ctr\_edge}!CTR\_EDGE\_EVENT\_ACTIVE@{CTR\_EDGE\_EVENT\_ACTIVE}}}\Hypertarget{group__ctr__edge_ggac8db56f46b8cfd0298f53a7e683d8aadacf830f1f03ebc1d3307b8bf68dbcd9aa}\label{group__ctr__edge_gac8db56f46b8cfd0298f53a7e683d8aad} 
+CTR\+\_\+\+EDGE\+\_\+\+EVENT\+\_\+\+ACTIVE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ctr__edge_ga4fcfa627150add06523479dc78a25a50}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_get\_active@{ctr\_edge\_get\_active}}
+\index{ctr\_edge\_get\_active@{ctr\_edge\_get\_active}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_get\_active()}{ctr\_edge\_get\_active()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_ga4fcfa627150add06523479dc78a25a50} 
+int ctr\+\_\+edge\+\_\+get\+\_\+active (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{is\+\_\+active}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_gaaa7748419dcf468ccd0d54e28d85003f}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_init@{ctr\_edge\_init}}
+\index{ctr\_edge\_init@{ctr\_edge\_init}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_init()}{ctr\_edge\_init()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_gaaa7748419dcf468ccd0d54e28d85003f} 
+int ctr\+\_\+edge\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{, }\item[{const struct gpio\+\_\+dt\+\_\+spec \texorpdfstring{$\ast$}{*}}]{spec}{, }\item[{bool}]{start\+\_\+active}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_ga6699a0878cb9864a1cfed38b70c17faa}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_set\_active\_duration@{ctr\_edge\_set\_active\_duration}}
+\index{ctr\_edge\_set\_active\_duration@{ctr\_edge\_set\_active\_duration}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_set\_active\_duration()}{ctr\_edge\_set\_active\_duration()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_ga6699a0878cb9864a1cfed38b70c17faa} 
+int ctr\+\_\+edge\+\_\+set\+\_\+active\+\_\+duration (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{, }\item[{int}]{msec}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_ga1b7b1a4b3d76ca090b28f06946abdb99}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_set\_callback@{ctr\_edge\_set\_callback}}
+\index{ctr\_edge\_set\_callback@{ctr\_edge\_set\_callback}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_set\_callback()}{ctr\_edge\_set\_callback()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_ga1b7b1a4b3d76ca090b28f06946abdb99} 
+int ctr\+\_\+edge\+\_\+set\+\_\+callback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{, }\item[{\mbox{\hyperlink{group__ctr__edge_gaccf36d7d366caa825a3f7e03fd8cc9ec}{ctr\+\_\+edge\+\_\+cb\+\_\+t}}}]{cb}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_ga8b1a6f257875387c966826e196386ab5}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_set\_cooldown\_time@{ctr\_edge\_set\_cooldown\_time}}
+\index{ctr\_edge\_set\_cooldown\_time@{ctr\_edge\_set\_cooldown\_time}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_set\_cooldown\_time()}{ctr\_edge\_set\_cooldown\_time()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_ga8b1a6f257875387c966826e196386ab5} 
+int ctr\+\_\+edge\+\_\+set\+\_\+cooldown\+\_\+time (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{, }\item[{int}]{msec}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_gaba56fdd6167945c92cfd418356566e5e}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_set\_inactive\_duration@{ctr\_edge\_set\_inactive\_duration}}
+\index{ctr\_edge\_set\_inactive\_duration@{ctr\_edge\_set\_inactive\_duration}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_set\_inactive\_duration()}{ctr\_edge\_set\_inactive\_duration()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_gaba56fdd6167945c92cfd418356566e5e} 
+int ctr\+\_\+edge\+\_\+set\+\_\+inactive\+\_\+duration (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{, }\item[{int}]{msec}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_ga1e1978a7e08c4a4811bff541f8857bc0}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_unwatch@{ctr\_edge\_unwatch}}
+\index{ctr\_edge\_unwatch@{ctr\_edge\_unwatch}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_unwatch()}{ctr\_edge\_unwatch()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_ga1e1978a7e08c4a4811bff541f8857bc0} 
+int ctr\+\_\+edge\+\_\+unwatch (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__edge_ga1e5ac9064a5b73397ab4228e235b2616}\index{ctr\_edge@{ctr\_edge}!ctr\_edge\_watch@{ctr\_edge\_watch}}
+\index{ctr\_edge\_watch@{ctr\_edge\_watch}!ctr\_edge@{ctr\_edge}}
+\doxysubsubsection{\texorpdfstring{ctr\_edge\_watch()}{ctr\_edge\_watch()}}
+{\footnotesize\ttfamily \label{group__ctr__edge_ga1e5ac9064a5b73397ab4228e235b2616} 
+int ctr\+\_\+edge\+\_\+watch (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structctr__edge}{ctr\+\_\+edge}} \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})}
+

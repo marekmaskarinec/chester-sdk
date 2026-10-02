@@ -1,0 +1,83 @@
+\doxysection{ctr\+\_\+batt.\+h}
+\hypertarget{ctr__batt_8h_source}{}\label{ctr__batt_8h_source}\index{drivers/ctr\_batt.h@{drivers/ctr\_batt.h}}
+\mbox{\hyperlink{ctr__batt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_BATT\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_BATT\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ CTR\_BATT\_REST\_TIMEOUT\_DEFAULT\_MS\ 1000}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ CTR\_BATT\_LOAD\_TIMEOUT\_DEFAULT\_MS\ 9000}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ int\ (*ctr\_batt\_api\_get\_rest\_voltage\_mv)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{int}\ *rest\_mv,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ delay\_ms);}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ int\ (*ctr\_batt\_api\_get\_load\_voltage\_mv)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{int}\ *load\_mv,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ delay\_ms);}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ void\ (*ctr\_batt\_api\_get\_load\_current\_ma)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{int}\ *current\_ma,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ load\_mv);}
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ int\ (*ctr\_batt\_api\_load)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ int\ (*ctr\_batt\_api\_unload)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ ctr\_batt\_api\_get\_rest\_voltage\_mv\ get\_rest\_voltage\_mv;}
+\DoxyCodeLine{00042\ \ \ \ \ ctr\_batt\_api\_get\_load\_voltage\_mv\ get\_load\_voltage\_mv;}
+\DoxyCodeLine{00043\ \ \ \ \ ctr\_batt\_api\_get\_load\_current\_ma\ get\_load\_current\_ma;}
+\DoxyCodeLine{00044\ \ \ \ \ ctr\_batt\_api\_load\ load;}
+\DoxyCodeLine{00045\ \ \ \ \ ctr\_batt\_api\_unload\ unload;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__batt_gae8a9acd98b0dcf21d41961274501c8d0}{ctr\_batt\_get\_rest\_voltage\_mv}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{int}\ *rest\_mv,\ \textcolor{keywordtype}{int}\ delay\_ms)}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_rest\_voltage\_mv(dev,\ rest\_mv,\ delay\_ms);}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__batt_gac9b85cc544e40392cc9eadac9c5cbb8b}{ctr\_batt\_get\_load\_voltage\_mv}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{int}\ *load\_mv,\ \textcolor{keywordtype}{int}\ delay\_ms)}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>get\_load\_voltage\_mv(dev,\ load\_mv,\ delay\_ms);}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__ctr__batt_ga9612224d2256fa5717acc6f76765b250}{ctr\_batt\_get\_load\_current\_ma}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{int}\ *current\_ma,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ load\_mv)}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ api-\/>get\_load\_current\_ma(dev,\ current\_ma,\ load\_mv);}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__batt_ga59b22153115bc5f04c1225dd34ce61da}{ctr\_batt\_load}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>load(dev);}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__batt_gae20d5845b135ca482d67c792658513a3}{ctr\_batt\_unload}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev)}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_batt\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>unload(dev);}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_BATT\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\doxysection{ctr\+\_\+ble\+\_\+tag.\+h File Reference}
+\hypertarget{ctr__ble__tag_8h}{}\label{ctr__ble__tag_8h}\index{ctr\_ble\_tag.h@{ctr\_ble\_tag.h}}
+{\ttfamily \#include $<$zephyr/bluetooth/bluetooth.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for ctr\+\_\+ble\+\_\+tag.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctr__ble__tag_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ctr__ble__tag_8h_a4b0e9dada1db70c8f0a1cf2ce67d5ba3}{CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+COUNT}}~8
+\item 
+\#define \mbox{\hyperlink{ctr__ble__tag_8h_af9ae7d1893e666653b6f768d599609b0}{CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+ENROLL\+\_\+\+TIMEOUT\+\_\+\+SEC}}~10
+\item 
+\#define \mbox{\hyperlink{ctr__ble__tag_8h_a73a24ad8ccf425def26a695a4c9c4506}{CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+ENROLL\+\_\+\+RSSI\+\_\+\+THRESHOLD}}~-\/55
+\item 
+\#define \mbox{\hyperlink{ctr__ble__tag_8h_aed7e7cc5ebe999cf4e86df86489de1b4}{CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+DATA\+\_\+\+TIMEOUT\+\_\+\+INTERVALS}}~3
+\item 
+\#define \mbox{\hyperlink{ctr__ble__tag_8h_a55003a22867f2546d165874399d036b0}{CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+SCAN\+\_\+\+MAX\+\_\+\+TIME}}~0x4000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ctr__ble__tag_ga817fa2978b73aa498a5ee4a51eaa17a7}{ctr\+\_\+ble\+\_\+tag\+\_\+read}} (int idx, uint8\+\_\+t addr\mbox{[}BT\+\_\+\+ADDR\+\_\+\+SIZE\mbox{]}, int \texorpdfstring{$\ast$}{*}rssi, float \texorpdfstring{$\ast$}{*}voltage, float \texorpdfstring{$\ast$}{*}temperature, float \texorpdfstring{$\ast$}{*}humidity, bool \texorpdfstring{$\ast$}{*}valid)
+\item 
+int \mbox{\hyperlink{group__ctr__ble__tag_gaef82e8abb46a22ffac811d06630f1bfb}{ctr\+\_\+ble\+\_\+tag\+\_\+is\+\_\+addr\+\_\+empty}} (const uint8\+\_\+t addr\mbox{[}BT\+\_\+\+ADDR\+\_\+\+SIZE\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ctr__ble__tag_8h_a4b0e9dada1db70c8f0a1cf2ce67d5ba3}\index{ctr\_ble\_tag.h@{ctr\_ble\_tag.h}!CTR\_BLE\_TAG\_COUNT@{CTR\_BLE\_TAG\_COUNT}}
+\index{CTR\_BLE\_TAG\_COUNT@{CTR\_BLE\_TAG\_COUNT}!ctr\_ble\_tag.h@{ctr\_ble\_tag.h}}
+\doxysubsubsection{\texorpdfstring{CTR\_BLE\_TAG\_COUNT}{CTR\_BLE\_TAG\_COUNT}}
+{\footnotesize\ttfamily \label{ctr__ble__tag_8h_a4b0e9dada1db70c8f0a1cf2ce67d5ba3} 
+\#define CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+COUNT~8}
+
+\Hypertarget{ctr__ble__tag_8h_aed7e7cc5ebe999cf4e86df86489de1b4}\index{ctr\_ble\_tag.h@{ctr\_ble\_tag.h}!CTR\_BLE\_TAG\_DATA\_TIMEOUT\_INTERVALS@{CTR\_BLE\_TAG\_DATA\_TIMEOUT\_INTERVALS}}
+\index{CTR\_BLE\_TAG\_DATA\_TIMEOUT\_INTERVALS@{CTR\_BLE\_TAG\_DATA\_TIMEOUT\_INTERVALS}!ctr\_ble\_tag.h@{ctr\_ble\_tag.h}}
+\doxysubsubsection{\texorpdfstring{CTR\_BLE\_TAG\_DATA\_TIMEOUT\_INTERVALS}{CTR\_BLE\_TAG\_DATA\_TIMEOUT\_INTERVALS}}
+{\footnotesize\ttfamily \label{ctr__ble__tag_8h_aed7e7cc5ebe999cf4e86df86489de1b4} 
+\#define CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+DATA\+\_\+\+TIMEOUT\+\_\+\+INTERVALS~3}
+
+\Hypertarget{ctr__ble__tag_8h_a73a24ad8ccf425def26a695a4c9c4506}\index{ctr\_ble\_tag.h@{ctr\_ble\_tag.h}!CTR\_BLE\_TAG\_ENROLL\_RSSI\_THRESHOLD@{CTR\_BLE\_TAG\_ENROLL\_RSSI\_THRESHOLD}}
+\index{CTR\_BLE\_TAG\_ENROLL\_RSSI\_THRESHOLD@{CTR\_BLE\_TAG\_ENROLL\_RSSI\_THRESHOLD}!ctr\_ble\_tag.h@{ctr\_ble\_tag.h}}
+\doxysubsubsection{\texorpdfstring{CTR\_BLE\_TAG\_ENROLL\_RSSI\_THRESHOLD}{CTR\_BLE\_TAG\_ENROLL\_RSSI\_THRESHOLD}}
+{\footnotesize\ttfamily \label{ctr__ble__tag_8h_a73a24ad8ccf425def26a695a4c9c4506} 
+\#define CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+ENROLL\+\_\+\+RSSI\+\_\+\+THRESHOLD~-\/55}
+
+\Hypertarget{ctr__ble__tag_8h_af9ae7d1893e666653b6f768d599609b0}\index{ctr\_ble\_tag.h@{ctr\_ble\_tag.h}!CTR\_BLE\_TAG\_ENROLL\_TIMEOUT\_SEC@{CTR\_BLE\_TAG\_ENROLL\_TIMEOUT\_SEC}}
+\index{CTR\_BLE\_TAG\_ENROLL\_TIMEOUT\_SEC@{CTR\_BLE\_TAG\_ENROLL\_TIMEOUT\_SEC}!ctr\_ble\_tag.h@{ctr\_ble\_tag.h}}
+\doxysubsubsection{\texorpdfstring{CTR\_BLE\_TAG\_ENROLL\_TIMEOUT\_SEC}{CTR\_BLE\_TAG\_ENROLL\_TIMEOUT\_SEC}}
+{\footnotesize\ttfamily \label{ctr__ble__tag_8h_af9ae7d1893e666653b6f768d599609b0} 
+\#define CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+ENROLL\+\_\+\+TIMEOUT\+\_\+\+SEC~10}
+
+\Hypertarget{ctr__ble__tag_8h_a55003a22867f2546d165874399d036b0}\index{ctr\_ble\_tag.h@{ctr\_ble\_tag.h}!CTR\_BLE\_TAG\_SCAN\_MAX\_TIME@{CTR\_BLE\_TAG\_SCAN\_MAX\_TIME}}
+\index{CTR\_BLE\_TAG\_SCAN\_MAX\_TIME@{CTR\_BLE\_TAG\_SCAN\_MAX\_TIME}!ctr\_ble\_tag.h@{ctr\_ble\_tag.h}}
+\doxysubsubsection{\texorpdfstring{CTR\_BLE\_TAG\_SCAN\_MAX\_TIME}{CTR\_BLE\_TAG\_SCAN\_MAX\_TIME}}
+{\footnotesize\ttfamily \label{ctr__ble__tag_8h_a55003a22867f2546d165874399d036b0} 
+\#define CTR\+\_\+\+BLE\+\_\+\+TAG\+\_\+\+SCAN\+\_\+\+MAX\+\_\+\+TIME~0x4000}
+

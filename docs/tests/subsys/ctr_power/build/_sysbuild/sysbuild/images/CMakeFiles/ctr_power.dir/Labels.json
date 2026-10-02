@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_power"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_power.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_power-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/_sysbuild/sysbuild/images/ctr_power-prefix/src/ctr_power-stamp/ctr_power-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ctr_power"
+		],
+		"name" : "ctr_power"
+	}
+}

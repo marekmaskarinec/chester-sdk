@@ -1,0 +1,91 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x3eed
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          2488956 (bytes into file)
+  Flags:                             0x5000200, Version5 EABI, soft-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         6
+  Size of section headers:           40 (bytes)
+  Number of section headers:         45
+  Section header string table index: 44
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] rom_start         PROGBITS        00000000 000100 000100 00  AX  0   0  4
+  [ 2] text              PROGBITS        00000100 000200 00e24c 00  AX  0   0  8
+  [ 3] .ARM.exidx        ARM_EXIDX       0000e34c 00e44c 000008 00  AL  2   0  4
+  [ 4] initlevel         PROGBITS        0000e354 00e454 0000c8 00   A  0   0  4
+  [ 5] device_area       PROGBITS        0000e41c 00e51c 000118 00   A  0   0  4
+  [ 6] sw_isr_table      PROGBITS        0000e534 00e634 000180 00   A  0   0  4
+  [ 7] flash_driver[...] PROGBITS        0000e6b4 00e7b4 000018 00   A  0   0  4
+  [ 8] gpio_driver_[...] PROGBITS        0000e6cc 00e7cc 000024 00   A  0   0  4
+  [ 9] led_driver_a[...] PROGBITS        0000e6f0 00e7f0 000038 00   A  0   0  4
+  [10] pwm_driver_a[...] PROGBITS        0000e728 00e828 000008 00   A  0   0  4
+  [11] spi_driver_a[...] PROGBITS        0000e730 00e830 000008 00   A  0   0  4
+  [12] clock_contro[...] PROGBITS        0000e738 00e838 00001c 00   A  0   0  4
+  [13] log_const_area    PROGBITS        0000e754 00e854 0000b8 00   A  0   0  4
+  [14] log_backend_area  PROGBITS        0000e80c 00e90c 000010 00   A  0   0  4
+  [15] shell_area        PROGBITS        0000e81c 00e91c 000030 00   A  0   0  4
+  [16] shell_root_c[...] PROGBITS        0000e84c 00e94c 000010 00   A  0   0  4
+  [17] shell_subcmd[...] PROGBITS        0000e85c 00e95c 00012c 00   A  0   0  4
+  [18] tbss              NOBITS          0000e988 00ea88 000008 00 WAT  0   0  4
+  [19] rodata            PROGBITS        0000e990 00ea90 002578 00   A  0   0 16
+  [20] .ramfunc          PROGBITS        20000000 0118a0 000000 00   W  0   0  1
+  [21] datas             PROGBITS        20000000 011008 000774 00  WA  0   0  8
+  [22] device_states     PROGBITS        20000774 01177c 000014 00  WA  0   0  1
+  [23] log_mpsc_pbu[...] PROGBITS        20000788 011790 000038 00  WA  0   0  4
+  [24] log_msg_ptr_area  PROGBITS        200007c0 0117c8 000004 00  WA  0   0  4
+  [25] log_dynamic_area  PROGBITS        200007c4 0117cc 00005c 00  WA  0   0  4
+  [26] k_heap_area       PROGBITS        20000820 011828 000014 00  WA  0   0  4
+  [27] k_mutex_area      PROGBITS        20000834 01183c 000050 00  WA  0   0  4
+  [28] k_sem_area        PROGBITS        20000884 01188c 000010 00  WA  0   0  4
+  [29] .comment          PROGBITS        00000000 0118a0 000040 01  MS  0   0  1
+  [30] .debug_aranges    PROGBITS        00000000 0118e0 002920 00      0   0  8
+  [31] .debug_info       PROGBITS        00000000 014200 1356af 00      0   0  1
+  [32] .debug_abbrev     PROGBITS        00000000 1498af 01c20d 00      0   0  1
+  [33] .debug_line       PROGBITS        00000000 165abc 05cb24 00      0   0  1
+  [34] .debug_frame      PROGBITS        00000000 1c25e0 006d18 00      0   0  4
+  [35] .debug_str        PROGBITS        00000000 1c92f8 013f1f 01  MS  0   0  1
+  [36] .debug_loc        PROGBITS        00000000 1dd217 059759 00      0   0  1
+  [37] .debug_ranges     PROGBITS        00000000 236970 00e530 00      0   0  8
+  [38] .ARM.attributes   ARM_ATTRIBUTES  00000000 244ea0 000032 00      0   0  1
+  [39] .last_section     PROGBITS        0001179c 01189c 000004 00  WA  0   0  4
+  [40] bss               NOBITS          200008a0 0118a0 0052d8 00  WA  0   0 16
+  [41] noinit            NOBITS          20005b80 0118a0 007180 00  WA  0   0 64
+  [42] .symtab           SYMTAB          00000000 244ed4 00f2a0 10     43 2424  4
+  [43] .strtab           STRTAB          00000000 254174 00b6c0 00      0   0  1
+  [44] .shstrtab         STRTAB          00000000 25f834 000246 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), y (purecode), p (processor specific)
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  EXIDX          0x00e44c 0x0000e34c 0x0000e34c 0x00008 0x00008 R   0x4
+  LOAD           0x000100 0x00000000 0x00000000 0x10f08 0x10f08 RWE 0x10
+  LOAD           0x011008 0x20000000 0x00010f08 0x00894 0x00894 RW  0x8
+  LOAD           0x01189c 0x0001179c 0x0001179c 0x00004 0x00004 RW  0x4
+  LOAD           0x000000 0x200008a0 0x200008a0 0x00000 0x0c460 RW  0x40
+  TLS            0x00ea88 0x0000e988 0x0000e988 0x00000 0x00008 R   0x4
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .ARM.exidx 
+   01     rom_start text .ARM.exidx initlevel device_area sw_isr_table flash_driver_api_area gpio_driver_api_area led_driver_api_area pwm_driver_api_area spi_driver_api_area clock_control_driver_api_area log_const_area log_backend_area shell_area shell_root_cmds_area shell_subcmds_area rodata 
+   02     datas device_states log_mpsc_pbuf_area log_msg_ptr_area log_dynamic_area k_heap_area k_mutex_area k_sem_area 
+   03     .last_section 
+   04     bss noinit 
+   05     tbss 

@@ -1,0 +1,70 @@
+\doxysection{ctr\+\_\+x7.\+h}
+\hypertarget{ctr__x7_8h_source}{}\label{ctr__x7_8h_source}\index{drivers/ctr\_x7.h@{drivers/ctr\_x7.h}}
+\mbox{\hyperlink{ctr__x7_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_X7\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_X7\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <zephyr/drivers/gpio.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x7__calibration}{ctr\_x7\_calibration}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__x7__calibration_a0c9a82b93f409ec5f6cefc70d1e9ac40}{x0}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__x7__calibration_ae4f65dd68c74cd73ca155bc313e254c7}{y0}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__x7__calibration_af704403b0964de41fc1a7638623431d9}{x1}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__x7__calibration_af53a89cb0d563b529ae5747486bd92ef}{y1}};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x7__result}{ctr\_x7\_result}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__x7__result_a033a49094517500c84754aea0f3a22be}{avg}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__x7__result_af36202c056e484295a76ba403122d371}{rms}};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ int\ (*ctr\_x7\_api\_set\_power)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keywordtype}{bool}\ is\_enabled);}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ int\ (*ctr\_x7\_api\_measure)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x7__calibration}{ctr\_x7\_calibration}}\ calibrations[2],}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ struct\ \mbox{\hyperlink{structctr__x7__result}{ctr\_x7\_result}}\ results[2]);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }ctr\_x7\_driver\_api\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ ctr\_x7\_api\_set\_power\ set\_power;}
+\DoxyCodeLine{00049\ \ \ \ \ ctr\_x7\_api\_measure\ measure;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__x7_ga5fe1698cf53db73a322573934c62d46f}{ctr\_x7\_set\_power}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keywordtype}{bool}\ is\_enabled)}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_x7\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_x7\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_power(dev,\ is\_enabled);}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__x7_ga06aad29f28e900f4b0adb889fbb944a0}{ctr\_x7\_measure}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__x7__calibration}{ctr\_x7\_calibration}}\ calibrations[2],}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__x7__result}{ctr\_x7\_result}}\ results[2])}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_x7\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_x7\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>measure(dev,\ calibrations,\ results);}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_X7\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

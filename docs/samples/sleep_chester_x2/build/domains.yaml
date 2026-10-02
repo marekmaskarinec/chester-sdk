@@ -1,0 +1,7 @@
+default: sleep_chester_x2
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/sleep_chester_x2/build
+domains:
+  - name: sleep_chester_x2
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/sleep_chester_x2/build/sleep_chester_x2
+flash_order:
+  - sleep_chester_x2

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_cloud"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_cloud.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_cloud-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/ctr_cloud/build/_sysbuild/sysbuild/images/ctr_cloud-prefix/src/ctr_cloud-stamp/ctr_cloud-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ctr_cloud"
+		],
+		"name" : "ctr_cloud"
+	}
+}

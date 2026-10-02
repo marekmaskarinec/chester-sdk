@@ -1,0 +1,7 @@
+default: ssd1306
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build
+domains:
+  - name: ssd1306
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/ssd1306
+flash_order:
+  - ssd1306

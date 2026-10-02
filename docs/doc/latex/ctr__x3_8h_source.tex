@@ -1,0 +1,62 @@
+\doxysection{ctr\+\_\+x3.\+h}
+\hypertarget{ctr__x3_8h_source}{}\label{ctr__x3_8h_source}\index{drivers/ctr\_x3.h@{drivers/ctr\_x3.h}}
+\mbox{\hyperlink{ctr__x3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_X3\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_X3\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\_x3\_channel}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4a78c36568dbe6287a7d89206361d70499}{CTR\_X3\_CHANNEL\_1}}\ =\ 0,}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group__ctr__x3_gga93d2a472ef27caed121dc4bbd0c2f6f4af476e0cb5a1b5ba332b3fbbfae3bc367}{CTR\_X3\_CHANNEL\_2}}\ =\ 1,}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{group__ctr__x3_ga45bea68cab78395e77b2a46bacfb422d}{ctr\_x3\_api\_set\_power}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\_x3\_channel}}\ channel,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{group__ctr__x3_gae7866a5595b99d458ad89a868d33bf4e}{ctr\_x3\_api\_measure}})(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\_x3\_channel}}\ channel,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ *result);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x3__driver__api}{ctr\_x3\_driver\_api}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{group__ctr__x3_ga45bea68cab78395e77b2a46bacfb422d}{ctr\_x3\_api\_set\_power}}\ \mbox{\hyperlink{structctr__x3__driver__api_a28af9cc87b1a5bcaf96fc1eb4f1c0421}{set\_power}};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{group__ctr__x3_gae7866a5595b99d458ad89a868d33bf4e}{ctr\_x3\_api\_measure}}\ \mbox{\hyperlink{structctr__x3__driver__api_afa99f0ac235ab2279525751b3e99a781}{measure}};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__x3_ga7ce67eea25f5fc26d74605d36b0a2c54}{ctr\_x3\_set\_power}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\_x3\_channel}}\ channel,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled)}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x3__driver__api}{ctr\_x3\_driver\_api}}\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x3__driver__api}{ctr\_x3\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__x3__driver__api_a28af9cc87b1a5bcaf96fc1eb4f1c0421}{set\_power}}(dev,\ channel,\ enabled);}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__x3_ga34ec4735e3644d74ff19385bb49fdce6}{ctr\_x3\_measure}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__x3_ga93d2a472ef27caed121dc4bbd0c2f6f4}{ctr\_x3\_channel}}\ channel,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ *result)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x3__driver__api}{ctr\_x3\_driver\_api}}\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__x3__driver__api}{ctr\_x3\_driver\_api}}\ *)dev-\/>api;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>\mbox{\hyperlink{structctr__x3__driver__api_afa99f0ac235ab2279525751b3e99a781}{measure}}(dev,\ channel,\ result);}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_X3\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,25 @@
+{
+    "format-version": 1,
+    "time": 1786622578,
+    "files": [
+        {
+            "load_address": 49664,
+            "version_MCUBOOT": "3.0.0+0",
+            "type": "application",
+            "board": "chester",
+            "soc": "nrf52840",
+            "size": 617456,
+            "file": "app_update.bin",
+            "modtime": 1786622578
+        }
+    ],
+    "name": "clime",
+    "firmware": {
+        "zephyr": {
+            "revision": "52fc80b2508cb5fb9858d5232d448f7d5a28b671-off"
+        },
+        "nrf": {
+            "revision": "38914f587059fe57f4358052ef7270c97e07170b-off"
+        }
+    }
+}

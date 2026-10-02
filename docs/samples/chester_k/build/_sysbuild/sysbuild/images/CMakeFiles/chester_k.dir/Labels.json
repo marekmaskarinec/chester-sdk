@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/CMakeFiles/chester_k"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/CMakeFiles/chester_k.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/CMakeFiles/chester_k-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/_sysbuild/sysbuild/images/chester_k-prefix/src/chester_k-stamp/chester_k-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"chester_k"
+		],
+		"name" : "chester_k"
+	}
+}

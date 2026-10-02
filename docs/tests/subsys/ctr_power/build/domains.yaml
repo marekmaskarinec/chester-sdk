@@ -1,0 +1,7 @@
+default: ctr_power
+build_dir: /home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build
+domains:
+  - name: ctr_power
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_power/build/ctr_power
+flash_order:
+  - ctr_power

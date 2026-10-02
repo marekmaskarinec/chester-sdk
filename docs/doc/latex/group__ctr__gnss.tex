@@ -1,0 +1,112 @@
+\doxysection{ctr\+\_\+gnss}
+\hypertarget{group__ctr__gnss}{}\label{group__ctr__gnss}\index{ctr\_gnss@{ctr\_gnss}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctr__gnss__data__start__ok}{ctr\+\_\+gnss\+\_\+data\+\_\+start\+\_\+ok}}
+\item 
+struct \mbox{\hyperlink{structctr__gnss__data__start__err}{ctr\+\_\+gnss\+\_\+data\+\_\+start\+\_\+err}}
+\item 
+struct \mbox{\hyperlink{structctr__gnss__data__stop__ok}{ctr\+\_\+gnss\+\_\+data\+\_\+stop\+\_\+ok}}
+\item 
+struct \mbox{\hyperlink{structctr__gnss__data__stop__err}{ctr\+\_\+gnss\+\_\+data\+\_\+stop\+\_\+err}}
+\item 
+struct \mbox{\hyperlink{structctr__gnss__data__update}{ctr\+\_\+gnss\+\_\+data\+\_\+update}}
+\item 
+union \mbox{\hyperlink{unionctr__gnss__event__data}{ctr\+\_\+gnss\+\_\+event\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c}{ctr\+\_\+gnss\+\_\+user\+\_\+cb}}) (enum \mbox{\hyperlink{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}{ctr\+\_\+gnss\+\_\+event}} event, union \mbox{\hyperlink{unionctr__gnss__event__data}{ctr\+\_\+gnss\+\_\+event\+\_\+data}} \texorpdfstring{$\ast$}{*}data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}{ctr\+\_\+gnss\+\_\+event}} \{ \newline
+\mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a979596b13f500ed705051dc47163d2ec}{CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+FAILURE}} = -\/1
+, \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a00a16ce649d9487b7e4638a3553f2c54}{CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+START\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433aa9db0aec32e216093d445d3a3bbdc724}{CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+START\+\_\+\+ERR}} = 1
+, \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a0a53f19fdd449690ed93e1d7a299418d}{CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+STOP\+\_\+\+OK}} = 2
+, \newline
+\mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a1ff7c95514b62f73762dd448bfa68cf9}{CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+STOP\+\_\+\+ERR}} = 3
+, \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a29cd04d53417c957daad5ecbb4cf3298}{CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+UPDATE}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ctr__gnss_ga0d744a0dce348a1cab827358bdc721a6}{ctr\+\_\+gnss\+\_\+set\+\_\+handler}} (\mbox{\hyperlink{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c}{ctr\+\_\+gnss\+\_\+user\+\_\+cb}} user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+int \mbox{\hyperlink{group__ctr__gnss_gac03534ce1aac62d5117fbd4258cf3ce5}{ctr\+\_\+gnss\+\_\+start}} (int \texorpdfstring{$\ast$}{*}corr\+\_\+id)
+\item 
+int \mbox{\hyperlink{group__ctr__gnss_gaca0ad8f49d22cd5aa7684effa717ed27}{ctr\+\_\+gnss\+\_\+stop}} (bool keep\+\_\+bckp\+\_\+domain, int \texorpdfstring{$\ast$}{*}corr\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c}\index{ctr\_gnss@{ctr\_gnss}!ctr\_gnss\_user\_cb@{ctr\_gnss\_user\_cb}}
+\index{ctr\_gnss\_user\_cb@{ctr\_gnss\_user\_cb}!ctr\_gnss@{ctr\_gnss}}
+\doxysubsubsection{\texorpdfstring{ctr\_gnss\_user\_cb}{ctr\_gnss\_user\_cb}}
+{\footnotesize\ttfamily \label{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c} 
+typedef void(\texorpdfstring{$\ast$}{*} ctr\+\_\+gnss\+\_\+user\+\_\+cb) (enum \mbox{\hyperlink{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}{ctr\+\_\+gnss\+\_\+event}} event, union \mbox{\hyperlink{unionctr__gnss__event__data}{ctr\+\_\+gnss\+\_\+event\+\_\+data}} \texorpdfstring{$\ast$}{*}data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}\index{ctr\_gnss@{ctr\_gnss}!ctr\_gnss\_event@{ctr\_gnss\_event}}
+\index{ctr\_gnss\_event@{ctr\_gnss\_event}!ctr\_gnss@{ctr\_gnss}}
+\doxysubsubsection{\texorpdfstring{ctr\_gnss\_event}{ctr\_gnss\_event}}
+{\footnotesize\ttfamily \label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+enum \mbox{\hyperlink{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}{ctr\+\_\+gnss\+\_\+event}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_GNSS\_EVENT\_FAILURE@{CTR\_GNSS\_EVENT\_FAILURE}!ctr\_gnss@{ctr\_gnss}}\index{ctr\_gnss@{ctr\_gnss}!CTR\_GNSS\_EVENT\_FAILURE@{CTR\_GNSS\_EVENT\_FAILURE}}}\Hypertarget{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a979596b13f500ed705051dc47163d2ec}\label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_GNSS\_EVENT\_START\_OK@{CTR\_GNSS\_EVENT\_START\_OK}!ctr\_gnss@{ctr\_gnss}}\index{ctr\_gnss@{ctr\_gnss}!CTR\_GNSS\_EVENT\_START\_OK@{CTR\_GNSS\_EVENT\_START\_OK}}}\Hypertarget{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a00a16ce649d9487b7e4638a3553f2c54}\label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+START\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_GNSS\_EVENT\_START\_ERR@{CTR\_GNSS\_EVENT\_START\_ERR}!ctr\_gnss@{ctr\_gnss}}\index{ctr\_gnss@{ctr\_gnss}!CTR\_GNSS\_EVENT\_START\_ERR@{CTR\_GNSS\_EVENT\_START\_ERR}}}\Hypertarget{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433aa9db0aec32e216093d445d3a3bbdc724}\label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+START\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_GNSS\_EVENT\_STOP\_OK@{CTR\_GNSS\_EVENT\_STOP\_OK}!ctr\_gnss@{ctr\_gnss}}\index{ctr\_gnss@{ctr\_gnss}!CTR\_GNSS\_EVENT\_STOP\_OK@{CTR\_GNSS\_EVENT\_STOP\_OK}}}\Hypertarget{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a0a53f19fdd449690ed93e1d7a299418d}\label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+STOP\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_GNSS\_EVENT\_STOP\_ERR@{CTR\_GNSS\_EVENT\_STOP\_ERR}!ctr\_gnss@{ctr\_gnss}}\index{ctr\_gnss@{ctr\_gnss}!CTR\_GNSS\_EVENT\_STOP\_ERR@{CTR\_GNSS\_EVENT\_STOP\_ERR}}}\Hypertarget{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a1ff7c95514b62f73762dd448bfa68cf9}\label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+STOP\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_GNSS\_EVENT\_UPDATE@{CTR\_GNSS\_EVENT\_UPDATE}!ctr\_gnss@{ctr\_gnss}}\index{ctr\_gnss@{ctr\_gnss}!CTR\_GNSS\_EVENT\_UPDATE@{CTR\_GNSS\_EVENT\_UPDATE}}}\Hypertarget{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a29cd04d53417c957daad5ecbb4cf3298}\label{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433} 
+CTR\+\_\+\+GNSS\+\_\+\+EVENT\+\_\+\+UPDATE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ctr__gnss_ga0d744a0dce348a1cab827358bdc721a6}\index{ctr\_gnss@{ctr\_gnss}!ctr\_gnss\_set\_handler@{ctr\_gnss\_set\_handler}}
+\index{ctr\_gnss\_set\_handler@{ctr\_gnss\_set\_handler}!ctr\_gnss@{ctr\_gnss}}
+\doxysubsubsection{\texorpdfstring{ctr\_gnss\_set\_handler()}{ctr\_gnss\_set\_handler()}}
+{\footnotesize\ttfamily \label{group__ctr__gnss_ga0d744a0dce348a1cab827358bdc721a6} 
+int ctr\+\_\+gnss\+\_\+set\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c}{ctr\+\_\+gnss\+\_\+user\+\_\+cb}}}]{user\+\_\+cb}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__gnss_gac03534ce1aac62d5117fbd4258cf3ce5}\index{ctr\_gnss@{ctr\_gnss}!ctr\_gnss\_start@{ctr\_gnss\_start}}
+\index{ctr\_gnss\_start@{ctr\_gnss\_start}!ctr\_gnss@{ctr\_gnss}}
+\doxysubsubsection{\texorpdfstring{ctr\_gnss\_start()}{ctr\_gnss\_start()}}
+{\footnotesize\ttfamily \label{group__ctr__gnss_gac03534ce1aac62d5117fbd4258cf3ce5} 
+int ctr\+\_\+gnss\+\_\+start (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{corr\+\_\+id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__gnss_gaca0ad8f49d22cd5aa7684effa717ed27}\index{ctr\_gnss@{ctr\_gnss}!ctr\_gnss\_stop@{ctr\_gnss\_stop}}
+\index{ctr\_gnss\_stop@{ctr\_gnss\_stop}!ctr\_gnss@{ctr\_gnss}}
+\doxysubsubsection{\texorpdfstring{ctr\_gnss\_stop()}{ctr\_gnss\_stop()}}
+{\footnotesize\ttfamily \label{group__ctr__gnss_gaca0ad8f49d22cd5aa7684effa717ed27} 
+int ctr\+\_\+gnss\+\_\+stop (\begin{DoxyParamCaption}\item[{bool}]{keep\+\_\+bckp\+\_\+domain}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{corr\+\_\+id}{}\end{DoxyParamCaption})}
+

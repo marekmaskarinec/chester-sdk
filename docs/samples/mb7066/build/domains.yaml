@@ -1,0 +1,7 @@
+default: mb7066
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build
+domains:
+  - name: mb7066
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/mb7066/build/mb7066
+flash_order:
+  - mb7066

@@ -1,0 +1,13 @@
+# Target labels
+ ctr_ble
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_ble
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_ble.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_ble-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ctr_ble/build/_sysbuild/sysbuild/images/ctr_ble-prefix/src/ctr_ble-stamp/ctr_ble-update.rule

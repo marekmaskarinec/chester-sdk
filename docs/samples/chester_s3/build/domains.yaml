@@ -1,0 +1,7 @@
+default: chester_s3
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build
+domains:
+  - name: chester_s3
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_s3/build/chester_s3
+flash_order:
+  - chester_s3

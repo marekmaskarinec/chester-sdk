@@ -1,0 +1,13 @@
+# Target labels
+ weight_scale
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/CMakeFiles/weight_scale
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/CMakeFiles/weight_scale.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/CMakeFiles/weight_scale-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/weight_scale/build/_sysbuild/sysbuild/images/weight_scale-prefix/src/weight_scale-stamp/weight_scale-update.rule

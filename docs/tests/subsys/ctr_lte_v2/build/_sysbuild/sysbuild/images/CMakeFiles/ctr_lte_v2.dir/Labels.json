@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_lte_v2"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_lte_v2.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/CMakeFiles/ctr_lte_v2-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/tests/subsys/ctr_lte_v2/build/_sysbuild/sysbuild/images/ctr_lte_v2-prefix/src/ctr_lte_v2-stamp/ctr_lte_v2-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ctr_lte_v2"
+		],
+		"name" : "ctr_lte_v2"
+	}
+}

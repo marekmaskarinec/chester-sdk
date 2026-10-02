@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/CMakeFiles/people_counter"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/CMakeFiles/people_counter.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/CMakeFiles/people_counter-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/samples/people_counter/build/_sysbuild/sysbuild/images/people_counter-prefix/src/people_counter-stamp/people_counter-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"people_counter"
+		],
+		"name" : "people_counter"
+	}
+}

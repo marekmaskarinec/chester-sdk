@@ -1,0 +1,13 @@
+# Target labels
+ ssd1306
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/CMakeFiles/ssd1306
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/CMakeFiles/ssd1306.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/CMakeFiles/ssd1306-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/ssd1306/build/_sysbuild/sysbuild/images/ssd1306-prefix/src/ssd1306-stamp/ssd1306-update.rule

@@ -1,0 +1,91 @@
+\doxysection{ctr\+\_\+machine\+\_\+probe}
+\hypertarget{group__ctr__machine__probe}{}\label{group__ctr__machine__probe}\index{ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_ga4156bb0c3edc38b1e1780c2f8693dae0}{ctr\+\_\+machine\+\_\+probe\+\_\+scan}} (void)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_ga5aee2f329ee2ea1f87537f14f6443cbf}{ctr\+\_\+machine\+\_\+probe\+\_\+get\+\_\+count}} (void)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_gab3d962bd342ea111fa00ee3c2bad9ddc}{ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+thermometer}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, float \texorpdfstring{$\ast$}{*}temperature)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_ga1a89da83e4471effa56f92694ded9a53}{ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+hygrometer}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, float \texorpdfstring{$\ast$}{*}temperature, float \texorpdfstring{$\ast$}{*}humidity)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_gae1ffced08446d8f7848b2a0986054ab9}{ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+lux\+\_\+meter}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, float \texorpdfstring{$\ast$}{*}illuminance)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_gabfb9361b817cce533b6a037e5f8d3969}{ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+magnetometer}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, float \texorpdfstring{$\ast$}{*}magnetic\+\_\+field)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_ga5294cdf7eb15158cd8e4a19d16a6fe49}{ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+accelerometer}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, float \texorpdfstring{$\ast$}{*}accel\+\_\+x, float \texorpdfstring{$\ast$}{*}accel\+\_\+y, float \texorpdfstring{$\ast$}{*}accel\+\_\+z, int \texorpdfstring{$\ast$}{*}orientation)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_ga8ab2fac932bf2dfb69bc2d13187d9451}{ctr\+\_\+machine\+\_\+probe\+\_\+enable\+\_\+tilt\+\_\+alert}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, int threshold, int duration)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_gaf3ccecfb62fd668526a0038374ebb36a}{ctr\+\_\+machine\+\_\+probe\+\_\+disable\+\_\+tilt\+\_\+alert}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number)
+\item 
+int \mbox{\hyperlink{group__ctr__machine__probe_ga9ff2c8d3b618e17c6db2baafabb220f9}{ctr\+\_\+machine\+\_\+probe\+\_\+get\+\_\+tilt\+\_\+alert}} (int index, uint64\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number, bool \texorpdfstring{$\ast$}{*}is\+\_\+active)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ctr__machine__probe_gaf3ccecfb62fd668526a0038374ebb36a}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_disable\_tilt\_alert@{ctr\_machine\_probe\_disable\_tilt\_alert}}
+\index{ctr\_machine\_probe\_disable\_tilt\_alert@{ctr\_machine\_probe\_disable\_tilt\_alert}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_disable\_tilt\_alert()}{ctr\_machine\_probe\_disable\_tilt\_alert()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_gaf3ccecfb62fd668526a0038374ebb36a} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+disable\+\_\+tilt\+\_\+alert (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_ga8ab2fac932bf2dfb69bc2d13187d9451}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_enable\_tilt\_alert@{ctr\_machine\_probe\_enable\_tilt\_alert}}
+\index{ctr\_machine\_probe\_enable\_tilt\_alert@{ctr\_machine\_probe\_enable\_tilt\_alert}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_enable\_tilt\_alert()}{ctr\_machine\_probe\_enable\_tilt\_alert()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_ga8ab2fac932bf2dfb69bc2d13187d9451} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+enable\+\_\+tilt\+\_\+alert (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{int}]{threshold}{, }\item[{int}]{duration}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_ga5aee2f329ee2ea1f87537f14f6443cbf}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_get\_count@{ctr\_machine\_probe\_get\_count}}
+\index{ctr\_machine\_probe\_get\_count@{ctr\_machine\_probe\_get\_count}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_get\_count()}{ctr\_machine\_probe\_get\_count()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_ga5aee2f329ee2ea1f87537f14f6443cbf} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+get\+\_\+count (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_ga9ff2c8d3b618e17c6db2baafabb220f9}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_get\_tilt\_alert@{ctr\_machine\_probe\_get\_tilt\_alert}}
+\index{ctr\_machine\_probe\_get\_tilt\_alert@{ctr\_machine\_probe\_get\_tilt\_alert}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_get\_tilt\_alert()}{ctr\_machine\_probe\_get\_tilt\_alert()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_ga9ff2c8d3b618e17c6db2baafabb220f9} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+get\+\_\+tilt\+\_\+alert (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{is\+\_\+active}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_ga5294cdf7eb15158cd8e4a19d16a6fe49}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_read\_accelerometer@{ctr\_machine\_probe\_read\_accelerometer}}
+\index{ctr\_machine\_probe\_read\_accelerometer@{ctr\_machine\_probe\_read\_accelerometer}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_read\_accelerometer()}{ctr\_machine\_probe\_read\_accelerometer()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_ga5294cdf7eb15158cd8e4a19d16a6fe49} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+accelerometer (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{accel\+\_\+x}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{accel\+\_\+y}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{accel\+\_\+z}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{orientation}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_ga1a89da83e4471effa56f92694ded9a53}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_read\_hygrometer@{ctr\_machine\_probe\_read\_hygrometer}}
+\index{ctr\_machine\_probe\_read\_hygrometer@{ctr\_machine\_probe\_read\_hygrometer}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_read\_hygrometer()}{ctr\_machine\_probe\_read\_hygrometer()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_ga1a89da83e4471effa56f92694ded9a53} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+hygrometer (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{temperature}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{humidity}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_gae1ffced08446d8f7848b2a0986054ab9}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_read\_lux\_meter@{ctr\_machine\_probe\_read\_lux\_meter}}
+\index{ctr\_machine\_probe\_read\_lux\_meter@{ctr\_machine\_probe\_read\_lux\_meter}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_read\_lux\_meter()}{ctr\_machine\_probe\_read\_lux\_meter()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_gae1ffced08446d8f7848b2a0986054ab9} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+lux\+\_\+meter (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{illuminance}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_gabfb9361b817cce533b6a037e5f8d3969}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_read\_magnetometer@{ctr\_machine\_probe\_read\_magnetometer}}
+\index{ctr\_machine\_probe\_read\_magnetometer@{ctr\_machine\_probe\_read\_magnetometer}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_read\_magnetometer()}{ctr\_machine\_probe\_read\_magnetometer()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_gabfb9361b817cce533b6a037e5f8d3969} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+magnetometer (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{magnetic\+\_\+field}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_gab3d962bd342ea111fa00ee3c2bad9ddc}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_read\_thermometer@{ctr\_machine\_probe\_read\_thermometer}}
+\index{ctr\_machine\_probe\_read\_thermometer@{ctr\_machine\_probe\_read\_thermometer}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_read\_thermometer()}{ctr\_machine\_probe\_read\_thermometer()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_gab3d962bd342ea111fa00ee3c2bad9ddc} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+read\+\_\+thermometer (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{serial\+\_\+number}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{temperature}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__ctr__machine__probe_ga4156bb0c3edc38b1e1780c2f8693dae0}\index{ctr\_machine\_probe@{ctr\_machine\_probe}!ctr\_machine\_probe\_scan@{ctr\_machine\_probe\_scan}}
+\index{ctr\_machine\_probe\_scan@{ctr\_machine\_probe\_scan}!ctr\_machine\_probe@{ctr\_machine\_probe}}
+\doxysubsubsection{\texorpdfstring{ctr\_machine\_probe\_scan()}{ctr\_machine\_probe\_scan()}}
+{\footnotesize\ttfamily \label{group__ctr__machine__probe_ga4156bb0c3edc38b1e1780c2f8693dae0} 
+int ctr\+\_\+machine\+\_\+probe\+\_\+scan (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+

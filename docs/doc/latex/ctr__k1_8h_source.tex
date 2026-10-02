@@ -1,0 +1,92 @@
+\doxysection{ctr\+\_\+k1.\+h}
+\hypertarget{ctr__k1_8h_source}{}\label{ctr__k1_8h_source}\index{drivers/ctr\_k1.h@{drivers/ctr\_k1.h}}
+\mbox{\hyperlink{ctr__k1_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_K1\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_K1\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Zephyr\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <zephyr/device.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <zephyr/drivers/gpio.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ clang-\/format\ off\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ CTR\_K1\_CHANNEL\_SINGLE\_ENDED(ch)\ ((ch)\ -\/\ 1)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ CTR\_K1\_CHANNEL\_DIFFERENTIAL(ch)\ ((ch)\ -\/\ 1\ +\ CTR\_K1\_CHANNEL\_1\_DIFFERENTIAL)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ CTR\_K1\_CHANNEL\_IDX(ch)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ ((ch)\ >=\ CTR\_K1\_CHANNEL\_1\_DIFFERENTIAL\ ?\ (ch)\ -\/\ CTR\_K1\_CHANNEL\_1\_DIFFERENTIAL\ :\ (ch))}}
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ clang-\/format\ on\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__k1_ga697216bcaca3b22cd906cd26f03b9247}{ctr\_k1\_channel}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247ad73b5c56329661173cb35b1aa372e781}{CTR\_K1\_CHANNEL\_1\_SINGLE\_ENDED}}\ =\ 0,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247a8600fb213c0d32dca71042f81d0d5c9f}{CTR\_K1\_CHANNEL\_2\_SINGLE\_ENDED}}\ =\ 1,}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247a4dfd4b30e546494c5709c5c353cc540f}{CTR\_K1\_CHANNEL\_3\_SINGLE\_ENDED}}\ =\ 2,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247a590c9a7b4a7b28978ee265b82671c857}{CTR\_K1\_CHANNEL\_4\_SINGLE\_ENDED}}\ =\ 3,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247ac55052a74a18d77c79cb415f6d74abbb}{CTR\_K1\_CHANNEL\_1\_DIFFERENTIAL}}\ =\ 4,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247a623b3377eb9c8316a8151953d57c8803}{CTR\_K1\_CHANNEL\_2\_DIFFERENTIAL}}\ =\ 5,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247a8812042305dd9c517d6106c082f9a82a}{CTR\_K1\_CHANNEL\_3\_DIFFERENTIAL}}\ =\ 6,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group__ctr__k1_gga697216bcaca3b22cd906cd26f03b9247a8afd60295596df694c2600b77d1bc8a6}{CTR\_K1\_CHANNEL\_4\_DIFFERENTIAL}}\ =\ 7,}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__k1__calibration}{ctr\_k1\_calibration}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__k1__calibration_a07315054d43c7f9d64e65f45a9f07d01}{x0}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__k1__calibration_aa5ae1ceb81db09bd28bd65a50b434209}{y0}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__k1__calibration_af432096be417f5536918cba8a9c54543}{x1}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__k1__calibration_a2514dd033183027d3703584f5fb33db0}{y1}};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__k1__result}{ctr\_k1\_result}}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__k1__result_a70c5e54ad24f7effd3314cac5334e62e}{avg}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__k1__result_a8c92b3f41d1fed2f343aef88ac0501f4}{rms}};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{typedef}\ int\ (*ctr\_k1\_api\_set\_power)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__k1_ga697216bcaca3b22cd906cd26f03b9247}{ctr\_k1\_channel}}\ channel,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_enabled);}
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ int\ (*ctr\_k1\_api\_measure)(\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }device\ *dev,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__k1_ga697216bcaca3b22cd906cd26f03b9247}{ctr\_k1\_channel}}\ channels[],}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ channels\_count,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__k1__calibration}{ctr\_k1\_calibration}}\ calibrations[],}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ struct\ \mbox{\hyperlink{structctr__k1__result}{ctr\_k1\_result}}\ results[]);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{struct\ }ctr\_k1\_driver\_api\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ ctr\_k1\_api\_set\_power\ set\_power;}
+\DoxyCodeLine{00069\ \ \ \ \ ctr\_k1\_api\_measure\ measure;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__k1_gaf632a5d8c5f475d7ef8639bb8ed996c5}{ctr\_k1\_set\_power}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__k1_ga697216bcaca3b22cd906cd26f03b9247}{ctr\_k1\_channel}}\ channel,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_enabled)}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_k1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_k1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>set\_power(dev,\ channel,\ is\_enabled);}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__k1_ga347b856eb86e78a0bfa11930bd1bf253}{ctr\_k1\_measure}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ device\ *dev,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__k1_ga697216bcaca3b22cd906cd26f03b9247}{ctr\_k1\_channel}}\ channels[],}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ channels\_count,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__k1__calibration}{ctr\_k1\_calibration}}\ calibrations[],}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structctr__k1__result}{ctr\_k1\_result}}\ results[])}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_k1\_driver\_api\ *api\ =\ (\textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }ctr\_k1\_driver\_api\ *)dev-\/>api;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ api-\/>measure(dev,\ channels,\ channels\_count,\ calibrations,\ results);}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_DRIVERS\_CTR\_K1\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,9 @@
+default: dfu_external_flash
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/dfu_external_flash/build
+domains:
+  - name: dfu_external_flash
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/dfu_external_flash/build/dfu_external_flash
+  - name: mcuboot
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/dfu_external_flash/build/mcuboot
+flash_order:
+  - dfu_external_flash

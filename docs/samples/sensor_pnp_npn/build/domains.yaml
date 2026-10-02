@@ -1,0 +1,7 @@
+default: sensor_pnp_npn
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build
+domains:
+  - name: sensor_pnp_npn
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/sensor_pnp_npn/build/sensor_pnp_npn
+flash_order:
+  - sensor_pnp_npn

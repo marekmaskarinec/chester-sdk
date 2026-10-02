@@ -1,0 +1,7 @@
+default: chester_k
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build
+domains:
+  - name: chester_k
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/chester_k/build/chester_k
+flash_order:
+  - chester_k

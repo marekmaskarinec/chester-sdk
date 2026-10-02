@@ -1,0 +1,7 @@
+default: ctr_trace
+build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_trace/build
+domains:
+  - name: ctr_trace
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/samples/ctr_trace/build/ctr_trace
+flash_order:
+  - ctr_trace

@@ -1,0 +1,338 @@
+\doxysection{drivers/ctr\+\_\+lte\+\_\+link.h File Reference}
+\hypertarget{ctr__lte__link_8h}{}\label{ctr__lte__link_8h}\index{drivers/ctr\_lte\_link.h@{drivers/ctr\_lte\_link.h}}
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for ctr\+\_\+lte\+\_\+link.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctr__lte__link_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctr__lte__link__driver__api}{ctr\+\_\+lte\+\_\+link\+\_\+driver\+\_\+api}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\+\_\+lte\+\_\+link\+\_\+user\+\_\+cb}}) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}{ctr\+\_\+lte\+\_\+link\+\_\+event}} event, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a5b50de694c72e8c1d617ae13fcaca8fb}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+set\+\_\+callback}}) (const struct device \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\+\_\+lte\+\_\+link\+\_\+user\+\_\+cb}} user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a1cab79b7cc1295cf29c4609030d95a27}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+lock}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a9e3e8aad30f2b18cd2ec08228bebba68}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+unlock}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_ab018ece09f80f05629f4eb04c00009ea}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+reset}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_ae43d53045e83eae4d6e96d3265a26272}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+wake\+\_\+up}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a0e2185bb5f3ed68c5278884a6fb27b3e}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+enable\+\_\+uart}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a00b97f58879125b1966a864f6fe2cb93}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+disable\+\_\+uart}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_aefb10a9afffc9c36164b3c03f8e71955}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+enter\+\_\+dialog}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_ac340ef48142938fa411269b9776f0963}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+exit\+\_\+dialog}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_aea1792a0d616ccb7d843f50d9b20b37a}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+enter\+\_\+data\+\_\+mode}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_ab2a755fbd3adb23b3bd12a5c55cb0a60}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+exit\+\_\+data\+\_\+mode}}) (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a448dbe29ff2edbf02192f8e050179d97}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+send\+\_\+line}}) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, const char \texorpdfstring{$\ast$}{*}format, va\+\_\+list ap)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a2bbb997f0957df1f4ccf923257ba3adc}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+recv\+\_\+line}}) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}line)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a959c2f9bfbf04cf509894699581b35f8}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+free\+\_\+line}}) (const struct device \texorpdfstring{$\ast$}{*}dev, char \texorpdfstring{$\ast$}{*}line)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_ae7d73d70b2d01e2b49ac5f3e4b5d722a}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+send\+\_\+data}}) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, const void \texorpdfstring{$\ast$}{*}buf, size\+\_\+t len)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ctr__lte__link_8h_a53cd24304a689675817569a57f20df9d}{ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+recv\+\_\+data}}) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, void \texorpdfstring{$\ast$}{*}buf, size\+\_\+t size, size\+\_\+t \texorpdfstring{$\ast$}{*}len)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}{ctr\+\_\+lte\+\_\+link\+\_\+event}} \{ \newline
+\mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86abfa2f9fc3cbe8b3902dcd14bd39356d0}{CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RESET}} = 0
+, \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86aed2a110a9ff46d580dede4df2d367549}{CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+INDICATE}} = 1
+, \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86ae344e7db731df6bd0df5e3a7c50ca459}{CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+LINE}} = 2
+, \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86a77a6ba814622228cb59bb3c26f33332c}{CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+DATA}} = 3
+, \newline
+\mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86ae1f1c6d08cce330e310c18075180c2fa}{CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+LOSS}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_ab7d0f45c361894c4e6a703487659e411}{ctr\+\_\+lte\+\_\+link\+\_\+set\+\_\+callback}} (const struct device \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\+\_\+lte\+\_\+link\+\_\+user\+\_\+cb}} user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+static void \mbox{\hyperlink{ctr__lte__link_8h_a7e70ac1e4c843ffa5e32f27d022b97c8}{ctr\+\_\+lte\+\_\+link\+\_\+lock}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static void \mbox{\hyperlink{ctr__lte__link_8h_aff1f769b5f928d0872fcd1561f9bb43d}{ctr\+\_\+lte\+\_\+link\+\_\+unlock}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_ac4d529e2b5262fc8402fe8f17b057b9b}{ctr\+\_\+lte\+\_\+link\+\_\+reset}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_aa406bcba023d59c7818629c90e5a6b3e}{ctr\+\_\+lte\+\_\+link\+\_\+wake\+\_\+up}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_af04d3a428fec6d68a61f83287c951af1}{ctr\+\_\+lte\+\_\+link\+\_\+enable\+\_\+uart}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a3f2b99c296bffe7a5754a38c86692140}{ctr\+\_\+lte\+\_\+link\+\_\+disable\+\_\+uart}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a26706f2b56a41c57830d141bfa8e6090}{ctr\+\_\+lte\+\_\+link\+\_\+enter\+\_\+dialog}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_aee0dde6ee8749ad43e3aa3845ef7cff1}{ctr\+\_\+lte\+\_\+link\+\_\+exit\+\_\+dialog}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a30ef204c2412bcd9e24f7de66da06dee}{ctr\+\_\+lte\+\_\+link\+\_\+enter\+\_\+data\+\_\+mode}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a17fd61288a147ac4547291edbf470b0a}{ctr\+\_\+lte\+\_\+link\+\_\+exit\+\_\+data\+\_\+mode}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a46ee12b6dd51510f3367744355ce11b6}{ctr\+\_\+lte\+\_\+link\+\_\+send\+\_\+line}} (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a3937cc408a6c0e82e796206f5ef737bc}{ctr\+\_\+lte\+\_\+link\+\_\+recv\+\_\+line}} (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}line)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_acc430f25a6d328101b608d26b60e61a7}{ctr\+\_\+lte\+\_\+link\+\_\+free\+\_\+line}} (const struct device \texorpdfstring{$\ast$}{*}dev, char \texorpdfstring{$\ast$}{*}line)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_ac4d56dc42f8065d5cf0d4a179799cf9a}{ctr\+\_\+lte\+\_\+link\+\_\+send\+\_\+data}} (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, const void \texorpdfstring{$\ast$}{*}buf, size\+\_\+t len)
+\item 
+static int \mbox{\hyperlink{ctr__lte__link_8h_a6af6dfbc35b57029d4fae5d4919db0ae}{ctr\+\_\+lte\+\_\+link\+\_\+recv\+\_\+data}} (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, void \texorpdfstring{$\ast$}{*}buf, size\+\_\+t size, size\+\_\+t \texorpdfstring{$\ast$}{*}len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{ctr__lte__link_8h_a00b97f58879125b1966a864f6fe2cb93}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_disable\_uart@{ctr\_lte\_link\_api\_disable\_uart}}
+\index{ctr\_lte\_link\_api\_disable\_uart@{ctr\_lte\_link\_api\_disable\_uart}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_disable\_uart}{ctr\_lte\_link\_api\_disable\_uart}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a00b97f58879125b1966a864f6fe2cb93} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+disable\+\_\+uart) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_a0e2185bb5f3ed68c5278884a6fb27b3e}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_enable\_uart@{ctr\_lte\_link\_api\_enable\_uart}}
+\index{ctr\_lte\_link\_api\_enable\_uart@{ctr\_lte\_link\_api\_enable\_uart}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_enable\_uart}{ctr\_lte\_link\_api\_enable\_uart}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a0e2185bb5f3ed68c5278884a6fb27b3e} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+enable\+\_\+uart) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_aea1792a0d616ccb7d843f50d9b20b37a}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_enter\_data\_mode@{ctr\_lte\_link\_api\_enter\_data\_mode}}
+\index{ctr\_lte\_link\_api\_enter\_data\_mode@{ctr\_lte\_link\_api\_enter\_data\_mode}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_enter\_data\_mode}{ctr\_lte\_link\_api\_enter\_data\_mode}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_aea1792a0d616ccb7d843f50d9b20b37a} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+enter\+\_\+data\+\_\+mode) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_aefb10a9afffc9c36164b3c03f8e71955}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_enter\_dialog@{ctr\_lte\_link\_api\_enter\_dialog}}
+\index{ctr\_lte\_link\_api\_enter\_dialog@{ctr\_lte\_link\_api\_enter\_dialog}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_enter\_dialog}{ctr\_lte\_link\_api\_enter\_dialog}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_aefb10a9afffc9c36164b3c03f8e71955} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+enter\+\_\+dialog) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_ab2a755fbd3adb23b3bd12a5c55cb0a60}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_exit\_data\_mode@{ctr\_lte\_link\_api\_exit\_data\_mode}}
+\index{ctr\_lte\_link\_api\_exit\_data\_mode@{ctr\_lte\_link\_api\_exit\_data\_mode}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_exit\_data\_mode}{ctr\_lte\_link\_api\_exit\_data\_mode}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ab2a755fbd3adb23b3bd12a5c55cb0a60} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+exit\+\_\+data\+\_\+mode) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_ac340ef48142938fa411269b9776f0963}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_exit\_dialog@{ctr\_lte\_link\_api\_exit\_dialog}}
+\index{ctr\_lte\_link\_api\_exit\_dialog@{ctr\_lte\_link\_api\_exit\_dialog}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_exit\_dialog}{ctr\_lte\_link\_api\_exit\_dialog}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ac340ef48142938fa411269b9776f0963} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+exit\+\_\+dialog) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_a959c2f9bfbf04cf509894699581b35f8}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_free\_line@{ctr\_lte\_link\_api\_free\_line}}
+\index{ctr\_lte\_link\_api\_free\_line@{ctr\_lte\_link\_api\_free\_line}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_free\_line}{ctr\_lte\_link\_api\_free\_line}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a959c2f9bfbf04cf509894699581b35f8} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+free\+\_\+line) (const struct device \texorpdfstring{$\ast$}{*}dev, char \texorpdfstring{$\ast$}{*}line)}
+
+\Hypertarget{ctr__lte__link_8h_a1cab79b7cc1295cf29c4609030d95a27}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_lock@{ctr\_lte\_link\_api\_lock}}
+\index{ctr\_lte\_link\_api\_lock@{ctr\_lte\_link\_api\_lock}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_lock}{ctr\_lte\_link\_api\_lock}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a1cab79b7cc1295cf29c4609030d95a27} 
+typedef void(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+lock) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_a53cd24304a689675817569a57f20df9d}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_recv\_data@{ctr\_lte\_link\_api\_recv\_data}}
+\index{ctr\_lte\_link\_api\_recv\_data@{ctr\_lte\_link\_api\_recv\_data}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_recv\_data}{ctr\_lte\_link\_api\_recv\_data}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a53cd24304a689675817569a57f20df9d} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+recv\+\_\+data) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, void \texorpdfstring{$\ast$}{*}buf, size\+\_\+t size, size\+\_\+t \texorpdfstring{$\ast$}{*}len)}
+
+\Hypertarget{ctr__lte__link_8h_a2bbb997f0957df1f4ccf923257ba3adc}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_recv\_line@{ctr\_lte\_link\_api\_recv\_line}}
+\index{ctr\_lte\_link\_api\_recv\_line@{ctr\_lte\_link\_api\_recv\_line}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_recv\_line}{ctr\_lte\_link\_api\_recv\_line}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a2bbb997f0957df1f4ccf923257ba3adc} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+recv\+\_\+line) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}line)}
+
+\Hypertarget{ctr__lte__link_8h_ab018ece09f80f05629f4eb04c00009ea}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_reset@{ctr\_lte\_link\_api\_reset}}
+\index{ctr\_lte\_link\_api\_reset@{ctr\_lte\_link\_api\_reset}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_reset}{ctr\_lte\_link\_api\_reset}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ab018ece09f80f05629f4eb04c00009ea} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+reset) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_ae7d73d70b2d01e2b49ac5f3e4b5d722a}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_send\_data@{ctr\_lte\_link\_api\_send\_data}}
+\index{ctr\_lte\_link\_api\_send\_data@{ctr\_lte\_link\_api\_send\_data}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_send\_data}{ctr\_lte\_link\_api\_send\_data}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ae7d73d70b2d01e2b49ac5f3e4b5d722a} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+send\+\_\+data) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, const void \texorpdfstring{$\ast$}{*}buf, size\+\_\+t len)}
+
+\Hypertarget{ctr__lte__link_8h_a448dbe29ff2edbf02192f8e050179d97}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_send\_line@{ctr\_lte\_link\_api\_send\_line}}
+\index{ctr\_lte\_link\_api\_send\_line@{ctr\_lte\_link\_api\_send\_line}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_send\_line}{ctr\_lte\_link\_api\_send\_line}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a448dbe29ff2edbf02192f8e050179d97} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+send\+\_\+line) (const struct device \texorpdfstring{$\ast$}{*}dev, k\+\_\+timeout\+\_\+t timeout, const char \texorpdfstring{$\ast$}{*}format, va\+\_\+list ap)}
+
+\Hypertarget{ctr__lte__link_8h_a5b50de694c72e8c1d617ae13fcaca8fb}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_set\_callback@{ctr\_lte\_link\_api\_set\_callback}}
+\index{ctr\_lte\_link\_api\_set\_callback@{ctr\_lte\_link\_api\_set\_callback}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_set\_callback}{ctr\_lte\_link\_api\_set\_callback}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a5b50de694c72e8c1d617ae13fcaca8fb} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+set\+\_\+callback) (const struct device \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\+\_\+lte\+\_\+link\+\_\+user\+\_\+cb}} user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)}
+
+\Hypertarget{ctr__lte__link_8h_a9e3e8aad30f2b18cd2ec08228bebba68}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_unlock@{ctr\_lte\_link\_api\_unlock}}
+\index{ctr\_lte\_link\_api\_unlock@{ctr\_lte\_link\_api\_unlock}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_unlock}{ctr\_lte\_link\_api\_unlock}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a9e3e8aad30f2b18cd2ec08228bebba68} 
+typedef void(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+unlock) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_ae43d53045e83eae4d6e96d3265a26272}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_api\_wake\_up@{ctr\_lte\_link\_api\_wake\_up}}
+\index{ctr\_lte\_link\_api\_wake\_up@{ctr\_lte\_link\_api\_wake\_up}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_api\_wake\_up}{ctr\_lte\_link\_api\_wake\_up}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ae43d53045e83eae4d6e96d3265a26272} 
+typedef int(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+api\+\_\+wake\+\_\+up) (const struct device \texorpdfstring{$\ast$}{*}dev)}
+
+\Hypertarget{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_user\_cb@{ctr\_lte\_link\_user\_cb}}
+\index{ctr\_lte\_link\_user\_cb@{ctr\_lte\_link\_user\_cb}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_user\_cb}{ctr\_lte\_link\_user\_cb}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77} 
+typedef void(\texorpdfstring{$\ast$}{*} ctr\+\_\+lte\+\_\+link\+\_\+user\+\_\+cb) (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}{ctr\+\_\+lte\+\_\+link\+\_\+event}} event, void \texorpdfstring{$\ast$}{*}user\+\_\+data)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_event@{ctr\_lte\_link\_event}}
+\index{ctr\_lte\_link\_event@{ctr\_lte\_link\_event}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_event}{ctr\_lte\_link\_event}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86} 
+enum \mbox{\hyperlink{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86}{ctr\+\_\+lte\+\_\+link\+\_\+event}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_LTE\_LINK\_EVENT\_RESET@{CTR\_LTE\_LINK\_EVENT\_RESET}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!CTR\_LTE\_LINK\_EVENT\_RESET@{CTR\_LTE\_LINK\_EVENT\_RESET}}}\Hypertarget{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86abfa2f9fc3cbe8b3902dcd14bd39356d0}\label{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86} 
+CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_LTE\_LINK\_EVENT\_INDICATE@{CTR\_LTE\_LINK\_EVENT\_INDICATE}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!CTR\_LTE\_LINK\_EVENT\_INDICATE@{CTR\_LTE\_LINK\_EVENT\_INDICATE}}}\Hypertarget{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86aed2a110a9ff46d580dede4df2d367549}\label{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86} 
+CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+INDICATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_LTE\_LINK\_EVENT\_RX\_LINE@{CTR\_LTE\_LINK\_EVENT\_RX\_LINE}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!CTR\_LTE\_LINK\_EVENT\_RX\_LINE@{CTR\_LTE\_LINK\_EVENT\_RX\_LINE}}}\Hypertarget{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86ae344e7db731df6bd0df5e3a7c50ca459}\label{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86} 
+CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_LTE\_LINK\_EVENT\_RX\_DATA@{CTR\_LTE\_LINK\_EVENT\_RX\_DATA}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!CTR\_LTE\_LINK\_EVENT\_RX\_DATA@{CTR\_LTE\_LINK\_EVENT\_RX\_DATA}}}\Hypertarget{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86a77a6ba814622228cb59bb3c26f33332c}\label{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86} 
+CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+DATA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_LTE\_LINK\_EVENT\_RX\_LOSS@{CTR\_LTE\_LINK\_EVENT\_RX\_LOSS}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!CTR\_LTE\_LINK\_EVENT\_RX\_LOSS@{CTR\_LTE\_LINK\_EVENT\_RX\_LOSS}}}\Hypertarget{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86ae1f1c6d08cce330e310c18075180c2fa}\label{ctr__lte__link_8h_a5c0be71526a9b417a37a497f5febeb86} 
+CTR\+\_\+\+LTE\+\_\+\+LINK\+\_\+\+EVENT\+\_\+\+RX\+\_\+\+LOSS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ctr__lte__link_8h_a3f2b99c296bffe7a5754a38c86692140}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_disable\_uart@{ctr\_lte\_link\_disable\_uart}}
+\index{ctr\_lte\_link\_disable\_uart@{ctr\_lte\_link\_disable\_uart}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_disable\_uart()}{ctr\_lte\_link\_disable\_uart()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a3f2b99c296bffe7a5754a38c86692140} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+disable\+\_\+uart (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_af04d3a428fec6d68a61f83287c951af1}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_enable\_uart@{ctr\_lte\_link\_enable\_uart}}
+\index{ctr\_lte\_link\_enable\_uart@{ctr\_lte\_link\_enable\_uart}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_enable\_uart()}{ctr\_lte\_link\_enable\_uart()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_af04d3a428fec6d68a61f83287c951af1} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+enable\+\_\+uart (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a30ef204c2412bcd9e24f7de66da06dee}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_enter\_data\_mode@{ctr\_lte\_link\_enter\_data\_mode}}
+\index{ctr\_lte\_link\_enter\_data\_mode@{ctr\_lte\_link\_enter\_data\_mode}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_enter\_data\_mode()}{ctr\_lte\_link\_enter\_data\_mode()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a30ef204c2412bcd9e24f7de66da06dee} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+enter\+\_\+data\+\_\+mode (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a26706f2b56a41c57830d141bfa8e6090}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_enter\_dialog@{ctr\_lte\_link\_enter\_dialog}}
+\index{ctr\_lte\_link\_enter\_dialog@{ctr\_lte\_link\_enter\_dialog}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_enter\_dialog()}{ctr\_lte\_link\_enter\_dialog()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a26706f2b56a41c57830d141bfa8e6090} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+enter\+\_\+dialog (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a17fd61288a147ac4547291edbf470b0a}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_exit\_data\_mode@{ctr\_lte\_link\_exit\_data\_mode}}
+\index{ctr\_lte\_link\_exit\_data\_mode@{ctr\_lte\_link\_exit\_data\_mode}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_exit\_data\_mode()}{ctr\_lte\_link\_exit\_data\_mode()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a17fd61288a147ac4547291edbf470b0a} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+exit\+\_\+data\+\_\+mode (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_aee0dde6ee8749ad43e3aa3845ef7cff1}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_exit\_dialog@{ctr\_lte\_link\_exit\_dialog}}
+\index{ctr\_lte\_link\_exit\_dialog@{ctr\_lte\_link\_exit\_dialog}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_exit\_dialog()}{ctr\_lte\_link\_exit\_dialog()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_aee0dde6ee8749ad43e3aa3845ef7cff1} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+exit\+\_\+dialog (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_acc430f25a6d328101b608d26b60e61a7}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_free\_line@{ctr\_lte\_link\_free\_line}}
+\index{ctr\_lte\_link\_free\_line@{ctr\_lte\_link\_free\_line}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_free\_line()}{ctr\_lte\_link\_free\_line()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_acc430f25a6d328101b608d26b60e61a7} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+free\+\_\+line (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a7e70ac1e4c843ffa5e32f27d022b97c8}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_lock@{ctr\_lte\_link\_lock}}
+\index{ctr\_lte\_link\_lock@{ctr\_lte\_link\_lock}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_lock()}{ctr\_lte\_link\_lock()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a7e70ac1e4c843ffa5e32f27d022b97c8} 
+static void ctr\+\_\+lte\+\_\+link\+\_\+lock (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a6af6dfbc35b57029d4fae5d4919db0ae}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_recv\_data@{ctr\_lte\_link\_recv\_data}}
+\index{ctr\_lte\_link\_recv\_data@{ctr\_lte\_link\_recv\_data}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_recv\_data()}{ctr\_lte\_link\_recv\_data()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a6af6dfbc35b57029d4fae5d4919db0ae} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+recv\+\_\+data (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{k\+\_\+timeout\+\_\+t}]{timeout}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{size\+\_\+t}]{size}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a3937cc408a6c0e82e796206f5ef737bc}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_recv\_line@{ctr\_lte\_link\_recv\_line}}
+\index{ctr\_lte\_link\_recv\_line@{ctr\_lte\_link\_recv\_line}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_recv\_line()}{ctr\_lte\_link\_recv\_line()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a3937cc408a6c0e82e796206f5ef737bc} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+recv\+\_\+line (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{k\+\_\+timeout\+\_\+t}]{timeout}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_ac4d529e2b5262fc8402fe8f17b057b9b}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_reset@{ctr\_lte\_link\_reset}}
+\index{ctr\_lte\_link\_reset@{ctr\_lte\_link\_reset}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_reset()}{ctr\_lte\_link\_reset()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ac4d529e2b5262fc8402fe8f17b057b9b} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+reset (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_ac4d56dc42f8065d5cf0d4a179799cf9a}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_send\_data@{ctr\_lte\_link\_send\_data}}
+\index{ctr\_lte\_link\_send\_data@{ctr\_lte\_link\_send\_data}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_send\_data()}{ctr\_lte\_link\_send\_data()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ac4d56dc42f8065d5cf0d4a179799cf9a} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{k\+\_\+timeout\+\_\+t}]{timeout}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{size\+\_\+t}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_a46ee12b6dd51510f3367744355ce11b6}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_send\_line@{ctr\_lte\_link\_send\_line}}
+\index{ctr\_lte\_link\_send\_line@{ctr\_lte\_link\_send\_line}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_send\_line()}{ctr\_lte\_link\_send\_line()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_a46ee12b6dd51510f3367744355ce11b6} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+send\+\_\+line (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{k\+\_\+timeout\+\_\+t}]{timeout}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_ab7d0f45c361894c4e6a703487659e411}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_set\_callback@{ctr\_lte\_link\_set\_callback}}
+\index{ctr\_lte\_link\_set\_callback@{ctr\_lte\_link\_set\_callback}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_set\_callback()}{ctr\_lte\_link\_set\_callback()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_ab7d0f45c361894c4e6a703487659e411} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+set\+\_\+callback (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{\mbox{\hyperlink{ctr__lte__link_8h_ab4987f939a5171ab8ebc47db105a0e77}{ctr\+\_\+lte\+\_\+link\+\_\+user\+\_\+cb}}}]{user\+\_\+cb}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_aff1f769b5f928d0872fcd1561f9bb43d}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_unlock@{ctr\_lte\_link\_unlock}}
+\index{ctr\_lte\_link\_unlock@{ctr\_lte\_link\_unlock}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_unlock()}{ctr\_lte\_link\_unlock()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_aff1f769b5f928d0872fcd1561f9bb43d} 
+static void ctr\+\_\+lte\+\_\+link\+\_\+unlock (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{ctr__lte__link_8h_aa406bcba023d59c7818629c90e5a6b3e}\index{ctr\_lte\_link.h@{ctr\_lte\_link.h}!ctr\_lte\_link\_wake\_up@{ctr\_lte\_link\_wake\_up}}
+\index{ctr\_lte\_link\_wake\_up@{ctr\_lte\_link\_wake\_up}!ctr\_lte\_link.h@{ctr\_lte\_link.h}}
+\doxysubsubsection{\texorpdfstring{ctr\_lte\_link\_wake\_up()}{ctr\_lte\_link\_wake\_up()}}
+{\footnotesize\ttfamily \label{ctr__lte__link_8h_aa406bcba023d59c7818629c90e5a6b3e} 
+static int ctr\+\_\+lte\+\_\+link\+\_\+wake\+\_\+up (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

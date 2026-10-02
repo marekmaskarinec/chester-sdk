@@ -1,0 +1,185 @@
+\doxysection{drivers/ctr\+\_\+s1.h File Reference}
+\hypertarget{ctr__s1_8h}{}\label{ctr__s1_8h}\index{drivers/ctr\_s1.h@{drivers/ctr\_s1.h}}
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for ctr\+\_\+s1.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctr__s1_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structctr__s1__buzzer__param}{ctr\+\_\+s1\+\_\+buzzer\+\_\+param}}
+\item 
+struct \mbox{\hyperlink{structctr__s1__led__param}{ctr\+\_\+s1\+\_\+led\+\_\+param}}
+\item 
+struct \mbox{\hyperlink{structctr__s1__status}{ctr\+\_\+s1\+\_\+status}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_gaefcbe2cb5bfb67d990e254f61d172511}{ctr\+\_\+s1\+\_\+buzzer\+\_\+command}} \{ \newline
+\mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a7373c024b5070f3582e0d1667b1aefa9}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a51e3f836fadee5efe233644b45a0500b}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+16}} = 1
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a5bec85bb198ba1ae97dffc400cbd4da3}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+4\+X\+\_\+1\+\_\+16}} = 2
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a92ea4366a9c698ee551a713cf05f803e}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+8}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a5b417e48e12918e5ab7747e34d681887}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+4}} = 4
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511abdf2cc8f70abad0d7be17ee517b4e9a2}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+2}} = 5
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a463af0efe1d8e2b189451c490e7f3f17}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+2\+X\+\_\+1\+\_\+2}} = 6
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a702ca6c6d5273ffa5eb5875651394a8c}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+3\+X\+\_\+1\+\_\+2}} = 7
+, \newline
+\mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511ac19c93ec4e07bba97bfa178202425b48}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+1}} = 8
+, \mbox{\hyperlink{group__ctr__s1_ggaefcbe2cb5bfb67d990e254f61d172511a57157dc2439b15a65272259b7658a6a0}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+COMMAND\+\_\+1\+X\+\_\+2\+\_\+1}} = 9
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_ga5f6f7f84691932f77e87fcdd46ea3fbb}{ctr\+\_\+s1\+\_\+buzzer\+\_\+pattern}} \{ \newline
+\mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbae8625c77d8047eb8d2c6160e9be7b812}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+\+OFF}} = 0
+, \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbab0de6b58dd315014d93565b6c40661a4}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+1\+\_\+\+HZ\+\_\+1\+\_\+1}} = 1
+, \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbaa239dfec92840461c8ca13f1d6748822}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+1\+\_\+\+HZ\+\_\+1\+\_\+7}} = 2
+, \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbabd592b9d96da4aca5d67dc4961ace8e5}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+2\+\_\+\+HZ\+\_\+1\+\_\+1}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbbabaf504fa12889f69d90bd9df25b38d9b}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+2\+\_\+\+HZ\+\_\+1\+\_\+3}} = 4
+, \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbba6c196b19ce204fa974ef056adfab59e8}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+4\+\_\+\+HZ\+\_\+1\+\_\+1}} = 5
+, \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbba81df3ef894e432685fede8bb764a08e7}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+8\+\_\+\+HZ\+\_\+1\+\_\+1}} = 6
+, \mbox{\hyperlink{group__ctr__s1_gga5f6f7f84691932f77e87fcdd46ea3fbba1890f652da93f59c6c41eaf1c016a485}{CTR\+\_\+\+S1\+\_\+\+BUZZER\+\_\+\+PATTERN\+\_\+\+ON}} = 15
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_ga94a57166a9f40f389cdfafac2c3e5f68}{ctr\+\_\+s1\+\_\+led\+\_\+channel}} \{ \mbox{\hyperlink{group__ctr__s1_gga94a57166a9f40f389cdfafac2c3e5f68a76e1846c8c31dafcbf8e7f8ef126c456}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+CHANNEL\+\_\+R}} = 0
+, \mbox{\hyperlink{group__ctr__s1_gga94a57166a9f40f389cdfafac2c3e5f68a02acb0438cf16339f77c9751e6bb827b}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+CHANNEL\+\_\+G}} = 1
+, \mbox{\hyperlink{group__ctr__s1_gga94a57166a9f40f389cdfafac2c3e5f68a79978dba7fd1a6e6eb06d022e50a6019}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+CHANNEL\+\_\+B}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_ga74019edefb23aa3b42fe329b4a0bdcbd}{ctr\+\_\+s1\+\_\+led\+\_\+brightness}} \{ \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbdac01ec2c6699d9d2ce58d7f9c50a558fd}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+BRIGHTNESS\+\_\+\+OFF}} = 0x00
+, \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbdaf13310c6a80f9169ed4b9f223e87bc74}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+BRIGHTNESS\+\_\+\+LOW}} = 0x1f
+, \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbda3e1484e603777b0f2243e77710728957}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+BRIGHTNESS\+\_\+\+MEDIUM}} = 0x7f
+, \mbox{\hyperlink{group__ctr__s1_gga74019edefb23aa3b42fe329b4a0bdcbdacd52431030aad41ab49a4b685301dfa3}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+BRIGHTNESS\+\_\+\+HIGH}} = 0xff
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_gaf7e13846d2a2104326bab976a4bae58e}{ctr\+\_\+s1\+\_\+led\+\_\+command}} \{ \newline
+\mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea91eaf871d30a5336c77c4117e4db2beb}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea88f40d6e32d0820e6724dd45b43e82cf}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+16}} = 1
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea01f164a9a264bd4a7f94647fc968823b}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+4\+X\+\_\+1\+\_\+16}} = 2
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eaad63f7c3c6193c930532db14ce030bc6}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+8}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eab60f0801948b8c7a1cc297ac5b954f3a}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+4}} = 4
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea9d44f316077755812953be17912610d7}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+2}} = 5
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eadde2370fa7f9fe15ef93737f94b65fdf}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+2\+X\+\_\+1\+\_\+2}} = 6
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eaec243093e6e3567390f522c7c7121f86}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+3\+X\+\_\+1\+\_\+2}} = 7
+, \newline
+\mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58eab4daa2a38267611dbe074478df0be529}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+1\+X\+\_\+1\+\_\+1}} = 8
+, \mbox{\hyperlink{group__ctr__s1_ggaf7e13846d2a2104326bab976a4bae58ea3558b6a435466b2d8ffe565a86ad75e1}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+COMMAND\+\_\+1\+X\+\_\+2\+\_\+1}} = 9
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_gaa0ed4c2f6392f2473bfd8c66f2eaeb6a}{ctr\+\_\+s1\+\_\+led\+\_\+pattern}} \{ \newline
+\mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aae553e570774a55f8f239e774010b72d9}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+\+OFF}} = 0
+, \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aaa760dfadaf640b513abdaade69c61c08}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+1\+\_\+\+HZ\+\_\+1\+\_\+1}} = 1
+, \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa467bbc78bbd12603957420936921beb5}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+1\+\_\+\+HZ\+\_\+1\+\_\+7}} = 2
+, \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa538d5a000ec44d5cb7a26b876652cec5}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+2\+\_\+\+HZ\+\_\+1\+\_\+1}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa2c6501db8d775908e2bbc54be5c6044d}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+2\+\_\+\+HZ\+\_\+1\+\_\+3}} = 4
+, \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa6174dd3096aebb49d0afe3bffab64b41}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+4\+\_\+\+HZ\+\_\+1\+\_\+1}} = 5
+, \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aa9ffe15289f9a0521aaed34629a6c87a6}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+8\+\_\+\+HZ\+\_\+1\+\_\+1}} = 6
+, \mbox{\hyperlink{group__ctr__s1_ggaa0ed4c2f6392f2473bfd8c66f2eaeb6aadd1b432b1efdd3619f9227deca8d0bb7}{CTR\+\_\+\+S1\+\_\+\+LED\+\_\+\+PATTERN\+\_\+\+ON}} = 15
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_ga52263a891f2232f0a48ce1106bede491}{ctr\+\_\+s1\+\_\+motion\+\_\+sensitivity}} \{ \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491a6d19990c15efdf4021f37ea66dab1c7f}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+SENSITIVITY\+\_\+\+LOW}} = 0
+, \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491a1e2ba0a3e1e29b4bb76078a79861b9df}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+SENSITIVITY\+\_\+\+MEDIUM}} = 1
+, \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491ae6b9e32f233a9604a6c86ac73bcaac82}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+SENSITIVITY\+\_\+\+HIGH}} = 2
+, \mbox{\hyperlink{group__ctr__s1_gga52263a891f2232f0a48ce1106bede491a1fc402bdfecb7fad80db16f4ab4347f8}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+SENSITIVITY\+\_\+\+VERY\+\_\+\+HIGH}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_ga101641b5bb5a5370cf1e7bfc38f816a7}{ctr\+\_\+s1\+\_\+motion\+\_\+blind\+\_\+time}} \{ \newline
+\mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aa366a9d8b815247eb5458daca09291cd}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+0\+\_\+5S}} = 0
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aacefb384a06ed776d6e0df2008726c3a}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+1\+\_\+0S}} = 1
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7ad4930a37bff9fd14078e6f617505174e}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+1\+\_\+5S}} = 2
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aa6a661c333da2a5a169b89216ce43963}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+2\+\_\+0S}} = 3
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a9dfe7206b4b1ea6d8457d9bf54fb6b4f}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+2\+\_\+5S}} = 4
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a5231e31e1bb8620709ea35f065c1c63b}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+3\+\_\+0S}} = 5
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a408b29214997f22bd3f47d0694cd9f68}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+3\+\_\+5S}} = 6
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a4a3c13da5552c36ac020b5dc8c7f0d92}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+4\+\_\+0S}} = 7
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7afc3be9724809134baa06fd4658dc3286}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+4\+\_\+5S}} = 8
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a3149b8a859fa3e81b9c7290da9dac678}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+5\+\_\+0S}} = 9
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aef0e3992c20595efb80e09a5b5b52fa0}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+5\+\_\+5S}} = 10
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a8d7151f7a514630ec645bd8127e6786c}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+6\+\_\+0S}} = 11
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7a4bf0e8478275a2d9a93b14ccadf0e328}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+6\+\_\+5S}} = 12
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7ad6ff10aefc2fed212610a04ac99aefdb}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+7\+\_\+0S}} = 13
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7aa55075cf27b93b6a0c8f49d27d345333}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+7\+\_\+5S}} = 14
+, \mbox{\hyperlink{group__ctr__s1_gga101641b5bb5a5370cf1e7bfc38f816a7adff1e9db45af2664888bf48934a9e4c4}{CTR\+\_\+\+S1\+\_\+\+PIR\+\_\+\+BLIND\+\_\+\+TIME\+\_\+8\+\_\+0S}} = 15
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__s1_ga057c9c304d4f0e61874cd1aab5a8744e}{ctr\+\_\+s1\+\_\+event}} \{ \newline
+\mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea77f8611bf398496afe3ee6bcb64c1354}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+DEVICE\+\_\+\+RESET}} = 15
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eab6727e22909239cf6b8c7515793a7c39}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+MOTION\+\_\+\+DETECTED}} = 12
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea525216a5a677c64584e7e64855edab5b}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+ALTITUDE\+\_\+\+CONVERTED}} = 11
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eadf73e32f5629cf99f89f4c0f28f6d628}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+PRESSURE\+\_\+\+CONVERTED}} = 10
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eaa52b3011d9182979a79670c5f475aac9}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+ILLUMINANCE\+\_\+\+CONVERTED}} = 9
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea75afd4a12bec4331b416f620d4eaf457}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+HUMIDITY\+\_\+\+CONVERTED}} = 8
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea0220483e08d6e386c35123fb5b0de798}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+TEMPERATURE\+\_\+\+CONVERTED}} = 7
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea2cb5dd94827b519bf3636af917307856}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+CO2\+\_\+\+ABC\+\_\+\+CALIB\+\_\+\+DONE}} = 6
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ead10912e1e24d65616ad993ebe6ad8e65}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+CO2\+\_\+\+TGT\+\_\+\+CALIB\+\_\+\+DONE}} = 5
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744eafad0d151e56424d615894c7e534d677c}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+CO2\+\_\+\+CONC\+\_\+\+CONVERTED}} = 4
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea829d012062840f1f39a36cc697ceeb31}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+BUTTON\+\_\+\+PRESSED}} = 3
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea50a22cd8157ec670b0c71a089e7c88b5}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+BUTTON\+\_\+\+CLICKED}} = 2
+, \newline
+\mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea0f119eec569eb12b89ea55eceeb9fb8b}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+BUTTON\+\_\+\+HOLD}} = 1
+, \mbox{\hyperlink{group__ctr__s1_gga057c9c304d4f0e61874cd1aab5a8744ea0415d0faa515c6c7444aa78a6a06933c}{CTR\+\_\+\+S1\+\_\+\+EVENT\+\_\+\+BUTTON\+\_\+\+RELEASED}} = 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga84340dad345734b7aad6b42f8c4683ca}{ctr\+\_\+s1\+\_\+set\+\_\+handler}} (const struct device \texorpdfstring{$\ast$}{*}dev, ctr\+\_\+s1\+\_\+user\+\_\+cb user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga374cbd3056ace3fb275d0e2d74f6eb92}{ctr\+\_\+s1\+\_\+enable\+\_\+interrupts}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga008ed336faf2027f96afa839e9b778e9}{ctr\+\_\+s1\+\_\+apply}} (const struct device \texorpdfstring{$\ast$}{*}dev)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga4cd4efb9eb3e1a4cd7a6c484e489cba5}{ctr\+\_\+s1\+\_\+get\+\_\+status}} (const struct device \texorpdfstring{$\ast$}{*}dev, struct \mbox{\hyperlink{structctr__s1__status}{ctr\+\_\+s1\+\_\+status}} \texorpdfstring{$\ast$}{*}status)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_gae47d2028f5dbac2eba041f838038811c}{ctr\+\_\+s1\+\_\+get\+\_\+serial\+\_\+number}} (const struct device \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t \texorpdfstring{$\ast$}{*}serial\+\_\+number)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_gaaed681effd9d3737f8f9414456a5b2d9}{ctr\+\_\+s1\+\_\+get\+\_\+hw\+\_\+revision}} (const struct device \texorpdfstring{$\ast$}{*}dev, uint16\+\_\+t \texorpdfstring{$\ast$}{*}hw\+\_\+revision)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga142b5ffbd49c6ced96c36a44809a1fab}{ctr\+\_\+s1\+\_\+get\+\_\+hw\+\_\+variant}} (const struct device \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t \texorpdfstring{$\ast$}{*}hw\+\_\+variant)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_gac72d655ac54277380cebbe1a7d6fabe4}{ctr\+\_\+s1\+\_\+get\+\_\+fw\+\_\+version}} (const struct device \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t \texorpdfstring{$\ast$}{*}fw\+\_\+version)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga1e5e42309b01a783c9dfe987bd74439c}{ctr\+\_\+s1\+\_\+get\+\_\+vendor\+\_\+name}} (const struct device \texorpdfstring{$\ast$}{*}dev, char \texorpdfstring{$\ast$}{*}buf, size\+\_\+t buf\+\_\+size)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga2d4795ddaff76c3e23afedd84afd409a}{ctr\+\_\+s1\+\_\+get\+\_\+product\+\_\+name}} (const struct device \texorpdfstring{$\ast$}{*}dev, char \texorpdfstring{$\ast$}{*}buf, size\+\_\+t buf\+\_\+size)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga08b589e91457f49152c9be7039343cb2}{ctr\+\_\+s1\+\_\+set\+\_\+buzzer}} (const struct device \texorpdfstring{$\ast$}{*}dev, const struct \mbox{\hyperlink{structctr__s1__buzzer__param}{ctr\+\_\+s1\+\_\+buzzer\+\_\+param}} \texorpdfstring{$\ast$}{*}param)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_gace0dec1cf15b5ac9656039dba44c699a}{ctr\+\_\+s1\+\_\+set\+\_\+led}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__s1_ga94a57166a9f40f389cdfafac2c3e5f68}{ctr\+\_\+s1\+\_\+led\+\_\+channel}} channel, const struct \mbox{\hyperlink{structctr__s1__led__param}{ctr\+\_\+s1\+\_\+led\+\_\+param}} \texorpdfstring{$\ast$}{*}param)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga8d55163025c314bcca1bb6114a36d999}{ctr\+\_\+s1\+\_\+set\+\_\+motion\+\_\+sensitivity}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__s1_ga52263a891f2232f0a48ce1106bede491}{ctr\+\_\+s1\+\_\+motion\+\_\+sensitivity}} motion\+\_\+sensitivity)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_gaefb62c5c15f5f7190a48fae2c6b524cf}{ctr\+\_\+s1\+\_\+set\+\_\+motion\+\_\+blind\+\_\+time}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__s1_ga101641b5bb5a5370cf1e7bfc38f816a7}{ctr\+\_\+s1\+\_\+motion\+\_\+blind\+\_\+time}} motion\+\_\+blind\+\_\+time)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga94d58e62efa5b80958af172877fbe6dd}{ctr\+\_\+s1\+\_\+read\+\_\+motion\+\_\+count}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}motion\+\_\+count)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga531697c42f1eb3685341bbfd748e058e}{ctr\+\_\+s1\+\_\+read\+\_\+temperature}} (const struct device \texorpdfstring{$\ast$}{*}dev, float \texorpdfstring{$\ast$}{*}temperature)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga22ec873019190e4fdc08d892a76b6c36}{ctr\+\_\+s1\+\_\+read\+\_\+humidity}} (const struct device \texorpdfstring{$\ast$}{*}dev, float \texorpdfstring{$\ast$}{*}humidity)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga06815009cd6a19f80283660c48840967}{ctr\+\_\+s1\+\_\+read\+\_\+illuminance}} (const struct device \texorpdfstring{$\ast$}{*}dev, float \texorpdfstring{$\ast$}{*}illuminance)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga3284e31515cc93dcd1bf2e72534244f7}{ctr\+\_\+s1\+\_\+read\+\_\+altitude}} (const struct device \texorpdfstring{$\ast$}{*}dev, float \texorpdfstring{$\ast$}{*}altitude)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga81f29d12ab2f9639d9271e106c2c3226}{ctr\+\_\+s1\+\_\+read\+\_\+pressure}} (const struct device \texorpdfstring{$\ast$}{*}dev, float \texorpdfstring{$\ast$}{*}pressure)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_gae6af0dfa6841ac7d7e4ead797035618c}{ctr\+\_\+s1\+\_\+read\+\_\+co2\+\_\+conc}} (const struct device \texorpdfstring{$\ast$}{*}dev, float \texorpdfstring{$\ast$}{*}co2\+\_\+conc)
+\item 
+static int \mbox{\hyperlink{group__ctr__s1_ga55e31017577e2191f58310400cea355d}{ctr\+\_\+s1\+\_\+calib\+\_\+tgt\+\_\+co2\+\_\+conc}} (const struct device \texorpdfstring{$\ast$}{*}dev, float tgt\+\_\+co2\+\_\+conc)
+\end{DoxyCompactItemize}

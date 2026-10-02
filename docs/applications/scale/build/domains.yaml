@@ -1,0 +1,10 @@
+default: scale
+build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/scale/build
+domains:
+  - name: scale
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/scale/build/scale
+  - name: mcuboot
+    build_dir: /home/marek/dev/hio/chester-sdk/chester/applications/scale/build/mcuboot
+flash_order:
+  - mcuboot
+  - scale

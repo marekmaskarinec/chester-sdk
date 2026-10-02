@@ -1,0 +1,19 @@
+# ninja log v7
+1	16	1780393778278529222	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-mkdir	2de82352822e6584
+1	16	1780393778278529222	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-mkdir	2de82352822e6584
+16	45	1780393778307525421	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-download	168ef50d844e4d1f
+16	45	1780393778307525421	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-download	168ef50d844e4d1f
+45	74	1780393778336521621	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-update	84dad1274f0cb05c
+45	74	1780393778336521621	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-update	84dad1274f0cb05c
+74	102	1780393778364517951	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-patch	4a381c67bf946f89
+74	102	1780393778364517951	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-patch	4a381c67bf946f89
+102	123	1780393778386515068	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-configure	9abbfb2ef05feedc
+102	123	1780393778386515068	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-configure	9abbfb2ef05feedc
+124	14681	1780393778387514937	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-build	58d5ec753d70c939
+124	14681	1780393778387514937	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-build	58d5ec753d70c939
+14681	14688	1780393792943959595	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-install	7ec1d0bec2c1fab4
+14681	14688	1780393792943959595	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-install	7ec1d0bec2c1fab4
+14688	14708	1780393792969957331	_sysbuild/sysbuild/images/CMakeFiles/lrw-complete	97537c5cbd7c9991
+14688	14708	1780393792969957331	_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-done	97537c5cbd7c9991
+14688	14708	1780393792969957331	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw-complete	97537c5cbd7c9991
+14688	14708	1780393792969957331	/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-done	97537c5cbd7c9991

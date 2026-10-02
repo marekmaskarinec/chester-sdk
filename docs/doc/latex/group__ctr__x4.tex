@@ -1,0 +1,124 @@
+\doxysection{ctr\+\_\+x4}
+\hypertarget{group__ctr__x4}{}\label{group__ctr__x4}\index{ctr\_x4@{ctr\_x4}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__ctr__x4_ga14e75174a2315a39b444f49d548cb40c}{ctr\+\_\+x4\+\_\+event}} \{ \mbox{\hyperlink{group__ctr__x4_gga14e75174a2315a39b444f49d548cb40cae9d25e3144ce9deaa398118c6f1b6b91}{CTR\+\_\+\+X4\+\_\+\+EVENT\+\_\+\+LINE\+\_\+\+CONNECTED}} = 0
+, \mbox{\hyperlink{group__ctr__x4_gga14e75174a2315a39b444f49d548cb40ca6bb878302d9ed53e04231b32573e4b06}{CTR\+\_\+\+X4\+\_\+\+EVENT\+\_\+\+LINE\+\_\+\+DISCONNECTED}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082}{ctr\+\_\+x4\+\_\+output}} \{ \mbox{\hyperlink{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a3341a6576fcc42a7387aef99e1605579}{CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+1}} = 0
+, \mbox{\hyperlink{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a1146369634934c1fb5f09e6f721f3c47}{CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+2}} = 1
+, \mbox{\hyperlink{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a6b181648bfc1f8ae8879783962b0b085}{CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+3}} = 2
+, \mbox{\hyperlink{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a3d600a4039295a2c7d7127c903ea8eb4}{CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+4}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4}{ctr\+\_\+x4\+\_\+line\+\_\+state}} \{ \mbox{\hyperlink{group__ctr__x4_ggafc85679fd557f6bac16e146f666156a4a3e96f7706f3ebcc189cc4bd9abbfd449}{CTR\+\_\+\+X4\+\_\+\+LINE\+\_\+\+STATE\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{group__ctr__x4_ggafc85679fd557f6bac16e146f666156a4a0a42c2449020ef0a11cfedc41174f709}{CTR\+\_\+\+X4\+\_\+\+LINE\+\_\+\+STATE\+\_\+\+DISCONNECTED}} = 1
+, \mbox{\hyperlink{group__ctr__x4_ggafc85679fd557f6bac16e146f666156a4a944d4e82a490bf49df8e3362a0af0b15}{CTR\+\_\+\+X4\+\_\+\+LINE\+\_\+\+STATE\+\_\+\+CONNECTED}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__ctr__x4_gaff5b0970bbf325d018867891142796a9}{ctr\+\_\+x4\+\_\+set\+\_\+handler}} (const struct device \texorpdfstring{$\ast$}{*}dev, ctr\+\_\+x4\+\_\+user\+\_\+cb user\+\_\+cb, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\item 
+static int \mbox{\hyperlink{group__ctr__x4_gab924ea8b4a4018cb2fd338aee3b3d331}{ctr\+\_\+x4\+\_\+set\+\_\+output}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082}{ctr\+\_\+x4\+\_\+output}} output, bool is\+\_\+on)
+\item 
+static int \mbox{\hyperlink{group__ctr__x4_gaa16be7a6cf8e4ded124168f489e72fde}{ctr\+\_\+x4\+\_\+get\+\_\+line\+\_\+voltage}} (const struct device \texorpdfstring{$\ast$}{*}dev, int \texorpdfstring{$\ast$}{*}line\+\_\+voltage\+\_\+mv)
+\item 
+static int \mbox{\hyperlink{group__ctr__x4_ga44a4ca782c64c2e87767cda9b23220f1}{ctr\+\_\+x4\+\_\+get\+\_\+line\+\_\+state}} (const struct device \texorpdfstring{$\ast$}{*}dev, enum \mbox{\hyperlink{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4}{ctr\+\_\+x4\+\_\+line\+\_\+state}} \texorpdfstring{$\ast$}{*}line\+\_\+state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__ctr__x4_ga14e75174a2315a39b444f49d548cb40c}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_event@{ctr\_x4\_event}}
+\index{ctr\_x4\_event@{ctr\_x4\_event}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_event}{ctr\_x4\_event}}
+{\footnotesize\ttfamily \label{group__ctr__x4_ga14e75174a2315a39b444f49d548cb40c} 
+enum \mbox{\hyperlink{group__ctr__x4_ga14e75174a2315a39b444f49d548cb40c}{ctr\+\_\+x4\+\_\+event}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_EVENT\_LINE\_CONNECTED@{CTR\_X4\_EVENT\_LINE\_CONNECTED}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_EVENT\_LINE\_CONNECTED@{CTR\_X4\_EVENT\_LINE\_CONNECTED}}}\Hypertarget{group__ctr__x4_gga14e75174a2315a39b444f49d548cb40cae9d25e3144ce9deaa398118c6f1b6b91}\label{group__ctr__x4_ga14e75174a2315a39b444f49d548cb40c} 
+CTR\+\_\+\+X4\+\_\+\+EVENT\+\_\+\+LINE\+\_\+\+CONNECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_EVENT\_LINE\_DISCONNECTED@{CTR\_X4\_EVENT\_LINE\_DISCONNECTED}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_EVENT\_LINE\_DISCONNECTED@{CTR\_X4\_EVENT\_LINE\_DISCONNECTED}}}\Hypertarget{group__ctr__x4_gga14e75174a2315a39b444f49d548cb40ca6bb878302d9ed53e04231b32573e4b06}\label{group__ctr__x4_ga14e75174a2315a39b444f49d548cb40c} 
+CTR\+\_\+\+X4\+\_\+\+EVENT\+\_\+\+LINE\+\_\+\+DISCONNECTED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_line\_state@{ctr\_x4\_line\_state}}
+\index{ctr\_x4\_line\_state@{ctr\_x4\_line\_state}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_line\_state}{ctr\_x4\_line\_state}}
+{\footnotesize\ttfamily \label{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4} 
+enum \mbox{\hyperlink{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4}{ctr\+\_\+x4\+\_\+line\+\_\+state}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_LINE\_STATE\_UNKNOWN@{CTR\_X4\_LINE\_STATE\_UNKNOWN}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_LINE\_STATE\_UNKNOWN@{CTR\_X4\_LINE\_STATE\_UNKNOWN}}}\Hypertarget{group__ctr__x4_ggafc85679fd557f6bac16e146f666156a4a3e96f7706f3ebcc189cc4bd9abbfd449}\label{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4} 
+CTR\+\_\+\+X4\+\_\+\+LINE\+\_\+\+STATE\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_LINE\_STATE\_DISCONNECTED@{CTR\_X4\_LINE\_STATE\_DISCONNECTED}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_LINE\_STATE\_DISCONNECTED@{CTR\_X4\_LINE\_STATE\_DISCONNECTED}}}\Hypertarget{group__ctr__x4_ggafc85679fd557f6bac16e146f666156a4a0a42c2449020ef0a11cfedc41174f709}\label{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4} 
+CTR\+\_\+\+X4\+\_\+\+LINE\+\_\+\+STATE\+\_\+\+DISCONNECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_LINE\_STATE\_CONNECTED@{CTR\_X4\_LINE\_STATE\_CONNECTED}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_LINE\_STATE\_CONNECTED@{CTR\_X4\_LINE\_STATE\_CONNECTED}}}\Hypertarget{group__ctr__x4_ggafc85679fd557f6bac16e146f666156a4a944d4e82a490bf49df8e3362a0af0b15}\label{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4} 
+CTR\+\_\+\+X4\+\_\+\+LINE\+\_\+\+STATE\+\_\+\+CONNECTED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_output@{ctr\_x4\_output}}
+\index{ctr\_x4\_output@{ctr\_x4\_output}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_output}{ctr\_x4\_output}}
+{\footnotesize\ttfamily \label{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082} 
+enum \mbox{\hyperlink{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082}{ctr\+\_\+x4\+\_\+output}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_OUTPUT\_1@{CTR\_X4\_OUTPUT\_1}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_OUTPUT\_1@{CTR\_X4\_OUTPUT\_1}}}\Hypertarget{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a3341a6576fcc42a7387aef99e1605579}\label{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082} 
+CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_OUTPUT\_2@{CTR\_X4\_OUTPUT\_2}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_OUTPUT\_2@{CTR\_X4\_OUTPUT\_2}}}\Hypertarget{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a1146369634934c1fb5f09e6f721f3c47}\label{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082} 
+CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_OUTPUT\_3@{CTR\_X4\_OUTPUT\_3}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_OUTPUT\_3@{CTR\_X4\_OUTPUT\_3}}}\Hypertarget{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a6b181648bfc1f8ae8879783962b0b085}\label{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082} 
+CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTR\_X4\_OUTPUT\_4@{CTR\_X4\_OUTPUT\_4}!ctr\_x4@{ctr\_x4}}\index{ctr\_x4@{ctr\_x4}!CTR\_X4\_OUTPUT\_4@{CTR\_X4\_OUTPUT\_4}}}\Hypertarget{group__ctr__x4_gga86e282f4ec4b1f78f9a04f4368ef0082a3d600a4039295a2c7d7127c903ea8eb4}\label{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082} 
+CTR\+\_\+\+X4\+\_\+\+OUTPUT\+\_\+4&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ctr__x4_ga44a4ca782c64c2e87767cda9b23220f1}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_get\_line\_state@{ctr\_x4\_get\_line\_state}}
+\index{ctr\_x4\_get\_line\_state@{ctr\_x4\_get\_line\_state}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_get\_line\_state()}{ctr\_x4\_get\_line\_state()}}
+{\footnotesize\ttfamily \label{group__ctr__x4_ga44a4ca782c64c2e87767cda9b23220f1} 
+static int ctr\+\_\+x4\+\_\+get\+\_\+line\+\_\+state (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{enum \mbox{\hyperlink{group__ctr__x4_gafc85679fd557f6bac16e146f666156a4}{ctr\+\_\+x4\+\_\+line\+\_\+state}} \texorpdfstring{$\ast$}{*}}]{line\+\_\+state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__x4_gaa16be7a6cf8e4ded124168f489e72fde}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_get\_line\_voltage@{ctr\_x4\_get\_line\_voltage}}
+\index{ctr\_x4\_get\_line\_voltage@{ctr\_x4\_get\_line\_voltage}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_get\_line\_voltage()}{ctr\_x4\_get\_line\_voltage()}}
+{\footnotesize\ttfamily \label{group__ctr__x4_gaa16be7a6cf8e4ded124168f489e72fde} 
+static int ctr\+\_\+x4\+\_\+get\+\_\+line\+\_\+voltage (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{line\+\_\+voltage\+\_\+mv}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__x4_gaff5b0970bbf325d018867891142796a9}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_set\_handler@{ctr\_x4\_set\_handler}}
+\index{ctr\_x4\_set\_handler@{ctr\_x4\_set\_handler}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_set\_handler()}{ctr\_x4\_set\_handler()}}
+{\footnotesize\ttfamily \label{group__ctr__x4_gaff5b0970bbf325d018867891142796a9} 
+static int ctr\+\_\+x4\+\_\+set\+\_\+handler (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{ctr\+\_\+x4\+\_\+user\+\_\+cb}]{user\+\_\+cb}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{group__ctr__x4_gab924ea8b4a4018cb2fd338aee3b3d331}\index{ctr\_x4@{ctr\_x4}!ctr\_x4\_set\_output@{ctr\_x4\_set\_output}}
+\index{ctr\_x4\_set\_output@{ctr\_x4\_set\_output}!ctr\_x4@{ctr\_x4}}
+\doxysubsubsection{\texorpdfstring{ctr\_x4\_set\_output()}{ctr\_x4\_set\_output()}}
+{\footnotesize\ttfamily \label{group__ctr__x4_gab924ea8b4a4018cb2fd338aee3b3d331} 
+static int ctr\+\_\+x4\+\_\+set\+\_\+output (\begin{DoxyParamCaption}\item[{const struct device \texorpdfstring{$\ast$}{*}}]{dev}{, }\item[{enum \mbox{\hyperlink{group__ctr__x4_ga86e282f4ec4b1f78f9a04f4368ef0082}{ctr\+\_\+x4\+\_\+output}}}]{output}{, }\item[{bool}]{is\+\_\+on}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+

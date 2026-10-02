@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/CMakeFiles/motion"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/CMakeFiles/motion.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/CMakeFiles/motion-complete.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-build.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-configure.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-download.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-install.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-mkdir.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-patch.rule"
+		},
+		{
+			"file" : "/home/marek/dev/hio/chester-sdk/chester/applications/motion/build/_sysbuild/sysbuild/images/motion-prefix/src/motion-stamp/motion-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"motion"
+		],
+		"name" : "motion"
+	}
+}

@@ -1,0 +1,13 @@
+# Target labels
+ lrw
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/CMakeFiles/lrw-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-build.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-download.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-install.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/samples/lrw/build/_sysbuild/sysbuild/images/lrw-prefix/src/lrw-stamp/lrw-update.rule

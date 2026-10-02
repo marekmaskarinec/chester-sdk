@@ -1,0 +1,13 @@
+# Target labels
+ scale
+# Source files and their labels
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/CMakeFiles/scale
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/CMakeFiles/scale.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/CMakeFiles/scale-complete.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-build.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-configure.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-download.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-install.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-mkdir.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-patch.rule
+/home/marek/dev/hio/chester-sdk/chester/applications/scale/build/_sysbuild/sysbuild/images/scale-prefix/src/scale-stamp/scale-update.rule

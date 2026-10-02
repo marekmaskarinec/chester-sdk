@@ -1,0 +1,74 @@
+\doxysection{ctr\+\_\+gnss.\+h}
+\hypertarget{ctr__gnss_8h_source}{}\label{ctr__gnss_8h_source}\mbox{\hyperlink{ctr__gnss_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ HARDWARIO\ a.s.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LicenseRef-\/HARDWARIO-\/5-\/Clause}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ CHESTER\_INCLUDE\_CTR\_GNSS\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHESTER\_INCLUDE\_CTR\_GNSS\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Standard\ includes\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}{ctr\_gnss\_event}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a979596b13f500ed705051dc47163d2ec}{CTR\_GNSS\_EVENT\_FAILURE}}\ =\ -\/1,}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a00a16ce649d9487b7e4638a3553f2c54}{CTR\_GNSS\_EVENT\_START\_OK}}\ =\ 0,}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433aa9db0aec32e216093d445d3a3bbdc724}{CTR\_GNSS\_EVENT\_START\_ERR}}\ =\ 1,}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a0a53f19fdd449690ed93e1d7a299418d}{CTR\_GNSS\_EVENT\_STOP\_OK}}\ =\ 2,}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a1ff7c95514b62f73762dd448bfa68cf9}{CTR\_GNSS\_EVENT\_STOP\_ERR}}\ =\ 3,}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group__ctr__gnss_gga5c0274583f70421f63936dfdb732c433a29cd04d53417c957daad5ecbb4cf3298}{CTR\_GNSS\_EVENT\_UPDATE}}\ =\ 4,}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__start__ok}{ctr\_gnss\_data\_start\_ok}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__gnss__data__start__ok_a7f433c81c955922ea06ff4a17220d6ee}{corr\_id}};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__start__err}{ctr\_gnss\_data\_start\_err}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__gnss__data__start__err_a218e102b3cf346adfc97cb8e1fd2ccc5}{corr\_id}};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__stop__ok}{ctr\_gnss\_data\_stop\_ok}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__gnss__data__stop__ok_af5c7a806e3a2baa010db27bb3e0e5c92}{corr\_id}};}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__stop__err}{ctr\_gnss\_data\_stop\_err}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__gnss__data__stop__err_aafa26eca85eb969f2759a8579b419e31}{corr\_id}};}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__update}{ctr\_gnss\_data\_update}}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__gnss__data__update_ae7ed948bf1f0c263942f97c4afa8bce3}{fix\_quality}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structctr__gnss__data__update_a177964f1c013b1a9409c2e919a7c246d}{satellites\_tracked}};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__gnss__data__update_a81900bc24ad29daf72cfb38ef7a1dd38}{latitude}};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__gnss__data__update_a320c161dca115f521d4d2d4b425f25bb}{longitude}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structctr__gnss__data__update_ac5406d967d81dbf4420580d5b28c11f9}{altitude}};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionctr__gnss__event__data}{ctr\_gnss\_event\_data}}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__start__ok}{ctr\_gnss\_data\_start\_ok}}\ \mbox{\hyperlink{unionctr__gnss__event__data_a8a3115fab2d23641e14950f08a1119ea}{start\_ok}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__start__err}{ctr\_gnss\_data\_start\_err}}\ \mbox{\hyperlink{unionctr__gnss__event__data_afc3a7c0bd13f4603fb2799844c1dd984}{start\_err}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__stop__ok}{ctr\_gnss\_data\_stop\_ok}}\ \mbox{\hyperlink{unionctr__gnss__event__data_af80806e34afdb2c1783d11de8901bdbe}{stop\_ok}};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__stop__err}{ctr\_gnss\_data\_stop\_err}}\ \mbox{\hyperlink{unionctr__gnss__event__data_a972d5bc3da3f953684327d77c8cf16a7}{stop\_err}};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structctr__gnss__data__update}{ctr\_gnss\_data\_update}}\ \mbox{\hyperlink{unionctr__gnss__event__data_a7ba9a3a59131788b845fbd395f90f834}{update}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c}{ctr\_gnss\_user\_cb}})(\textcolor{keyword}{enum}\ \mbox{\hyperlink{group__ctr__gnss_ga5c0274583f70421f63936dfdb732c433}{ctr\_gnss\_event}}\ event,\ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionctr__gnss__event__data}{ctr\_gnss\_event\_data}}\ *data,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *user\_data);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__gnss_ga0d744a0dce348a1cab827358bdc721a6}{ctr\_gnss\_set\_handler}}(\mbox{\hyperlink{group__ctr__gnss_gaacb89571a96ce3bba9dedd822ba1ce5c}{ctr\_gnss\_user\_cb}}\ user\_cb,\ \textcolor{keywordtype}{void}\ *user\_data);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__gnss_gac03534ce1aac62d5117fbd4258cf3ce5}{ctr\_gnss\_start}}(\textcolor{keywordtype}{int}\ *corr\_id);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ctr__gnss_gaca0ad8f49d22cd5aa7684effa717ed27}{ctr\_gnss\_stop}}(\textcolor{keywordtype}{bool}\ keep\_bckp\_domain,\ \textcolor{keywordtype}{int}\ *corr\_id);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CHESTER\_INCLUDE\_CTR\_GNSS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
