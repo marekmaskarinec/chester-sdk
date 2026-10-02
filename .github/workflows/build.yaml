@@ -227,7 +227,49 @@ jobs:
           path: ${{ steps.build-command.outputs.app_path }}/stage
           retention-days: 1
           if-no-files-found: error
+      - name: build sbom
+        # if: startsWith(github.ref, 'refs/tags/')
+        working-directory: ${{ steps.build-command.outputs.app_path }}
+        run: |
+          pip install -r ../../../nrf/scripts/requirements-west-ncs-sbom.txt # TODO: solve this better
+          mkdir sbom-out/
+          west ncs-sbom -d build --output-html sbom-out/${{ matrix.application }}_${{ github.ref_name }}.html --output-spdx sbom-out/${{ matrix.application }}_${{ github.ref_name }}.spdx
+      - name: upload sbom artifact
+        # if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-${{ matrix.application }}
+          path: ${{ steps.build-command.outputs.app_path }}/sbom
+          retention-days: 1
+          if-no-files-found: error
   # ------------------------
+  sbom:
+    runs-on: ubuntu-latest
+    container:
+      image: hardwario/nrf-connect-sdk-build:v3.4.0-1
+    needs:
+      - prepare
+      - build-app
+    if: startsWith(github.ref, 'refs/tags/')
+    permissions:
+      contents: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          ref: 'gh-pages'
+          path: 'chester-sdk/chester'
+      - name: download sbom artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: 'sbom-*'
+      - name: upload to pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./artifacts
+          destination_dir: sbom
   release:
     runs-on: ubuntu-latest
     container:
