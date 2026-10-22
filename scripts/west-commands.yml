@@ -25,6 +25,11 @@ west-commands:
       - name: hio-sbom
         class: HioSbom
         help: post-process west spdx output into a single SPDX JSON
+  - file: scripts/west_commands/hio-vex.py
+    commands:
+      - name: hio-vex
+        class: HioVex
+        help: add build-aware statements to an OpenVEX document
   - file: scripts/west_commands/lrw-decode/lrw-decode.py
     commands:
       - name: chester-lrw-decode
