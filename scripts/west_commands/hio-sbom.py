@@ -10,7 +10,12 @@ West extension for HARDWARIO CHESTER platform.
 
 Post-processes the output of `west spdx` into a single SPDX JSON document
 suitable for CRA compliance, see
-https://stack-canary.com/blog/zephyr-sbom-cra-compliance/'''
+https://stack-canary.com/blog/zephyr-sbom-cra-compliance/
+
+Scan the result with grype (`grype sbom:<file>`), which matches by CPE. The
+CPE is product-wide, so expect Zephyr CVEs for code that is not built or is
+already fixed in the fork; triage them with VEX (`west hio-vex`). osv-scanner cannot be used:
+it has no way to match C/GIT components from SPDX PURLs.'''
 
 import os
 import re
@@ -60,16 +65,23 @@ def zephyr_version(project_dir):
     return f"{v['VERSION_MAJOR']}.{v['VERSION_MINOR']}.{v['PATCHLEVEL']}"
 
 
-def merge(spdx_dir, name):
-    '''Parse all *.spdx files in spdx_dir and merge them into one Document.'''
-    docs = {}
-    for file in sorted(os.listdir(spdx_dir)):
-        if file.endswith('.spdx'):
-            docs[file[:-5]] = parse_file(os.path.join(spdx_dir, file))
-    if not docs:
-        raise SystemExit(f'no *.spdx files in {spdx_dir}, run `west spdx` first')
+def merge(spdx_dirs, name):
+    '''Parse all *.spdx files in the given directories and merge them into one Document.
 
-    prefix_of_ns = {d.creation_info.document_namespace: p for p, d in docs.items()}
+    spdx_dirs maps a prefix (the sysbuild domain) to a `west spdx` output directory.'''
+    docs = {}
+    for domain, spdx_dir in spdx_dirs.items():
+        files = []
+        if os.path.isdir(spdx_dir):
+            files = sorted(f for f in os.listdir(spdx_dir) if f.endswith('.spdx'))
+        if not files:
+            raise SystemExit(f'no *.spdx files in {spdx_dir}, run `west spdx` first')
+        for file in files:
+            # SPDX IDs allow only letters, digits, '.' and '-'
+            docs[(domain.replace('_', '-'), file[:-5])] = parse_file(os.path.join(spdx_dir, file))
+
+    prefix_of_ns = {d.creation_info.document_namespace: f'{domain}-{kind}'
+                    for (domain, kind), d in docs.items()}
 
     now = datetime.now()
     out = Document(CreationInfo(
@@ -82,7 +94,8 @@ def merge(spdx_dir, name):
         created=now))
 
     licenses = {}
-    for prefix, doc in docs.items():
+    for (domain, kind), doc in docs.items():
+        prefix = f'{domain}-{kind}'
         ns_of_ref = {r.document_ref_id: r.document_uri
                      for r in doc.creation_info.external_document_refs}
 
@@ -96,7 +109,7 @@ def merge(spdx_dir, name):
 
         for item in doc.packages + doc.files:
             item.spdx_id = rename(item.spdx_id)
-        if prefix == 'build':
+        if kind == 'build':
             # CMake targets like "debug" or "kernel" are not third-party components, but
             # scanners match bare package names (e.g. npm "debug"), so make them distinct
             for pkg in doc.packages:
@@ -138,6 +151,7 @@ def add_subsystems(doc, config_path, zephyr_v):
     '''Add a package for every Zephyr subsystem enabled in .config.'''
     with open(config_path) as f:
         config = f.read().splitlines()
+    # the first zephyr-sources package is the application domain's, see merge()
     kernel = next((p for p in doc.packages if p.name == 'zephyr-sources'), None)
     if kernel is None:
         raise SystemExit('zephyr-sources package not found in the merged SBOM')
@@ -178,25 +192,31 @@ class HioSbom(WestCommand):
         parser.add_argument('-d', '--build-dir', default='build',
                             help='build directory (default: build)')
         parser.add_argument('-o', '--output',
-                            help='output file (default: <domain>/spdx/sbom.spdx.json)')
+                            help='output file (default: <app domain>/spdx/sbom.spdx.json)')
         return parser
 
     def do_run(self, args, unknown_args):
+        # domain name -> build directory, the default (application) domain first
         build_dir = args.build_dir
-        domains = os.path.join(build_dir, 'domains.yaml')
-        if os.path.exists(domains):  # sysbuild: use the default domain
-            with open(domains) as f:
-                build_dir = os.path.join(build_dir, yaml.safe_load(f)['default'])
+        domains = {os.path.basename(os.path.abspath(build_dir)): build_dir}
+        if os.path.exists(os.path.join(build_dir, 'domains.yaml')):  # sysbuild
+            with open(os.path.join(build_dir, 'domains.yaml')) as f:
+                sysbuild = yaml.safe_load(f)
+            default = sysbuild['default']
+            names = [default] + [d['name'] for d in sysbuild['domains'] if d['name'] != default]
+            domains = {n: os.path.join(build_dir, n) for n in names}
+        app_dir = next(iter(domains.values()))
 
-        spdx_dir = os.path.join(build_dir, 'spdx')
-        output = args.output or os.path.join(spdx_dir, 'sbom.spdx.json')
+        output = args.output or os.path.join(app_dir, 'spdx', 'sbom.spdx.json')
         zephyr_dir, nrf_dir = (p.abspath for p in self.manifest.get_projects(['zephyr', 'nrf']))
         zephyr_v, nrf_v = zephyr_version(zephyr_dir), zephyr_version(nrf_dir)
 
-        doc = merge(spdx_dir, os.path.basename(os.path.abspath(build_dir)) + '-sbom')
+        doc = merge({n: os.path.join(d, 'spdx') for n, d in domains.items()},
+                    next(iter(domains)) + '-sbom')
         enrich(doc, zephyr_v, nrf_v)
-        add_subsystems(doc, os.path.join(build_dir, 'zephyr', '.config'), zephyr_v)
+        add_subsystems(doc, os.path.join(app_dir, 'zephyr', '.config'), zephyr_v)
 
+        os.makedirs(os.path.dirname(os.path.abspath(output)), exist_ok=True)
         write_file(doc, output)
         log.inf(f'{output}: {len(doc.packages)} packages, {len(doc.files)} files, '
                 f'{len(doc.relationships)} relationships')
