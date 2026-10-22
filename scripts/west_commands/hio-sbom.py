@@ -138,7 +138,7 @@ def enrich(doc, zephyr_v, nrf_v):
             pkg.version = zephyr_v
         elif module == 'nrf':
             pkg.version = nrf_v
-        v = re.sub(r'-(dirty|off)$', '', pkg.version)
+        v = re.sub(r'(-(dirty|off))+$', '', pkg.version or '')
         pkg.supplier = Actor(ActorType.ORGANIZATION, supplier)
         refs = [(ExternalPackageRefCategory.SECURITY, 'cpe23Type', cpe),
                 (ExternalPackageRefCategory.PACKAGE_MANAGER, 'purl', purl)]
