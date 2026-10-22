@@ -13,7 +13,7 @@ on:
 
 env:
   # SBOM and evidence for security/psirt are made for release tags only
-  PSIRT: ${{ github.ref == 'refs/heads/marek.maskarinec/sbom-psirt' }}
+  PSIRT: ${{ github.ref == 'refs/heads/marek.maskarinec/sbom-workspace' }}
   PSIRT_VERSION: v0.0.0-test-${{ github.run_id }}
 
 jobs:
@@ -286,7 +286,7 @@ jobs:
     needs:
       - prepare
       - build-app
-    if: github.ref == 'refs/heads/marek.maskarinec/sbom-psirt'
+    if: github.ref == 'refs/heads/marek.maskarinec/sbom-workspace'
     permissions: {}
     env:
       PSIRT_BRANCH: test/${{ github.run_id }}
