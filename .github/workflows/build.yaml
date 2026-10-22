@@ -90,6 +90,26 @@ jobs:
           APPLICATIONS=$(python3 .github/gen-matrix.py applications)
           echo $APPLICATIONS
           echo applications=${APPLICATIONS} >> $GITHUB_OUTPUT
+      # modules.json and git history are the same for all variants, so they are
+      # written once per release, not into every leaf. The path must match the
+      # "workspace" of meta.json made by hio-evidence.py. A failure must not hold
+      # back the builds; the psirt job checks that the workspace exists.
+      - name: generate psirt workspace
+        if: env.PSIRT == 'true'
+        continue-on-error: true
+        working-directory: ./chester-sdk
+        run: |
+          python3 chester/.github/hio-evidence.py \
+            --workspace-out "$GITHUB_WORKSPACE/psirt/chester/_workspace/$PSIRT_VERSION"
+      - name: upload psirt artifact
+        if: env.PSIRT == 'true'
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: psirt-workspace
+          path: psirt
+          retention-days: 1
+          if-no-files-found: error
 
   # ------------------------
   build-sample:
@@ -277,6 +297,9 @@ jobs:
           path: leaves
           pattern: 'psirt-*'
           merge-multiple: true
+      # the workspace is made in prepare, where a failure must not stop the builds
+      - name: check that the workspace exists
+        run: test -f "leaves/chester/_workspace/$PSIRT_VERSION/modules.json"
       - name: push leaves to security/psirt
         env:
           PSIRT_GITLAB_TOKEN: ${{ secrets.PSIRT_GITLAB_TOKEN }}
