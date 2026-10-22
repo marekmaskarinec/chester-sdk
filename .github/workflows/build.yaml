@@ -300,6 +300,15 @@ jobs:
       # the workspace is made in prepare, where a failure must not stop the builds
       - name: check that the workspace exists
         run: test -f "leaves/chester/_workspace/$PSIRT_VERSION/modules.json"
+      # build-app is continue-on-error, so a failed variant only shows up here
+      - name: check that every variant has a leaf
+        env:
+          APPLICATIONS: ${{ needs.prepare.outputs.applications }}
+        run: |
+          expected=$(echo "$APPLICATIONS" | jq '[.[] | select(. != "_legacy")] | length')
+          found=$(find leaves -name meta.json | wc -l)
+          echo "leaves: $found of $expected"
+          test "$found" -eq "$expected"
       - name: push leaves to security/psirt
         env:
           PSIRT_GITLAB_TOKEN: ${{ secrets.PSIRT_GITLAB_TOKEN }}
@@ -321,15 +330,6 @@ jobs:
             git pull --rebase origin "$PSIRT_BRANCH"
           done
           exit 1
-      # build-app is continue-on-error, so a failed variant only shows up here
-      - name: check that every variant has a leaf
-        env:
-          APPLICATIONS: ${{ needs.prepare.outputs.applications }}
-        run: |
-          expected=$(echo "$APPLICATIONS" | jq '[.[] | select(. != "_legacy")] | length')
-          found=$(find leaves -name meta.json | wc -l)
-          echo "leaves: $found of $expected"
-          test "$found" -eq "$expected"
   # ------------------------
   release:
     runs-on: ubuntu-latest
