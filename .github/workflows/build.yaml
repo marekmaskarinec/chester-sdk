@@ -267,9 +267,6 @@ jobs:
       - build-app
     if: github.ref == 'refs/heads/marek.maskarinec/sbom-psirt'
     permissions: {}
-    concurrency:
-      group: psirt-push
-      cancel-in-progress: false
     env:
       PSIRT_BRANCH: test/${{ github.run_id }}
     steps:
