@@ -14,8 +14,9 @@ https://stack-canary.com/blog/zephyr-sbom-cra-compliance/
 
 Scan the result with grype (`grype sbom:<file>`), which matches by CPE. The
 CPE is product-wide, so expect Zephyr CVEs for code that is not built or is
-already fixed in the fork; triage them with VEX (`west hio-vex`). osv-scanner cannot be used:
-it has no way to match C/GIT components from SPDX PURLs.'''
+already fixed in the fork; they are triaged with VEX by tools/hio-vex in
+gitlab.hardwario.com/security/psirt. osv-scanner cannot be used: it has no
+way to match C/GIT components from SPDX PURLs.'''
 
 import os
 import re
