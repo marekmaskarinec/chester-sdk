@@ -5,15 +5,20 @@
 # SPDX-License-Identifier: LicenseRef-HARDWARIO-5-Clause
 #
 
-'''Write meta.json and evidence/ of a psirt leaf for a sysbuild build.
+'''Write the evidence of a psirt leaf, or of the workspace shared by all leaves of a release.
 
-The leaf layout is defined in the README of gitlab.hardwario.com/security/psirt.
-The SBOM itself is written by `west hio-sbom -o <out>/sbom.spdx.json`.
+The layout is defined in the README of gitlab.hardwario.com/security/psirt.
+The SBOM of a leaf is written by `west hio-sbom -o <leaf>/sbom.spdx.json`.
 
-Run after the build, from anywhere inside the west workspace:
+Run from anywhere inside the west workspace. After a sysbuild build, for a leaf:
 
     python3 .github/hio-evidence.py --build-dir build --out <leaf> \\
         --project chester --application clime --variant clime --version v3.1.0
+
+Once per release, for <project>/_workspace/<version> (modules.json and the git history
+of all modules, needs no build):
+
+    python3 .github/hio-evidence.py --workspace-out <dir>
 '''
 
 import argparse
@@ -25,6 +30,7 @@ import os
 import re
 import shutil
 import subprocess
+import tempfile
 from datetime import datetime, timezone
 
 import yaml
@@ -67,11 +73,11 @@ def built_sources(build_dirs):
     return built
 
 
-def module_roots(build_dirs, zephyr_dir):
-    '''Return module name -> real path from zephyr_modules.txt, plus zephyr itself.'''
+def module_roots(modules_files, zephyr_dir):
+    '''Return module name -> real path from zephyr_modules.txt files, plus zephyr itself.'''
     roots = {'zephyr': os.path.realpath(zephyr_dir)}
-    for build_dir in build_dirs:
-        with open(os.path.join(build_dir, 'zephyr_modules.txt')) as f:
+    for modules_file in modules_files:
+        with open(modules_file) as f:
             roots.update({n: os.path.realpath(p)
                           for n, p, _ in re.findall(r'"(.*?)":"(.*?)":"(.*?)"', f.read())})
     return roots
@@ -93,7 +99,7 @@ def history(name, repo):
     ancestors = git(repo, 'rev-list', 'HEAD').split()
     local = []
     if name in UPSTREAM:
-        git(repo, 'fetch', '--quiet', '--no-tags', UPSTREAM[name], 'main')
+        git(repo, 'fetch', '--quiet', '--no-tags', '--filter=blob:none', UPSTREAM[name], 'main')
         base = git(repo, 'merge-base', 'HEAD', 'FETCH_HEAD').strip()
         log = git(repo, 'log', '--format=%H %s', f'{base}..HEAD')
         patches = git(repo, 'log', '-p', '--no-ext-diff', '--no-textconv', '--no-color',
@@ -118,39 +124,72 @@ def sha256(path):
         return hashlib.file_digest(f, 'sha256').hexdigest()
 
 
+def workspace_modules(zephyr_dir):
+    '''Return the zephyr_modules.txt of the west workspace, as the build system finds it.'''
+    out = os.path.join(tempfile.mkdtemp(), 'zephyr_modules.txt')
+    subprocess.run(['python3', os.path.join(zephyr_dir, 'scripts', 'zephyr_module.py'),
+                    '--zephyr-base', zephyr_dir, '--cmake-out', out], check=True)
+    return out
+
+
+def write_workspace(out, roots, projects, workspace):
+    '''Write modules.json and history/ of all modules.'''
+    os.makedirs(os.path.join(out, 'history'), exist_ok=True)
+    modules = []
+    for name, root in sorted(roots.items()):
+        remote, path = projects.get(root, (None, os.path.relpath(root, workspace)))
+        modules.append({'name': name, 'remote': remote,
+                        'revision': git(root, 'rev-parse', 'HEAD').strip(), 'path': path})
+        # no mtime or file name in the gzip header, so that equal history gives equal bytes
+        with open(os.path.join(out, 'history', f'{name}.json.gz'), 'wb') as raw, \
+                gzip.GzipFile(filename='', mode='wb', fileobj=raw, mtime=0) as gz:
+            gz.write(json.dumps(history(name, root)).encode())
+    with open(os.path.join(out, 'modules.json'), 'w') as f:
+        json.dump(modules, f, indent=2)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--build-dir', default='build', help='sysbuild build directory')
     parser.add_argument('--workspace', help='west workspace (default: west topdir)')
-    parser.add_argument('--out', required=True, help='leaf directory')
+    parser.add_argument('--out', help='leaf directory')
+    parser.add_argument('--workspace-out', help='write the release workspace here instead')
     parser.add_argument('--project', default='chester')
-    parser.add_argument('--application', required=True)
-    parser.add_argument('--variant', required=True)
-    parser.add_argument('--version', required=True)
+    parser.add_argument('--application')
+    parser.add_argument('--variant')
+    parser.add_argument('--version')
     args = parser.parse_args()
+    if bool(args.out) == bool(args.workspace_out):
+        parser.error('exactly one of --out and --workspace-out is required')
+    if args.out and not (args.application and args.variant and args.version):
+        parser.error('--out requires --application, --variant and --version')
 
     workspace = args.workspace or subprocess.run(
         ['west', 'topdir'], capture_output=True, text=True, check=True).stdout.strip()
     projects = west_projects(workspace)
     path_of = {p: a for a, (_, p) in projects.items()}
     zephyr_dir, nrf_dir = path_of['zephyr'], path_of['nrf']
+    if args.workspace_out:
+        write_workspace(args.workspace_out, module_roots([workspace_modules(zephyr_dir)], zephyr_dir),
+                        projects, workspace)
+        return
     sdk_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
     dirs = domains(args.build_dir)
-    roots = module_roots(dirs.values(), zephyr_dir)
+    roots = module_roots([os.path.join(d, 'zephyr_modules.txt') for d in dirs.values()],
+                         zephyr_dir)
     # generated files in the build directory are not module sources, even if it is in one
     build = os.path.realpath(args.build_dir) + os.sep
     compiled = sorted({module_path(s, roots) for s in built_sources(dirs.values())
                        if not s.startswith(build)} - {None})
-    used = {p.split('/', 1)[0] for p in compiled}
 
     evidence = os.path.join(args.out, 'evidence')
     os.makedirs(os.path.join(evidence, 'config'), exist_ok=True)
-    os.makedirs(os.path.join(evidence, 'history'), exist_ok=True)
 
     with open(os.path.join(args.out, 'meta.json'), 'w') as f:
         json.dump({'project': args.project, 'application': args.application,
                    'variant': args.variant, 'version': args.version,
+                   'workspace': f'{args.project}/_workspace/{args.version}',
                    'commit': git(sdk_dir, 'rev-parse', 'HEAD').strip(),
                    'ncs': version(nrf_dir), 'zephyr': version(zephyr_dir),
                    'generated': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')},
@@ -169,18 +208,6 @@ def main():
               for p in sorted(glob.glob(os.path.join(args.build_dir, pattern)))}
     with open(os.path.join(evidence, 'images.json'), 'w') as f:
         json.dump(images, f, indent=2)
-
-    modules = []
-    for name, root in sorted(roots.items()):
-        remote, path = projects.get(root, (None, os.path.relpath(root, workspace)))
-        modules.append({'name': name, 'remote': remote,
-                        'revision': git(root, 'rev-parse', 'HEAD').strip(), 'path': path})
-        # history is only needed to decide `fixed` for code that is compiled
-        if name in used:
-            with gzip.open(os.path.join(evidence, 'history', f'{name}.json.gz'), 'wt') as f:
-                json.dump(history(name, root), f)
-    with open(os.path.join(evidence, 'modules.json'), 'w') as f:
-        json.dump(modules, f, indent=2)
 
 
 if __name__ == '__main__':
