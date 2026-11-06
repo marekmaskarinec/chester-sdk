@@ -18,6 +18,28 @@ if len(sys.argv) != 3:
 app = sys.argv[1]
 out = sys.argv[2]
 
+# "<variant>-sb": same firmware, but MCUboot is signed with HARDWARIO's own key
+# (written to $RUNNER_TEMP by the workflow from a CI secret).
+SB_SUFFIX = '-sb'
+SB_KEY = '$RUNNER_TEMP/chester-sb-key.pem'
+sb = app.endswith(SB_SUFFIX)
+if sb:
+    app = app[:-len(SB_SUFFIX)]
+
+
+def build_cmd(variant=None):
+    update = f'west chester-update --variant "{variant}"' if variant else 'west chester-update'
+    build = 'west build'
+    if sb:
+        # Kconfig string values need their own literal quotes (no spaces in path)
+        build += f' -- -DSB_CONFIG_BOOT_SIGNATURE_KEY_FILE=\\"{SB_KEY}\\"'
+    return f'rm -rf build && {update} && {build}'
+
+
+def fw_name(name):
+    return name + ' SB' if sb else name
+
+
 if out not in ['path', 'cmd', 'name']:
     panic("Unknown out type supported: path, cmd, name")
 
@@ -35,10 +57,10 @@ if os.path.exists(project_yml_path):
     project = yaml.safe_load(open(project_yml_path, 'r'))
     if not project.get('variants', None):
         if out == 'cmd':
-            print(f'rm -rf build && west chester-update && west build')
+            print(build_cmd())
             sys.exit(0)
         if out == 'name':
-            print(project['project']['fw_name'])
+            print(fw_name(project['project']['fw_name']))
             sys.exit(0)
 
     for variant in project['variants']:
@@ -46,10 +68,10 @@ if os.path.exists(project_yml_path):
             # print(json.dumps(variant, sort_keys=True))
             # sys.exit(0)
             if out == 'cmd':
-                print(f'rm -rf build && west chester-update --variant "{variant["name"]}" && west build')
+                print(build_cmd(variant['name']))
                 sys.exit(0)
             if out == 'name':
-                print(variant['fw_name'])
+                print(fw_name(variant['fw_name']))
                 sys.exit(0)
 
     panic(f'Variant not found: {fw_bundle}')

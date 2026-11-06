@@ -35,13 +35,16 @@ def panic(msg):
 
 def matrix_applications():
     out = subprocess.check_output(
-        ['python3', os.path.join(HERE, 'gen-matrix.py'), 'applications'], text=True)
+        ['python3', os.path.join(HERE, 'gen-matrix.py'), 'applications', '--sb'], text=True)
     import json
     return json.loads(out)
 
 
 def variant_for(suffix):
     """Map a bundle suffix (e.g. 'clime.iaq') to its variant dict."""
+    sb = suffix.endswith('-sb')
+    if sb:
+        suffix = suffix[:-len('-sb')]
     name = suffix.split('.')[0]
     project_yml = os.path.join(APPS_DIR, name, 'project.yaml')
     project = yaml.safe_load(open(project_yml, 'r'))
@@ -49,6 +52,9 @@ def variant_for(suffix):
     variants = project.get('variants') or [project['project']]
     for variant in variants:
         if variant['fw_bundle'] == fw_bundle:
+            if sb:
+                variant = dict(variant, fw_name=variant['fw_name'] + ' SB',
+                               name=variant['name'] + ' (SB)')
             return variant
     panic(f'Variant not found: {fw_bundle}')
 

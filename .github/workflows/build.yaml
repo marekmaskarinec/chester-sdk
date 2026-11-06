@@ -87,7 +87,8 @@ jobs:
           SAMPLES=$(python3 .github/gen-matrix.py samples)
           echo $SAMPLES
           echo samples=${SAMPLES} >> $GITHUB_OUTPUT
-          APPLICATIONS=$(python3 .github/gen-matrix.py applications)
+          # Release tags also build "-sb" twins signed with our own MCUboot key.
+          APPLICATIONS=$(python3 .github/gen-matrix.py applications ${{ startsWith(github.ref, 'refs/tags/v') && '--sb' || '' }})
           echo $APPLICATIONS
           echo applications=${APPLICATIONS} >> $GITHUB_OUTPUT
       # modules.json and git history are the same for all variants, so they are
@@ -215,15 +216,35 @@ jobs:
             chester-sdk/test
             chester-sdk/tools
             chester-sdk/zephyr
+      # The -sb twins differ from their base variant only by the signing key, so
+      # psirt evidence is made for the base variant alone.
       - name: enable CMake file API for west spdx
-        if: env.PSIRT == 'true'
+        if: env.PSIRT == 'true' && !endsWith(matrix.application, '-sb')
         run: |
           mkdir -p "$RUNNER_TEMP/cmake/api/v1/query"
           touch "$RUNNER_TEMP/cmake/api/v1/query/codemodel-v2"
           echo "CMAKE_CONFIG_DIR=$RUNNER_TEMP/cmake" >> "$GITHUB_ENV"
+      - name: write SB signing key
+        if: endsWith(matrix.application, '-sb')
+        env:
+          SB_KEY: ${{ secrets.CHESTER_SB_SIGNING_KEY }}
+        run: |
+          set -eu
+          # fail loudly: a missing secret must never fall back to the dev key
+          test -n "$SB_KEY"
+          umask 077
+          printf '%s\n' "$SB_KEY" > "$RUNNER_TEMP/chester-sb-key.pem"
       - name: build
         working-directory: ${{ steps.build-command.outputs.app_path }}
         run: ${{ steps.build-command.outputs.build_cmd }}
+      - name: verify SB signature
+        if: endsWith(matrix.application, '-sb')
+        working-directory: ${{ steps.build-command.outputs.app_path }}
+        run: |
+          set -eu
+          app_domain=$(ls -d build/*/zephyr | grep -v '/mcuboot/zephyr$')
+          python3 "$GITHUB_WORKSPACE/chester-sdk/bootloader/mcuboot/scripts/imgtool.py" \
+            verify -k "$RUNNER_TEMP/chester-sb-key.pem" "$app_domain/zephyr.signed.bin"
       - name: stage firmware
         if: startsWith(github.ref, 'refs/tags/')
         working-directory: ${{ steps.build-command.outputs.app_path }}
@@ -260,7 +281,7 @@ jobs:
           if-no-files-found: error
       # after the firmware upload, so that a failure here cannot hold back the release
       - name: generate psirt leaf
-        if: env.PSIRT == 'true'
+        if: env.PSIRT == 'true' && !endsWith(matrix.application, '-sb')
         working-directory: ${{ steps.build-command.outputs.app_path }}
         run: |
           set -eu
@@ -273,7 +294,7 @@ jobs:
           python3 ../../.github/hio-evidence.py --out "$leaf" \
             --application "${app%%.*}" --variant "$app" --version "$PSIRT_VERSION"
       - name: upload psirt artifact
-        if: env.PSIRT == 'true'
+        if: env.PSIRT == 'true' && !endsWith(matrix.application, '-sb')
         uses: actions/upload-artifact@v4
         with:
           name: psirt-${{ matrix.application }}
@@ -305,7 +326,7 @@ jobs:
         env:
           APPLICATIONS: ${{ needs.prepare.outputs.applications }}
         run: |
-          expected=$(echo "$APPLICATIONS" | jq '[.[] | select(. != "_legacy")] | length')
+          expected=$(echo "$APPLICATIONS" | jq '[.[] | select(. != "_legacy" and (endswith("-sb") | not))] | length')
           found=$(find leaves -name meta.json | wc -l)
           echo "leaves: $found of $expected"
           test "$found" -eq "$expected"

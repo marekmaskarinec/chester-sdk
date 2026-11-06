@@ -13,9 +13,15 @@ def panic(msg):
     sys.exit(1)
 
 
-if len(sys.argv) != 2:
-    print("Usage: gen-matrix.py <type>")
+if len(sys.argv) not in (2, 3) or (len(sys.argv) == 3 and sys.argv[2] != '--sb'):
+    print("Usage: gen-matrix.py <type> [--sb]")
     sys.exit(1)
+
+# --sb (applications only): also emit a "<variant>-sb" twin of every variant,
+# built with HARDWARIO's own MCUboot signing key (release pipelines only).
+SB = len(sys.argv) == 3
+if SB and sys.argv[1] != 'applications':
+    panic("--sb is only valid for applications")
 
 
 if sys.argv[1] == 'applications':
@@ -39,6 +45,9 @@ if sys.argv[1] == 'applications':
                 if not fw_bundle.startswith(PREFIX):
                     panic(f"Invalid fw_bundle prefix: name: {name} variant {variant['name']}")
                 applications.append(fw_bundle[len(PREFIX):])
+
+    if SB:
+        applications += [a + '-sb' for a in applications]
 
     print(json.dumps(applications, sort_keys=True))
 
