@@ -37,7 +37,7 @@ def build_cmd(variant=None):
 
 
 def fw_name(name):
-    return name + ' SB' if sb else name
+    return name + '-sb' if sb else name
 
 
 if out not in ['path', 'cmd', 'name']:

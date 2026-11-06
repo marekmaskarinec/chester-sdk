@@ -53,7 +53,7 @@ def variant_for(suffix):
     for variant in variants:
         if variant['fw_bundle'] == fw_bundle:
             if sb:
-                variant = dict(variant, fw_name=variant['fw_name'] + ' SB')
+                variant = dict(variant, fw_name=variant['fw_name'] + '-sb')
             return suffix, variant, sb
     panic(f'Variant not found: {fw_bundle}')
 
