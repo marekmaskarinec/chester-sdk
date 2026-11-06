@@ -25,3 +25,16 @@ CONFIG_MCUBOOT_ACTION_HOOKS=y
 
 CONFIG_BUILD_OUTPUT_META=y
 CONFIG_BUILD_OUTPUT_META_STATE_PROPAGATE=y
+
+# RTT logging in MCUboot. The SEGGER RTT control block is placed in the custom
+# section at the start of RAM with buffer sizes identical to the application
+# (see Kconfig.log / Kconfig.defaults), so it sits at the same address and a
+# J-Link RTT monitor stays attached across the MCUboot -> application handoff.
+CONFIG_SEGGER_RTT_SECTION_CUSTOM=y
+CONFIG_SEGGER_RTT_BUFFER_SIZE_UP=2048
+CONFIG_SEGGER_RTT_BUFFER_SIZE_DOWN=256
+CONFIG_SEGGER_RTT_MAX_NUM_UP_BUFFERS=3
+CONFIG_SEGGER_RTT_MAX_NUM_DOWN_BUFFERS=3
+CONFIG_CONSOLE=y
+CONFIG_RTT_CONSOLE=y
+CONFIG_UART_CONSOLE=n
