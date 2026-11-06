@@ -41,7 +41,7 @@ def matrix_applications():
 
 
 def variant_for(suffix):
-    """Map a bundle suffix (e.g. 'clime.iaq') to its variant dict."""
+    """Map a bundle suffix (e.g. 'clime.iaq' or 'clime.iaq-sb') to (base suffix, variant dict, is_sb)."""
     sb = suffix.endswith('-sb')
     if sb:
         suffix = suffix[:-len('-sb')]
@@ -53,9 +53,8 @@ def variant_for(suffix):
     for variant in variants:
         if variant['fw_bundle'] == fw_bundle:
             if sb:
-                variant = dict(variant, fw_name=variant['fw_name'] + ' SB',
-                               name=variant['name'] + ' (SB)')
-            return variant
+                variant = dict(variant, fw_name=variant['fw_name'] + ' SB')
+            return suffix, variant, sb
     panic(f'Variant not found: {fw_bundle}')
 
 
@@ -99,21 +98,27 @@ def main():
         if not find_hex(artifact, True):
             panic(f'Missing firmware for {suffix} ({artifact}); '
                   f'a build variant likely failed — refusing to publish a partial release')
-        pending.append((artifact, variant_for(suffix)))
+        pending.append((artifact, *variant_for(suffix)))
 
-    rows = []
-    for artifact, variant in pending:
+    # One row per variant; the secure boot build is a second pair of columns.
+    rows = {}
+    for artifact, base, variant, sb in pending:
         identifier, link = upload(variant['fw_name'], args.version, artifact)
-        rows.append((variant['name'], link, identifier))
+        row = rows.setdefault(base, {'name': variant['name']})
+        row[sb] = (link, identifier)
         print(f'uploaded {variant["fw_name"]} -> {link}', file=sys.stderr)
 
     lines = []
     lines.append(f'**NCS:** {args.ncs} &nbsp;&nbsp; **Zephyr:** {args.zephyr}')
     lines.append('')
-    lines.append('| Firmware | Version | Link | ID |')
-    lines.append('|----------|---------|------|----|')
-    for name, link, identifier in rows:
-        lines.append(f'| {name} | {args.version} | [download]({link}) | `{identifier}` |')
+    lines.append('| Firmware | Version | Link | ID | Secure boot link | Secure boot ID |')
+    lines.append('|----------|---------|------|----|------------------|----------------|')
+    for row in rows.values():
+        cells = []
+        for sb in (False, True):
+            link, identifier = row.get(sb, (None, None))
+            cells += [f'[download]({link})', f'`{identifier}`'] if link else ['', '']
+        lines.append(f'| {row["name"]} | {args.version} | ' + ' | '.join(cells) + ' |')
     notes = '\n'.join(lines) + '\n'
 
     if args.out:
