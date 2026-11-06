@@ -307,7 +307,7 @@ jobs:
     needs:
       - prepare
       - build-app
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: false
     permissions: {}
     env:
       PSIRT_BRANCH: main
